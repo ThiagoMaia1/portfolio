@@ -1,10 +1,17 @@
+@import '../index.scss';
+
 .project-card {
     &:not(.open){
-        background-color: white;
+        background: linear-gradient($primaryColor, $accentColor);
         border-radius: 0.4em;
-        border: solid #c42e00 1px;
+        border: solid $accentColor 1px;
         // box-shadow: var(--box-shadow);
+    
+        &:hover {
+            transform: translateY(-6%);
+        }
     }
+
     &.container {
         width: 29vw;
         min-width: 29vh;

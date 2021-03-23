@@ -18,6 +18,14 @@ function Loading() {
             let interval : NodeJS.Timeout;
             // let running = true;
             let time = 0;
+            // let text = new scope.PointText(view.bounds.center);
+            // text.content = 'T';
+            // text.style.fontFamily = 'Roboto Slab';
+            // text.style.fontWeight = 900;
+            // text.style.fillColor = new scope.Color('white');
+            // text.style.fontSize = '3em';
+            // text.style.justification = 'center';
+            // text.position.y += text.bounds.height/3.3;
 
             view.onFrame = draw;
             path.onMouseEnter = () => changeSpeed(0);
@@ -25,7 +33,7 @@ function Loading() {
 
             function draw(event : any) {
                 // if (!running) return;
-                time = time + event.delta*speedRate;
+                time += event.delta*speedRate;
                 scope.activate();
                 const variation : number = Math.sin(time*3)*radius/10; 
                 var newStar = new scope.Path.Star(view.center, 6, radius - 2 + Math.abs(variation), radius - Math.abs(variation));

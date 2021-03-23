@@ -5,7 +5,7 @@ const ClosedProject = ({ logoUri, title, onClick }: { logoUri: string, title: st
 
     return (
         <div onClick={onClick} className='closed-card'>
-            <img className='logo closed-project' src={`${logoUri}`} alt={`Logo ${title}`}/>
+            <img className='logo closed-project' src={require(`${logoUri}`).default} alt={`Logo ${title}`}/>
             <div className='project-title'>{title.toUpperCase()}</div>
         </div>
     )

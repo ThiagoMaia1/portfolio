@@ -24,8 +24,10 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
 
     return (
         <div className='open-project-wrapper'>
-            <div className='open-project project-card' 
-                 style={{...style, transition: style.transition + ', ' + opacityTransition}}/>
+            <div className='shadow-open-project-animation'>
+                <div className='open-project project-card' 
+                    style={{...style, transition: style.transition + ', ' + opacityTransition}}/>
+            </div>
             <div className='display-open-project' style={{opacity: 1 - style.opacity, transition: opacityTransition}} onClick={_onClick} >
                 <ProjectInfo project={project}/>
             </div>

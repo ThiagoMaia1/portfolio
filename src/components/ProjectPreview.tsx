@@ -16,15 +16,14 @@ const ProjectPreview = ({project} : {project : Project}) => {
         setOpen(o => !o);
     }, [open]);
 
-    function scrollTo(duration : number, targetY : number, tolerance : number = 5) {
+    function scrollTo(duration : number, targetY : number, tolerance : number = 2) {
         let b = document.body;
-        let mspf = 1000/60; //miliseconds per frame;
-        let step = -(b.scrollTop - targetY)/(duration/mspf);
+        let step = -(b.scrollTop - targetY)/duration;
         let interval = setInterval(() => {
             if (b.scrollTop >= targetY - tolerance && b.scrollTop <= targetY + tolerance)
             clearInterval(interval);
             b.scrollTop = b.scrollTop + step;
-        }, mspf);
+        }, 1);
     }
 
     return (
