@@ -1,0 +1,78 @@
+#header {
+    height: 130vh;
+    width: 100%;
+    font-family: 'Roboto Slab';
+    // animation: fonts 2.5s infinite;
+    // overflow: hidden;
+    position: relative;
+
+    canvas {
+        width: 100%;
+        height: 100%;
+        // position: absolute;
+    }
+
+    > span {
+        color: white;
+        font-size: 8em;
+        position: absolute;
+        top: 30vh;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#header-image {
+    background-repeat: no-repeat;
+    background-size: cover;    
+    width: 100%;
+    height: 100%;      
+}
+
+.onda-header {
+    position: absolute;
+}
+    
+
+// @keyframes fonts{
+//     0% {
+//         font-family: 'Playfair Display';
+//         font-style: italic;
+//     }
+    
+//     12% {
+//         font-family: 'Rubik';
+//         font-style: normal;
+//     }
+    
+    
+//     25% {
+//         font-family: 'Syne Mono';
+//         font-style: normal;
+//     }
+    
+//     37% {
+//         font-family: 'Merriweather';
+//         font-style: italic;
+//     }
+    
+//     50% {
+//         font-family: 'Ranchers';
+//         font-style: normal;
+//     }
+    
+//     61% {
+//         font-family: 'Roboto Slab';
+//         font-style: normal;
+//     }
+    
+//     74% {
+//         font-family: 'Lato';
+//         font-style: normal;
+//     }
+
+//     87% {
+//         font-family: 'Trebuchet MS';
+//         font-style: normal;
+//     }
+// }

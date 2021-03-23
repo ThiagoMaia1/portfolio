@@ -1,0 +1,29 @@
+.project-carrossel {
+    height: 100%;
+    .carrossel {
+        pointer-events: all;
+        transform: perspective(100px) rotateY(5deg) rotateZ(-2deg);
+    }
+    .movimentador-galeria {
+        width: max-content;
+    }
+}
+
+.screenshot-gallery {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+}
+
+.project-screenshot {
+    height: 100%;
+    padding: 1em;
+    
+    img {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        height: 100%;
+        border-radius: 0.5em;
+        object-fit: cover;
+    }
+}

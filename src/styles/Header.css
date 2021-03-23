@@ -1,0 +1,6 @@
+.onda-header.superior {
+    top: calc(var(--scroll)*2);
+}
+.onda-header.inferior {
+    top: calc(var(--scroll)*1);
+}

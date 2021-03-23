@@ -1,0 +1,17 @@
+#about-me {
+    margin-bottom: 10vh;
+    position: relative;
+
+    .paragraph {
+        margin: 0 40% 0 15%;
+        text-align: justify;
+        line-height: 2;
+    }
+}
+
+#container-photo-thiago {
+    position: absolute;
+    right: 0;
+    top: -10vh;
+    transform: rotate(90deg);
+}

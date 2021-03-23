@@ -1,0 +1,28 @@
+$transition-curve: 1.5s ease-in-out;
+
+%full {
+    width: 100%;
+    height: 100%;
+}
+
+.open-project-wrapper {
+    @extend %full;
+    position: relative;
+    pointer-events: none;
+}
+
+.open-project {    
+    @extend %full;
+    position: absolute;
+    pointer-events: all;
+}
+
+.display-open-project {
+    padding: 8vh;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    bottom: 10vh;
+    right: 0;
+    background-color: lightgray;
+}
