@@ -18,7 +18,6 @@ export default class Project {
         imagesUri ?: string[],
     ) {
         this.name = name;
-        console.log(technologies);
         this.technologies = technologies;
         this.description = description;
         this.url = url;
@@ -28,8 +27,9 @@ export default class Project {
 
     get categories() : Array<Category> {
         const categories = this.technologies.map(t => t.category);
-        const uniqueCategories = new Set(categories);
-        return [...uniqueCategories];
+        const unique = new Set(categories);
+        const uniqueArray = [...unique];
+        return uniqueArray.sort();
     } 
 
     getCategoryTechnologies(category : Category) : Array<Technology> {

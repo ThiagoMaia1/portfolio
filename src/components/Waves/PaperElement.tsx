@@ -26,4 +26,4 @@ export default function PaperElement({animation, children = null}
     </div>
 }
 
-const uniqueId : () => number = () => Math.round(new Date().getTime() + (Math.random() * 100));
+const uniqueId : () => number = () => Math.round(new Date().getTime()/(Math.random()));

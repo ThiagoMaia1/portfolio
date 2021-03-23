@@ -9,12 +9,12 @@ function ProjectCarrossel({project} : {project : Project}) {
  
     return <div className='project-carrossel' 
                 style={{maxWidth: carrosselWidth, minWidth: carrosselWidth}}>
-        <Carrossel direcao={'horizontal'} tamanhoMaximo={carrosselWidth} tamanhoIcone={60}
+        <Carrossel direcao={'horizontal'} tamanhoMaximo={carrosselWidth} tamanhoIcone={60} corGradiente={'#c42e00'}
                 style={{zIndex: 10, maxWidth: carrosselWidth, minWidth: carrosselWidth, width: carrosselWidth, height: '100%', overflow: 'hidden'}}
         >
             <div className='screenshot-gallery'>
                 {project.imagesUri.map(i => 
-                    <ProjectScreenshot imageUri={i}/>
+                    <ProjectScreenshot imageUri={i} key={i}/>
                 )}
             </div>
         </Carrossel>

@@ -1,6 +1,5 @@
-import React, { Component, CSSProperties, HTMLAttributes, RefObject, SyntheticEvent, WheelEvent } from 'react';
+import React, { Component, CSSProperties, SyntheticEvent} from 'react';
 import './Carrossel.scss';
-// import { connect } from 'react-redux';
 import { MdKeyboardArrowUp, MdKeyboardArrowRight, MdKeyboardArrowDown, MdKeyboardArrowLeft } from 'react-icons/md';
 import { getCoords, Coordinates } from '../../constants/FuncoesGeraisTS';
 import { capitalize } from '../../constants/FuncoesGerais';

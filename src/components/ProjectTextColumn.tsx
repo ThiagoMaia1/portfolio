@@ -29,19 +29,21 @@ function ProjectTextColumn({project} : {project : Project}) {
 function TechnologiesSection({category, technologies} 
     : {category : Category, technologies : Technology[]}) {
 
-    return <>
+    return <div className='category-section'>
         <div className='category-title'>
             {Category[category] + 's'}
         </div>
-        {technologies.map(t => 
-            <div className='technology-info' key={t.name}>
-                <div className='technology-logo-container'>
-                    <img src={require(`${t.logoUri}`).default} alt={`Logo ${t.name}`}/>
+        <div className='technology-info'>
+            {technologies.map(t => 
+                <div key={t.name}>
+                    <div className='technology-logo-container'>
+                        <img src={require(`${t.logoUri}`).default} alt={`Logo ${t.name}`}/>
+                    </div>
+                    <span>{t.name}</span>
                 </div>
-                <span>{t.name}</span>
-            </div>
-        )}
-    </>;
+            )}
+        </div>
+    </div>;
 }
 
 export default ProjectTextColumn

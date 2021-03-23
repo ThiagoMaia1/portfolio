@@ -7,13 +7,13 @@ const projects: Array<Project> = [
   new Project(
     'Cultue - Apresentações de Slides para Igrejas',
     [
-      t['Firebase'],
-      t['ReactJs'],
-      t['Redux'],
-      t['Javascript'],
-      t['CSS3'],
-      t['HTML5'],
-      t['ReactRouter'],
+      t.Javascript,
+      t.HTML5,
+      t.CSS3,
+      t.Redux,
+      t.Firebase,
+      t.ReactJs,
+      t.ReactRouter,
     ],
     `Aplicação web voltada para a criação de slides para cultos de igrejas. 
     Utiliza os apis: vagalume e biblia para buscar letras de músicas e textos bíblicos e aloca-los em slides. 
@@ -34,20 +34,20 @@ const projects: Array<Project> = [
   new Project(
     'VidAngel Subtitles',
     [
-      t['Javascript'],
-      t['CSS3'],
-      t['HTML5'],
-      t['ChromeCast'],
-      t['ChromeExtensions'],
-      t['Postman'],
+      t.Javascript,
+      t.HTML5,
+      t.CSS3,
+      t.ChromeCast,
+      t.ChromeExtensions,
+      t.Postman,
     ],
     `Extension for Google Chrome that uses the OpenSubtitles Api to add subtitles to movies and TV shows on the VidAngel streaming service.`,
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-    '/logos/projects/VidAngelSubtitles.png'
+    './logos/projects/VidAngelSubtitles.png'
   ),
   new Project(
     'MyShop - E-Commerce',
-    [t['Dart'], t['Flutter'], t['Figma']],
+    [t.Dart, t.Flutter, t.Figma],
     `Aplicativo Mobile de ecommerce para Android ou IOs. Design reroduzido do Figma: `,
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
     './logos/projects/MyShop.png'
@@ -55,15 +55,16 @@ const projects: Array<Project> = [
   new Project(
     'Portfolio - Thiago Maia',
     [
-      t['ReactJs'], 
-      t['SASS'], 
-      t['Typescript'], 
-      t['HTML5'], 
-      t['PaperJs']
+      t.Typescript, 
+      t.HTML5, 
+      t.SASS, 
+      t.ReactJs, 
+      t.PaperJs,
+      t.AWS,
     ],
     `Aplicativo Mobile de ecommerce para Android ou Ios.`,
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-    './logos/projects/MyShop.png'
+    './logos/projects/Portfolio.svg'
   ),
 ];
 
