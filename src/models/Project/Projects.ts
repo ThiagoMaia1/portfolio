@@ -3,11 +3,12 @@ import Project from './Project';
 
 const t = technologies;
 
-const projects: Array<Project> = [new Project(
+const projects: Array<Project> = [
+  new Project(
     'Cultue - Apresentações de Slides para Igrejas',
     [
       t['Firebase'],
-      t['Reactjs'],
+      t['ReactJs'],
       t['Redux'],
       t['Javascript'],
       t['CSS3'],
@@ -38,6 +39,7 @@ const projects: Array<Project> = [new Project(
       t['HTML5'],
       t['ChromeCast'],
       t['ChromeExtensions'],
+      t['Postman'],
     ],
     `Extension for Google Chrome that uses the OpenSubtitles Api to add subtitles to movies and TV shows on the VidAngel streaming service.`,
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
@@ -45,18 +47,24 @@ const projects: Array<Project> = [new Project(
   ),
   new Project(
     'MyShop - E-Commerce',
-    [t['Dart'], t['Flutter']],
+    [t['Dart'], t['Flutter'], t['Figma']],
+    `Aplicativo Mobile de ecommerce para Android ou IOs. Design reroduzido do Figma: `,
+    'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
+    './logos/projects/MyShop.png'
+  ),
+  new Project(
+    'Portfolio - Thiago Maia',
+    [
+      t['ReactJs'], 
+      t['SASS'], 
+      t['Typescript'], 
+      t['HTML5'], 
+      t['PaperJs']
+    ],
     `Aplicativo Mobile de ecommerce para Android ou Ios.`,
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
     './logos/projects/MyShop.png'
   ),
-  // new Project(
-  //   'Portfolio - Thiago Maia',
-  //   [t['Reactjs'], t['SASS'], t['Typescript']],
-  //   `Aplicativo Mobile de ecommerce para Android ou Ios.`,
-  //   'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-  //   './logos/projects/MyShop.png'
-  // ),
 ];
 
 export default projects;

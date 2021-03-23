@@ -5,7 +5,7 @@ import '../styles/ProjectCarrossel.scss';
 
 function ProjectCarrossel({project} : {project : Project}) {
     
-    const carrosselWidth = '75vw';
+    const carrosselWidth = '65vw';
  
     return <div className='project-carrossel' 
                 style={{maxWidth: carrosselWidth, minWidth: carrosselWidth}}>
