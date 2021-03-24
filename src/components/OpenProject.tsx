@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from 'react';
+import React, { useState } from 'react';
 import useClosingAnimation from '../hooks/useClosingAnimation';
 import Project from '../models/Project/Project';
 import '../styles/OpenProject.scss';

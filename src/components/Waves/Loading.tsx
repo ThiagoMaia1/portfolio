@@ -11,7 +11,7 @@ function Loading() {
             const radius = view.size.width*0.4;
             var path = new scope.Path.Star(view.center, 6, radius, radius);
             // path.selected = true;
-            path.fillColor = getGradient(path.bounds, ['#A60000', '#ff3c00']);
+            path.fillColor = getGradient(path.bounds, ['#A60000', '#ff3c00'], scope);
 
             const initialSpeedRate = 1;
             let speedRate = initialSpeedRate;

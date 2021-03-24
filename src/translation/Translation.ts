@@ -24,7 +24,7 @@ const getTranslatedSentence = (key : keyof sentences) => {
     let languageCode : string = window.navigator.language;
     if (!(languageCode in translation)) {
         for (let k of Object.keys(translation)) {
-            if (getGeneralLanguage(k) == getGeneralLanguage(languageCode))
+            if (getGeneralLanguage(k) === getGeneralLanguage(languageCode))
                 break;
         }
         languageCode = 'en';

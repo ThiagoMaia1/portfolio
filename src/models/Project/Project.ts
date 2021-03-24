@@ -33,6 +33,6 @@ export default class Project {
     } 
 
     getCategoryTechnologies(category : Category) : Array<Technology> {
-        return this.technologies.filter(t => t.category == category);
+        return this.technologies.filter(t => t.category === category);
     }
 }

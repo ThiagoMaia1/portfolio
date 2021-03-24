@@ -1,6 +1,5 @@
 import React from 'react'
 import Project from '../models/Project/Project'
-import Carrossel from './Carrossel/Carrossel';
 import ProjectCarrossel from './ProjectCarrossel';
 import '../styles/ProjectInfo.scss';
 import ProjectTextColumn from './ProjectTextColumn';

@@ -23,7 +23,7 @@ function HeaderWaves() {
         const waves : Array<WavePath> = [
             new WavePath({
                 container: rect3, 
-                fillColor: getGradient(rect3, ['#330000', '#770d00']),
+                fillColor: getGradient(rect3, ['#330000', '#770d00'], scope),
                 height: 0,
                 sideWidth
             }, scope),
@@ -42,7 +42,7 @@ function HeaderWaves() {
         waves.push(
             new WavePath({
                 container: rect2, 
-                fillColor: getGradient(rect2, ['#991200', '#880000']),
+                fillColor: getGradient(rect2, ['#991200', '#880000'], scope),
                 inclinationFactor: 4,
                 randomStrenghtFactor: 0.15,
                 points: 11,
@@ -65,7 +65,7 @@ function HeaderWaves() {
         waves.push(
             new WavePath({
                 container: rect1, 
-                fillColor: getGradient(rect1, ['#A60000', '#ff3c00']),
+                fillColor: getGradient(rect1, ['#A60000', '#ff3c00'], scope),
                 inclinationFactor: -2,
                 randomStrenghtFactor: 0.1,
                 points: 8,
