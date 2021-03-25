@@ -27,7 +27,7 @@ function WavePhoto({ imageUri }: { imageUri: string }) {
                 let raster = new scope.Raster(img.current);
                 raster.position = view.center;
                 raster.position.y += 40;
-                raster.scale(0.39);
+                raster.scale(0.45);
 
                 let rect = new scope.Path.Rectangle(view.bounds);
                 // rect.fillColor = new scope.Color('yellow');

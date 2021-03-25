@@ -1,3 +1,4 @@
+import getTranslatedSentence from "../../translation/Translation";
 import Category from "../Category";
 import Technology from "./Technology";
 
@@ -17,6 +18,11 @@ const technologies = {
     Dart: new Technology('Dart', folder + 'Dart.png', Category.Language, 'https://dart.dev/'), 
     Excel: new Technology('Excel', folder + 'Excel.png', Category.Software, 'https://www.microsoft.com/pt-br/microsoft-365/excel'), 
     Expo: new Technology('Expo', folder + 'Expo.png', Category.Tool, 'https://expo.io/'), 
+    ForeignLanguage: new Technology(
+        getTranslatedSentence('foreignLanguage'), 
+        folder + getTranslatedSentence('foreignLanguageImage'), 
+        Category.Tool, 
+        getTranslatedSentence('foreignLanguageUrl'),), 
     Figma: new Technology('Figma', folder + 'Figma.svg', Category.Tool, 'https://www.figma.com/'), 
     Firebase: new Technology('Firebase', folder + 'Firebase.png', Category.Tool, 'https://firebase.google.com/'), 
     Flutter: new Technology('Flutter', folder + 'Flutter.svg', Category.Framework, 'https://flutter.dev/'), 
@@ -34,7 +40,9 @@ const technologies = {
     ReactRouter: new Technology('React Router', folder + 'ReactRouter.svg', Category.Tool, 'https://reactrouter.com/'), 
     Redux: new Technology('Redux', folder + 'Redux.png', Category.Tool, 'https://redux.js.org/'), 
     SASS: new Technology('SASS/SCSS', folder + 'SASS.png', Category.Language, 'https://sass-lang.com/'), 
+    Sendgrid: new Technology('Twilio Sendgrid', folder + 'SendGrid.png', Category.Language, 'https://sendgrid.com/'), 
     SQL: new Technology('SQL', folder + 'SQL.png', Category.Language, 'https://docs.microsoft.com/pt-br/sql/t-sql/language-reference?view=sql-server-ver15'), 
+    Trello: new Technology('Trello', folder + 'Trello.png', Category.Language, 'https://trello.com/'), 
     Typescript: new Technology('Typescript', folder + 'Typescript.svg', Category.Language, 'https://www.typescriptlang.org/'), 
     VBA: new Technology('Visual Basic for Applications', folder + 'VBA.png', Category.Language, 'https://docs.microsoft.com/pt-br/office/vba/library-reference/concepts/getting-started-with-vba-in-office'), 
     Vue: new Technology('Vue', folder + 'Vue.png', Category.Framework, 'https://vuejs.org/'), 

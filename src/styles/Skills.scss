@@ -1,0 +1,14 @@
+.skill-list-container {
+    width: 100%;
+    padding: 0 3vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 20em;
+    margin-bottom: 2em;
+    
+    > * {
+        font-size: 1.8em;
+    }
+}

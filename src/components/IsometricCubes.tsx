@@ -20,20 +20,37 @@ function IsometricCubes(props: Props) {
         let vectors = angles.map(a => baseVector.rotate(a, view.bounds.topLeft));
         let randomVector = () => vectors[Math.floor(Math.random() * vectors.length)];
 
-        let arr = Array(10).fill(0);
-        let paths = arr.map(_ => new scope.Path());
-        for (let p of paths) {
-            p.strokeColor = new scope.Color('lightgray');// new scope.Color({hue: Math.random()*255, saturation: 1, brightness: 0.7});
-            p.add(view.bounds.center); //.add(randomVector().multiply(Math.floor(Math.random()*20))));
-        }
+        let arr = Array(20).fill(0);
+        let pathObjects = arr.map(_ => ({
+            isExpanding: true,
+            path: new scope.Path(),
+        }));
+        pathObjects.forEach((p, i) => {
+            // let [color, width] = i % 2 
+            //                      ? ['lightgray', 1]
+            //                      : ['white', 2];
+            p.path.strokeColor = new scope.Color('lightgray');// new scope.Color({hue: Math.random()*255, saturation: 1, brightness: 0.7});
+            p.path.strokeWidth = 1;
+            // p.path.strokeScaling = false;
+            p.path.add(view.bounds.center); //.add(randomVector().multiply(Math.floor(Math.random()*20))));
+        });
         
         let timer = 0;
 
         view.onFrame = (event : OnFrameEvent) => {
-            if (event.time - timer < 0.5) return;
+            if (event.time - timer < 0.1) return;
             timer = event.time;
-            for (let p of paths) {
-                p.add(p.lastSegment.point.add(randomVector()));
+            for (let p of pathObjects) {
+                if (p.isExpanding)
+                    if (p.path.lastSegment.point.isInside(view.bounds)) 
+                        p.path.add(p.path.lastSegment.point.add(randomVector()));
+                    else 
+                        p.isExpanding = false;
+                else
+                    if (p.path.segments.length > 1)
+                        p.path.lastSegment.remove();
+                    else 
+                        p.isExpanding = true;
             }
         }
     }}/>

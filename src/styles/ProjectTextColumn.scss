@@ -34,53 +34,6 @@
     }
 }
 
-.category-section {
-    width: 50%;
-    padding-bottom: 1em;
-}
-
-.category-title {
-    font-size: 110%;
-    font-weight: 600;
-    width: 80%;
-    border-bottom: solid black 1px;
-}
-
-$logo-size: 1.5em;
-
-.technology-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    > div {
-        display: flex;
-        margin: 0.3em 0;
-        cursor: pointer;
-        span {
-            line-height: $logo-size;
-            &:hover {
-                text-decoration: underline;
-            }
-        }    
-    }
-
-    .technology-logo-container {
-        width: $logo-size;
-        height: $logo-size;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 0.5em;
-
-        img {
-            max-height: $logo-size;
-            max-width: $logo-size;
-            object-fit: cover;
-        }
-    }
-}
-
 .project-description {
     text-align: justify;
 }

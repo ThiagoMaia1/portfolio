@@ -1,0 +1,18 @@
+.category-section {
+    width: 50%;
+    padding-bottom: 1em;
+}
+
+.category-title {
+    font-size: 110%;
+    font-weight: 600;
+    width: 80%;
+    border-bottom: solid black 1px;
+}
+
+.technology-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}

@@ -16,6 +16,7 @@ const projects: Array<Project> = [
       t.Firebase,
       t.ReactJs,
       t.ReactRouter,
+      t.Sendgrid,
     ],
     getTranslatedSentence('cultueDescription'),
     'https://cultue.web.app/',
@@ -53,7 +54,7 @@ const projects: Array<Project> = [
   new Project(
     getTranslatedSentence('myShopTitle'),
     getTranslatedSentence('myShopSubtitle'),
-    [t.Dart, t.Flutter, t.Figma],
+    [t.Dart, t.Flutter, t.Figma, t.Trello, ],
     getTranslatedSentence('myShopDescription'),
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
     './logos/projects/MyShop.png'

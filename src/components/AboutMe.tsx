@@ -7,7 +7,7 @@ function AboutMe() {
 
     return <div id='about-me'>
         <div id='container-photo-thiago'>
-            <WavePhoto imageUri={'./Foto Thiago.jpg'}/> 
+            <WavePhoto imageUri={'./Foto Thiago.png'}/> 
         </div>
         <SectionTitle text={getTranslatedSentence('aboutMe')}/>
         <div className='paragraph'>{getTranslatedSentence('selfDescription')}</div>       

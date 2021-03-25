@@ -1,6 +1,7 @@
 import Category from "../models/Category";
 import Technology from "../models/Technology/Technology";
 import TechnologyLink from "./TechnologyLink";
+import '../styles/TechnologiesSection.scss';
 
 function TechnologiesSection({category, technologies} 
     : {category : Category, technologies : Technology[]}) {

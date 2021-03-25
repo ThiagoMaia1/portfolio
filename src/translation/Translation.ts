@@ -16,6 +16,9 @@ interface sentences {
     portfolioSubtitle : string,
     portfolioDescription : string,
     skills : string,
+    foreignLanguage : string,
+    foreignLanguageImage : string,
+    foreignLanguageUrl : string, 
 }
 
 const translation : Record<string, sentences> = {
@@ -32,11 +35,14 @@ const translation : Record<string, sentences> = {
         vidAngelDescription: '',
         myShopTitle : 'MyShop',
         myShopSubtitle : 'E-Commerce',
-        myShopDescription : 'Aplicativo Mobile de ecommerce para Android ou IOs. Design reroduzido do Figma: <a>https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-E-commerce-template-by-Oleh-Chabanov?node-id=161%3A590</a>',
+        myShopDescription : 'Aplicativo Mobile de ecommerce para Android ou IOs. Design reroduzido do Figma (TODO: Inserir Link).',
         portfolioTitle : 'Este Portfólio Incrível',
         portfolioSubtitle : '',
         portfolioDescription : 'Este site! Registrado aqui apenas para indicar as tecnologias utilizadas.',
-        skills: 'Competências',
+        skills: 'Principais Competências',
+        foreignLanguage : 'Inglês Fluente',
+        foreignLanguageImage : 'English.png',
+        foreignLanguageUrl : 'https://www.britannica.com/topic/English-language',
     },
     'en': {
         developerTitle: 'Front-end Developer',
@@ -55,7 +61,10 @@ const translation : Record<string, sentences> = {
         portfolioTitle : `This Awesome Portfolio`,
         portfolioSubtitle : '',
         portfolioDescription : '',
-        skills: 'Skills',
+        skills: 'Main Skills',
+        foreignLanguage : 'Native Portuguese',
+        foreignLanguageImage : 'Portuguese.png',
+        foreignLanguageUrl : 'https://www.portugues.com.br/',
     }
 };
 
