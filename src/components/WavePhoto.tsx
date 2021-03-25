@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
-import PaperElement, { OnFrameEvent } from './Waves/PaperElement'
-import { WavePath } from './Waves/Waves';
+import { useEffect, useRef, useState } from 'react'
+import PaperElement from './Waves/PaperElement'
 import '../styles/WavePhoto.scss';
+import { fixedStar } from '../constants/Constants';
 
 function WavePhoto({ imageUri }: { imageUri: string }) {
 
@@ -18,33 +18,35 @@ function WavePhoto({ imageUri }: { imageUri: string }) {
             : <PaperElement animation={scope => {
                 scope.activate();
                 let { view } = scope.project;
-                let rect = new scope.Rectangle(view.bounds);
-                rect.height = rect.height * 0.6;
-                rect.x = rect.x * 0.2;
-                let wave = new WavePath(
-                    {
-                        height: 20,
-                        fillColor: new scope.Color('transparent'),
-                        container: rect,
-                        points: 12,
-                        sideWidth: -150,
-                    },
-                    scope
-                )
+                let { numberOfPoints, smallRadius, bigRadius, smoothing } = fixedStar;
+                let sizeFactor = view.size.height;
+                const radius = view.size.height*0.46;
+                let path = new scope.Path.Star(view.bounds.center, numberOfPoints, bigRadius*sizeFactor, smallRadius*sizeFactor);
+                smoothing(path);
 
                 let raster = new scope.Raster(img.current);
                 raster.position = view.center;
-                raster.rotate(-90);
-                raster.scale(0.3);
+                raster.position.y += 40;
+                raster.scale(0.39);
 
-                let group = new scope.Group([wave.path, raster]);
+                let rect = new scope.Path.Rectangle(view.bounds);
+                // rect.fillColor = new scope.Color('yellow');
+
+                let group = new scope.Group([path, raster, rect]);
                 group.clipped = true;
 
-                view.onFrame = (event: OnFrameEvent) => {
-                    for (let f of wave.onFrameFunctions)
-                        f(event);
-                }
+                view.onFrame = draw;
+                let time = 0;
 
+                function draw(event : any) {
+                    time += event.delta;
+                    scope.activate();
+                    const variation : number = Math.sin(time/2)*radius/15; 
+                    var newStar = new scope.Path.Star(view.center, numberOfPoints, radius - 2 + Math.abs(variation), radius - Math.abs(variation));
+                    newStar.rotate(time*radius*0.05);
+                    path.segments = newStar.segments;
+                    smoothing(path);
+                }
             }} />
         }
     </div>

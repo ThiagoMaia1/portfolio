@@ -3,6 +3,7 @@ import Technology from "../Technology/Technology";
 
 export default class Project {
     name : string;
+    subtitle: string;
     technologies : Array<Technology>;
     description : string;
     url : string;
@@ -11,6 +12,7 @@ export default class Project {
     
     constructor(
         name : string,
+        subtitle : string,
         technologies : Array<Technology>,
         description : string,
         url : string,
@@ -18,6 +20,7 @@ export default class Project {
         imagesUri ?: string[],
     ) {
         this.name = name;
+        this.subtitle = subtitle;
         this.technologies = technologies;
         this.description = description;
         this.url = url;

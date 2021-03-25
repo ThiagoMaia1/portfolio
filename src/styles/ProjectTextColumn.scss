@@ -7,12 +7,17 @@
     pointer-events: all;
     height: 100%;
     width: 100%;
+
 }
 
-.project-title {
+.project-title-container {
     font-size: 120%;
     font-weight: 700;
-    padding-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .categories-container {
@@ -50,10 +55,14 @@ $logo-size: 1.5em;
 
     > div {
         display: flex;
+        margin: 0.3em 0;
+        cursor: pointer;
         span {
             line-height: $logo-size;
+            &:hover {
+                text-decoration: underline;
+            }
         }    
-        margin: 0.3em 0;
     }
 
     .technology-logo-container {

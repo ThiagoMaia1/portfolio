@@ -1,15 +1,14 @@
-import React from 'react'
 import Category from '../models/Category';
 import Project from '../models/Project/Project'
-import Technology from '../models/Technology/Technology';
 import '../styles/ProjectTextColumn.scss';
 import './logos/technologies/ReactJs.png'
+import TechnologiesSection from './TechnologiesSection';
 
 function ProjectTextColumn({project} : {project : Project}) {
 
     return <div className='project-text-column'>
         <div className='project-title'>
-            {project.name}
+            {project.name + (project.subtitle ? ' - ' + project.subtitle : '')}
         </div>
         <div className='categories-container'>
             {project.categories.map(c => 
@@ -26,24 +25,4 @@ function ProjectTextColumn({project} : {project : Project}) {
     </div>;
 }
 
-function TechnologiesSection({category, technologies} 
-    : {category : Category, technologies : Technology[]}) {
-
-    return <div className='category-section'>
-        <div className='category-title'>
-            {Category[category] + 's'}
-        </div>
-        <div className='technology-info'>
-            {technologies.map(t => 
-                <div key={t.name}>
-                    <div className='technology-logo-container'>
-                        <img src={require(`${t.logoUri}`).default} alt={`Logo ${t.name}`}/>
-                    </div>
-                    <span>{t.name}</span>
-                </div>
-            )}
-        </div>
-    </div>;
-}
-
-export default ProjectTextColumn
+export default ProjectTextColumn;

@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import paper from 'paper';
+import '../../styles/PaperElement.scss';
 
 export type OnFrameEvent = {
     time : number,
@@ -18,11 +19,11 @@ export default function PaperElement({animation, children = null}
         animation(scope);
     }, 0)}, []);
 
-    return <div style={{width: '100%', height: '100%', position: 'relative'}}>
-        <div style={{width: '100%', height: '100%', position: 'absolute'}}>
+    return <div className='paper-container'>
+        <div className='paper-children-container'>
             {children}
         </div>
-        <canvas style={{width: '100%', height: '100%'}} id={idRef.current}></canvas>
+        <canvas className='paper-canvas' id={idRef.current}></canvas>
     </div>
 }
 

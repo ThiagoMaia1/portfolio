@@ -1,18 +1,25 @@
 import useMousePosition from './useMousePosition';
 
-const useTilt = (ref, taxa, iframe) => {
+const useTilt = (ref, taxa, relativeToWindow = false) => {
     let centro = [];
+    let [rect, isOutside] = [{}, true];
     if (ref.current) {
-        var rect = ref.current.getBoundingClientRect();
+        rect = ref.current.getBoundingClientRect();
         centro = [
             rect.left + rect.width/2,
             rect.top + rect.height/2
         ]
     }
-    let coordenadas = useMousePosition(undefined, iframe);
-    let tamanho = [window.innerWidth, window.innerHeight];
+    let coordenadas = useMousePosition(ref.current);
+
+    if (rect)
+        isOutside = Math.abs(coordenadas[0]) > rect.width/2 || 
+                        Math.abs(coordenadas[1]) > rect.height/2;
+
+    if (!coordenadas || isOutside) return '';
+    let tamanho = relativeToWindow ? [window.innerWidth, window.innerHeight] : [rect.width, rect.height];
     let angulo = coordenadas.map((c, i) => 
-        (i*2-1)*taxa*100*(-c - centro[i] + tamanho[i]/2)/tamanho[i]
+        (i*2-1)*taxa*100*(-c)/tamanho[i]
     );
     let transform = `perspective(1000px) rotateX(${angulo[1]}deg) rotateY(${angulo[0]}deg)`;
     return transform;

@@ -26,3 +26,10 @@ export function getCoords(elem : HTMLElement, x = 0, y = 0) {
 
     return {top: Math.round(top), left: Math.round(left)};
 }
+
+export const gotoLink = (url : string) => {
+    let a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.click();
+} 

@@ -3,18 +3,14 @@ import React from 'react'
 import getGradient from '../../styles/PaperGradient';
 import getTranslatedSentence from '../../translation/Translation';
 import PaperElement, { OnFrameEvent } from './PaperElement';
-import {WavePath, Sides} from './Waves';
+import {WavePath, Sides, addShadow} from './Waves';
 
 
 function HeaderWaves() {
 
     return <PaperElement animation={(scope : paper.PaperScope) => {
         scope.activate();
-        let addShadow = (path : any) => {
-            path.shadowColor = new Color(0, 0, 0, 0.4);
-            path.shadowBlur = 12;
-            path.shadowOffset = new scope.Point(-3, -3);
-        }
+        
         const view = scope.project.view;
         const sideWidth = 100;
         
@@ -75,9 +71,7 @@ function HeaderWaves() {
             }, scope),
         );
 
-        waves.forEach(w => addShadow(w.path));
-        addShadow(text);
-        addShadow(textAbove);
+        scope.project.getItems({}).forEach(path => addShadow(path, scope));
         view.onFrame = draw;
 
         function draw(event : OnFrameEvent) {
@@ -92,4 +86,4 @@ function HeaderWaves() {
     }}/>
 }
 
-export default HeaderWaves
+export default HeaderWaves;

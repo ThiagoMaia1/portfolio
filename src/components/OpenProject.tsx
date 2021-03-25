@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { LegacyRef, useState } from 'react';
 import useClosingAnimation from '../hooks/useClosingAnimation';
+import useOutsideClick from '../hooks/useOutsideClick';
 import Project from '../models/Project/Project';
 import '../styles/OpenProject.scss';
 import ProjectInfo from './ProjectInfo';
@@ -8,6 +9,9 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
 
     let [ativo, setAtivo] = useState(true);
     const time = 1000;
+
+    const fechar = () => setAtivo(false);
+
     const style = useClosingAnimation(
         ativo,
         onClick,
@@ -16,23 +20,20 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
         time
     )
 
-    const opacityTransition = `opacity 1ms ease-in-out ${ativo ? time : 0}ms`;
-    const _onClick = () => {
-        console.log(ativo);
-        setAtivo(a => !a);
-    };
+    const ref = useOutsideClick(fechar);
 
-    return (
-        <div className='open-project-wrapper'>
+    const opacityTransition = `opacity 1ms ease-in-out ${ativo ? time : 0}ms`;
+
+    return <div className='open-project-wrapper' ref={ref as unknown as LegacyRef<HTMLDivElement>}>
             <div className='shadow-open-project-animation'>
                 <div className='open-project project-card' 
                     style={{...style, transition: style.transition + ', ' + opacityTransition}}/>
             </div>
-            <div className='display-open-project' style={{opacity: 1 - style.opacity, transition: opacityTransition}} onClick={_onClick} >
+            <div className='display-open-project' style={{opacity: 1 - style.opacity, transition: opacityTransition}}>
+                
                 <ProjectInfo project={project}/>
             </div>
         </div>
-    )
 }
 
 

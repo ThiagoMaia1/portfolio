@@ -2,6 +2,7 @@ import React from 'react'
 import PaperElement from './PaperElement'
 import getGradient from '../../styles/PaperGradient';
 import '../../styles/Loading.scss';
+import { fixedStar } from '../../constants/Constants';
 
 function Loading() {
     return (<div className='loading-container'>
@@ -9,7 +10,11 @@ function Loading() {
             scope.activate();
             const view = scope.project.view;
             const radius = view.size.width*0.4;
-            var path = new scope.Path.Star(view.center, 6, radius, radius);
+            let { smoothing, numberOfPoints } = fixedStar;
+
+            var path = new scope.Path.Star(view.center, numberOfPoints, radius, radius);
+
+            // var path = new scope.Path();
             // path.selected = true;
             path.fillColor = getGradient(path.bounds, ['#A60000', '#ff3c00'], scope);
 
@@ -36,10 +41,10 @@ function Loading() {
                 time += event.delta*speedRate;
                 scope.activate();
                 const variation : number = Math.sin(time*3)*radius/10; 
-                var newStar = new scope.Path.Star(view.center, 6, radius - 2 + Math.abs(variation), radius - Math.abs(variation));
+                var newStar = new scope.Path.Star(view.center, numberOfPoints, radius - 2 + Math.abs(variation), radius - Math.abs(variation));
                 newStar.rotate(time*radius*1.5);
                 path.segments = newStar.segments;
-                path.smooth({ type: 'catmull-rom', factor: 1});
+                smoothing(path);
             }
 
             function changeSpeed(target : number) {
@@ -48,7 +53,7 @@ function Loading() {
                 interval = setInterval(() => {
                     speedRate += direction*0.01;
                     if ((direction > 0 && speedRate > target) || (direction < 0 && speedRate < target)) clearInterval(interval);
-                }, 10)
+                }, 10);
             }
 
         }}>

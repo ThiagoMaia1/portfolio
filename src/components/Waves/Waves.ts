@@ -95,5 +95,13 @@ export class WavePath implements WaveData {
             this.path.smooth({ type: 'catmull-rom', factor: 1});
         });
     } 
+}
 
+export const addShadow = (path : any, scope : paper.PaperScope, {blur, offset, color} 
+    : {blur ?: number, offset ?: paper.Point, color ?: paper.Color} = {}) => {
+        Object.assign(path, {
+            shadowColor: color ?? new scope.Color(0, 0, 0, 0.4),
+            shadowBlur: blur ?? 12,
+            shadowOffset: offset ?? new scope.Point(-3, -3),
+        });
 }

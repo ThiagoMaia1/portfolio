@@ -1,12 +1,14 @@
-import React from 'react';
 import '../styles/ClosedProject.scss';
 
-const ClosedProject = ({ logoUri, title, onClick }: { logoUri: string, title: string, onClick: () => void }) => {
+const ClosedProject = ({ logoUri, title }
+    : { logoUri: string, title: string}) => {
 
     return (
-        <div onClick={onClick} className='closed-card'>
+        <div className='closed-card'>
             <img className='logo closed-project' src={require(`${logoUri}`).default} alt={`Logo ${title}`}/>
-            <div className='project-title'>{title.toUpperCase()}</div>
+            <div className='project-title-container'>
+                <div>{title.toUpperCase()}</div>
+            </div>
         </div>
     )
 }

@@ -1,7 +1,6 @@
+$heightWidth: 33vw;
+
 .wave-photo-container {
-    // transform: rotateX(90deg);
-    width: 90vh;
-    height: 50vw;
-    canvas {
-    }
+    height: $heightWidth;
+    width: $heightWidth;
 }
