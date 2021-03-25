@@ -35,7 +35,7 @@ const technologies = {
     PostgreSQL: new Technology('PostgreSQL', folder + 'PostgreSQL.png', Category.Software, 'https://www.postgresql.org/'), 
     Postman: new Technology('Postman', folder + 'Postman.png', Category.Tool, 'https://www.postman.com/'), 
     Python: new Technology('Python', folder + 'Python.png', Category.Language, 'https://python.org.br/'), 
-    ReactJs: new Technology('React.js', folder + 'ReactJs.png', Category.Framework, 'https://pt-br.reactjs.org/'), 
+    ReactJs: new Technology('React JS', folder + 'ReactJs.png', Category.Framework, 'https://pt-br.reactjs.org/'), 
     ReactNative: new Technology('React Native', folder + 'ReactJs.png', Category.Framework, 'https://reactnative.dev/'), 
     ReactRouter: new Technology('React Router', folder + 'ReactRouter.svg', Category.Tool, 'https://reactrouter.com/'), 
     Redux: new Technology('Redux', folder + 'Redux.png', Category.Tool, 'https://redux.js.org/'), 
