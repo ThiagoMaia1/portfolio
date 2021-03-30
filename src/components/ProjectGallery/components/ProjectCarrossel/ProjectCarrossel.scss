@@ -1,0 +1,45 @@
+.project-carrossel {
+    height: 100%;
+    margin-right: -7vw;
+    margin-left: -3vw;
+
+    .carrossel {
+        pointer-events: all;
+        transform: perspective(100px) rotateY(3deg) rotateZ(-1deg) scaleX(0.85);
+        transform-style: preserve-3d;
+    }
+
+    .arrow-circle {
+        transform: perspective(100px) translateZ(5px);
+    }
+
+    .movimentador-galeria {
+        width: max-content;
+    }
+}
+
+.screenshot-gallery {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+    padding: 8vh;
+}
+
+.project-screenshot {
+    height: 100%;
+    padding: 1em;
+    transition: transform 0.3s ease-in-out;
+    
+    img {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        height: 100%;
+        border-radius: 0.5em;
+        object-fit: fill;
+    }
+
+    &:hover {
+        transform: perspective(100px) rotateY(-3deg);
+        transform-origin: left;
+    }
+}

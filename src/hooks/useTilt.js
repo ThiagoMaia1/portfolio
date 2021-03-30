@@ -1,15 +1,9 @@
 import useMousePosition from './useMousePosition';
 
 const useTilt = (ref, taxa, relativeToWindow = false) => {
-    let centro = [];
     let [rect, isOutside] = [{}, true];
-    if (ref.current) {
+    if (ref.current)
         rect = ref.current.getBoundingClientRect();
-        centro = [
-            rect.left + rect.width/2,
-            rect.top + rect.height/2
-        ]
-    }
     let coordenadas = useMousePosition(ref.current);
 
     if (rect)

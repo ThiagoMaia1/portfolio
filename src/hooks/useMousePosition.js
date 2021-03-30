@@ -17,11 +17,8 @@ const useMousePosition = (el) => {
     const onMouseLeave = () => setCoordenadas(getOrigem());
 
     const getOrigem = () => {
-        let height, width;
         if (el) {
             let rect = el.getBoundingClientRect();
-            height = rect.height;
-            width = rect.width;
             return [rect.x + rect.width/2, rect.y + rect.height/2];
         } else {
             return [window.innerWidth/2, window.innerHeight/2];

@@ -1,5 +1,5 @@
-import '../../styles/Header.scss';
-import HeaderWaves from '../Waves/HeaderWaves';
+import './Header.scss';
+import HeaderWaves from './HeaderWaves/HeaderWaves';
 
 function Header() {
 

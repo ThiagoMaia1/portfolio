@@ -1,0 +1,41 @@
+.carrossel {
+    position: relative;
+    // overflow: hidden;
+    width: inherit;
+    height: inherit;
+    flex: inherit;
+    display: inherit;
+    overflow: inherit;
+    line-height: 0;
+}
+
+.arrow-circle {
+    background-color: white;
+    border-radius: 100px;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.4);
+}
+
+.seta-galeria {
+    z-index: inherit;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-galeria {
+    display: inline-block;
+    overflow: hidden;
+    width: inherit;
+    height: inherit;
+    flex: inherit;
+    line-height: initial;
+}
+
+.movimentador-galeria {
+    overflow: visible;
+    position: relative;
+    width: inherit;
+    height: inherit;
+    flex: inherit;
+}

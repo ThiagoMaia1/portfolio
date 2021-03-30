@@ -1,0 +1,28 @@
+$logo-size: 1.5em;
+
+.technology-link {
+    display: flex;
+    margin: 0.3em 0;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+    span {
+        line-height: $logo-size;
+    }    
+    
+    .technology-logo-container {
+        width: $logo-size;
+        height: $logo-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.5em;
+
+        img {
+            max-height: $logo-size;
+            max-width: $logo-size;
+            object-fit: cover;
+        }
+    }
+}

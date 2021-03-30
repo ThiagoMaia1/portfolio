@@ -2,7 +2,7 @@ import getTranslatedSentence from "../../translation/Translation";
 import Category from "../Category";
 import Technology from "./Technology";
 
-const folder : string = './logos/technologies/';
+const folder : string = 'technologies/';
 
 const technologies = {
     Access: new Technology('Access', folder + 'Access.svg', Category.Software, 'https://www.microsoft.com/en/microsoft-365/access'), 

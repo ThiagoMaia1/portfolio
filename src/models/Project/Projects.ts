@@ -20,7 +20,7 @@ const projects: Array<Project> = [
     ],
     getTranslatedSentence('cultueDescription'),
     'https://cultue.web.app/',
-    './logos/projects/Cultue.svg',
+    'projects/Cultue.svg',
     [
       './Imagens/ScreenShots/Cultue/Front Topo.png',
       './Imagens/ScreenShots/Cultue/Front Bottom.png',
@@ -49,7 +49,7 @@ const projects: Array<Project> = [
     ],
     getTranslatedSentence('vidAngelDescription'),
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-    './logos/projects/VidAngelSubtitles.png'
+    'projects/VidAngelSubtitles.png'
   ),
   new Project(
     getTranslatedSentence('myShopTitle'),
@@ -57,7 +57,7 @@ const projects: Array<Project> = [
     [t.Dart, t.Flutter, t.Figma, t.Trello, ],
     getTranslatedSentence('myShopDescription'),
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-    './logos/projects/MyShop.png'
+    'projects/MyShop.png'
   ),
   new Project(
     getTranslatedSentence('portfolioTitle'),
@@ -65,7 +65,7 @@ const projects: Array<Project> = [
     [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS],
     getTranslatedSentence('portfolioDescription'),
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-    './logos/projects/Portfolio.svg'
+    'projects/Portfolio.svg'
   ),
 ];
 
