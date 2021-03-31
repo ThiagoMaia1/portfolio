@@ -6,6 +6,8 @@ export enum Sides {
     down,
 }
 
+const baseWindowWidth = 1304;
+
 type WaveOnFrameFunction = (event : OnFrameEvent) => void;
 
 type WaveAnimationFunction = (event : OnFrameEvent, index : number) => number;
@@ -43,7 +45,7 @@ export class WavePath implements WaveData {
         this.height = w.height ?? w.container.height*0.1;
         this.side = w.side ?? 1;
         this.container = w.container;
-        this.sideWidth = w.sideWidth ?? 0;
+        this.sideWidth = (w.sideWidth ?? 0)*window.innerWidth/baseWindowWidth;
         let sideDifPoint = new scope.Point(this.sideWidth, 0); 
         // let halfHeight = new scope.Point(0, this.container.height*0.4);
         this.scope = scope;

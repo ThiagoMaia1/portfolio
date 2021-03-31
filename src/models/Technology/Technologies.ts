@@ -11,6 +11,8 @@ const technologies = {
     AdobeLightroom: new Technology('Adobe Lightroom', folder + 'AdobeLightroom.png', Category.Software, 'https://www.adobe.com/br/products/photoshop-lightroom.html'), 
     AdobePremiere: new Technology('Adobe Premiere', folder + 'AdobePremiere.png', Category.Software, 'https://www.adobe.com/br/products/premiere.html'), 
     AdobePhotoshop: new Technology('Adobe Photoshop', folder + 'AdobePhotoshop.png', Category.Software, 'https://www.adobe.com/br/products/photoshop.html'), 
+    Angular: new Technology('Angular', folder + 'APIRest.png', Category.Tool, ''), 
+    APIRest: new Technology('API Rest', folder + 'APIRest.png', Category.Tool, 'https://developer.mozilla.org/pt-BR/docs/Glossary/REST'), 
     AWS: new Technology('Amazon Web Services', folder + 'AWS.svg', Category.Tool, 'https://aws.amazon.com/'), 
     ChromeCast: new Technology('Chrome Cast', folder + 'ChromeCast.png', Category.Tool, 'https://developers.google.com/cast'), 
     ChromeExtensions: new Technology('Chrome Extensions', folder + 'ChromeExtensions.png', Category.Tool, 'https://developer.chrome.com/docs/extensions/'), 

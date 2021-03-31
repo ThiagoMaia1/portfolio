@@ -2,31 +2,17 @@ import Category from "../Category";
 import Technology from "../Technology/Technology";
 
 export default class Project {
-    name : string;
-    subtitle: string;
-    technologies : Array<Technology>;
-    description : string;
-    url : string;
-    logoUri : string;
-    imagesUri : string[];
-    
     constructor(
-        name : string,
-        subtitle : string,
-        technologies : Array<Technology>,
-        description : string,
-        url : string,
-        logoUri : string,
-        imagesUri ?: string[],
-    ) {
-        this.name = name;
-        this.subtitle = subtitle;
-        this.technologies = technologies;
-        this.description = description;
-        this.url = url;
-        this.logoUri = logoUri;
-        this.imagesUri = imagesUri ?? [];
-    }
+        public name : string,
+        public subtitle : string,
+        public technologies : Array<Technology>,
+        public description : string,
+        public url : string,
+        public logoUri : string,
+        public githubUrl : string,
+        public imagesUri : string[] = [],
+        public linkAfterDescription ?: {url : string, label : string},
+    ) {}
 
     get categories() : Array<Category> {
         const categories = this.technologies.map(t => t.category);
