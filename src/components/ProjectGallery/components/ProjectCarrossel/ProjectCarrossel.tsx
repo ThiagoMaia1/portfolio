@@ -23,7 +23,7 @@ function ProjectCarrossel({project} : {project : Project}) {
 function ProjectScreenshot({imageUri} : {imageUri : string}) {
 
     return <div className='project-screenshot'>
-        <img src={require(`${imageUri}`).default} alt=''/>
+        <img src={require(`../../../images/ScreenShots/${imageUri}`).default} alt=''/>
     </div>
 }
 
