@@ -38,6 +38,7 @@ $transition-curve: 1.5s ease-in-out;
 }
 
 .project-info-container {
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;

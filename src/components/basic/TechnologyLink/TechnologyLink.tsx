@@ -1,5 +1,6 @@
 import { gotoLink } from "../../../constants/FuncoesGeraisTS";
 import Technology from "../../../models/Technology/Technology";
+import TechnologyLogo from '../TechnologyLogo/TechnologyLogo';
 import './TechnologyLink.scss';
 
 function TechnologyLink({technology} : {technology : Technology}) {
@@ -8,9 +9,7 @@ function TechnologyLink({technology} : {technology : Technology}) {
         <div key={technology.name} 
              onClick={() => gotoLink(technology.webPageUrl)} 
              className='technology-link'>
-            <div className='technology-logo-container'>
-                <img src={require(`../../images/${technology.logoUri}`).default} alt={`Logo ${technology.name}`}/>
-            </div>
+            <TechnologyLogo technology={technology}/>
             <span>{technology.name}</span>
         </div>
     )

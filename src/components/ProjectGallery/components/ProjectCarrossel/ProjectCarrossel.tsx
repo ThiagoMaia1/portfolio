@@ -1,17 +1,19 @@
+import { gotoLink } from '../../../../constants/FuncoesGeraisTS';
 import Project from '../../../../models/Project/Project';
 import Carrossel from '../../../basic/Carrossel/Carrossel';
 import './ProjectCarrossel.scss';
 
 function ProjectCarrossel({project} : {project : Project}) {
     
-    const carrosselWidth = '80vw';
+    const carrosselWidth = '73vw';
  
     return <div className='project-carrossel' 
-                style={{maxWidth: carrosselWidth, minWidth: carrosselWidth}}>
-        <Carrossel direcao={'horizontal'} tamanhoMaximo={carrosselWidth} tamanhoIcone={60} corGradiente={'#c42e00'}
+                style={{maxWidth: carrosselWidth, minWidth: carrosselWidth}}
+            >
+        <Carrossel direcao={'horizontal'} tamanhoMaximo={carrosselWidth} tamanhoIcone={60} corGradiente={'#ba1e00'}
                 style={{zIndex: 10, maxWidth: carrosselWidth, minWidth: carrosselWidth, width: carrosselWidth, height: '100%'}}
         >
-            <div className='screenshot-gallery'>
+            <div className='screenshot-gallery' onClick={() => gotoLink(project.url)}>
                 {project.imagesUri.map(i => 
                     <ProjectScreenshot imageUri={i} key={i}/>
                 )}
@@ -22,9 +24,14 @@ function ProjectCarrossel({project} : {project : Project}) {
 
 function ProjectScreenshot({imageUri} : {imageUri : string}) {
 
-    return <div className='project-screenshot'>
-        <img src={require(`../../../images/ScreenShots/${imageUri}`).default} alt=''/>
-    </div>
+    return imageUri === 'iframe' 
+        ? <div id='iframe-loop' >
+            <iframe src={window.location.origin}></iframe>
+        </div>
+        : <div className='project-screenshot'>
+            <img src={require(`../../../images/ScreenShots/${imageUri}`).default} alt=''/>
+        </div>
+    
 }
 
 export default ProjectCarrossel;

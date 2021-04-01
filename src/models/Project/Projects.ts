@@ -54,24 +54,38 @@ const projects: Array<Project> = [
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
     'projects/VidAngelSubtitles.png',
     'https://github.com/ThiagoMaia1/vidangel-subtitles',
+    [
+      'VidAngelSubtitles/Print Extensão.PNG',
+      'VidAngelSubtitles/Print Extensão2.PNG',
+      'VidAngelSubtitles/Print Extensão3.PNG',
+    ],
+    {
+      url: 'https://www.vidangel.com/browse',
+      label: 'Clique para conhecer mais sobre o VidAngel.'
+    }
   ),
   new Project(
     getTranslatedSentence('myShopTitle'),
     getTranslatedSentence('myShopSubtitle'),
     [t.Dart, t.Flutter, t.Figma, t.Trello,],
     getTranslatedSentence('myShopDescription'),
-    'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
+    'https://youtu.be/BJljtECxGkE',
     'projects/MyShop.png',
-    '',
-  ),
-  new Project(
-    getTranslatedSentence('portfolioTitle'),
-    getTranslatedSentence('portfolioSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS],
-    getTranslatedSentence('portfolioDescription'),
-    'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-    'projects/Portfolio.svg',
-    'https://github.com/ThiagoMaia1/portfolio',
+    'https://github.com/ThiagoRavier/ecommerce',
+    [
+      'MyShop/Registration.png',
+      'MyShop/Home.png',
+      'MyShop/Catalogue.png',
+      'MyShop/Gallery.png',
+      'MyShop/Product.png',
+      'MyShop/Cart.png',
+      'MyShop/Closing.png',
+      'MyShop/Profile.png',
+    ],
+    {
+      url: 'https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-(E-commerce-template)-by-Oleh-Chabanov', 
+      label: 'Figma de Oleh Chabanov.'
+    }
   ),
   new Project(
     getTranslatedSentence('ultimatoSystemTitle'),
@@ -79,17 +93,59 @@ const projects: Array<Project> = [
     [t.Access, t.Excel, t.VBA, t.SQL, t.HTML5],
     getTranslatedSentence('ultimatoSystemDescription'),
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-    'projects/Portfolio.svg',
-    'https://github.com/ThiagoMaia1/portfolio',
+    'projects/Ultimato.png',
+    '',
+    [
+      'Ultimato/Form_Expedicao_Base.PNG',
+      'Ultimato/Form_Expedicao_Novo.PNG',
+      'Ultimato/Form_Entrada_Produtos.PNG',
+      'Ultimato/Form_Coleta_Transportadora.PNG',
+      'Ultimato/Form_Postagens_Realizadas.PNG',
+      'Ultimato/Form_Presentes.PNG',
+      'Ultimato/Form_Reclamacoes_Inserir.PNG',
+      'Ultimato/Form_Transferencias.PNG',
+      'Ultimato/Form_Vendas_Novo.PNG',
+    ],
+    {
+      url: 'https://drive.google.com/file/d/1jj4wEeJquL0TMINlnHdRqgbUNpx6VpPB/view', 
+      label: 'Clique para ler mais detalhes no Trabalho de Conclusão de Curso sobre o projeto.'
+    }
   ),
   new Project(
     getTranslatedSentence('acaiAntonioTitle'),
     getTranslatedSentence('acaiAntonioSubtitle'),
     [t.Typescript, t.HTML5, t.CSS3, t.ReactNative],
     getTranslatedSentence('acaiAntonioDescription'),
-    'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
+    'https://youtu.be/BWt3QXCnMxY',
     'projects/AcaiAntonio.png',
     'https://github.com/ThiagoMaia1/acai-antonio',
+    [
+      'Acai/Início.png',
+      'Acai/Tamanhos.png',
+      'Acai/Recheios.png',
+    ],
+  ),
+  new Project(
+    getTranslatedSentence('ballGameTitle'),
+    getTranslatedSentence('ballGameSubtitle'),
+    [t.Typescript, t.HTML5, t.SASS, t.Angular, t.Firebase, t.AWS],
+    getTranslatedSentence('ballGameDescription'),
+    'https://master.d2gy6xsqkmio1s.amplifyapp.com/',
+    'projects/Surpresa.png',
+    'https://github.com/ThiagoMaia1/angular-game',
+    ['BallGame/Surpresa.png']
+  ),
+  new Project(
+    getTranslatedSentence('portfolioTitle'),
+    getTranslatedSentence('portfolioSubtitle'),
+    [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS],
+    getTranslatedSentence('portfolioDescription'),
+    'http://localhost:3000', //'https://thiagomaia.tk',
+    'projects/Portfolio.svg',
+    'https://github.com/ThiagoMaia1/portfolio',
+    [
+      'iframe'
+    ]
   ),
   // new Project(
   //   getTranslatedSentence('boardGameHelperTitle'),
@@ -100,15 +156,6 @@ const projects: Array<Project> = [
   //   'projects/Portfolio.svg',
   //   'https://github.com/ThiagoMaia1/portfolio',
   // ),
-  new Project(
-    getTranslatedSentence('ballGameTitle'),
-    getTranslatedSentence('ballGameSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.Angular, t.Firebase, t.AWS],
-    getTranslatedSentence('ballGameDescription'),
-    'https://master.d2gy6xsqkmio1s.amplifyapp.com/',
-    'projects/Surpresa.png',
-    'https://github.com/ThiagoMaia1/portfolio',
-  ),
 ];
 
 export default projects;

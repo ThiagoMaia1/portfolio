@@ -181,7 +181,7 @@ class Carrossel extends Component<Props, State> {
         this.offsetComTransition(distancia);
     }
     
-    deslizar = (sentido : IndexSeta, tamanhoPasso = 10, tempo = 20) => {
+    deslizar = (sentido : IndexSeta, tamanhoPasso = 20, tempo = 20) => {
         this.clearTimeoutInterval(this.animacao);
         this.animacao = setInterval(() => {
             var offsetAtual = this.getOffsetAtual();
@@ -220,7 +220,7 @@ class Carrossel extends Component<Props, State> {
     }
 
     saltar(sentido : IndexSeta) {
-        this.deslizar(sentido, 80); 
+        this.deslizar(sentido, 160); 
         this.timeoutSalto = setTimeout(() => {
             this.clearTimeoutInterval(this.timeoutTransition);
             if(this.state.mouseEnterSeta === sentido) this.deslizar(sentido);

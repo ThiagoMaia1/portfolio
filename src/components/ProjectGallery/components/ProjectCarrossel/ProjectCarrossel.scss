@@ -1,7 +1,7 @@
 .project-carrossel {
     height: 100%;
     margin-right: -7vw;
-    margin-left: -3vw;
+    margin-left: 2.4vw;
 
     .carrossel {
         pointer-events: all;
@@ -10,11 +10,20 @@
     }
 
     .arrow-circle {
-        transform: perspective(100px) translateZ(5px);
+        transform: perspective(100px) translateZ(10px);
     }
 
     .movimentador-galeria {
         width: max-content;
+    }
+
+    .seta-galeria {
+        &:first-of-type {
+            background-image: none !important;
+            > .arrow-circle {
+                transform: perspective(100px) translateZ(10px) translateX(3.5vw);
+            }
+        }
     }
 }
 
@@ -30,16 +39,32 @@
     height: 100%;
     padding: 1em;
     transition: transform 0.3s ease-in-out;
+    // cursor: pointer;
+    user-select: none;
     
     img {
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         height: 100%;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         border-radius: 0.5em;
         object-fit: fill;
     }
 
     &:hover {
-        transform: perspective(100px) rotateY(-3deg);
+        transform: perspective(100px) translateZ(5px);
+        transform-style: preserve-3d;
         transform-origin: left;
+    }
+}
+
+#iframe-loop {
+    position: absolute;
+    > iframe {
+        width: 100vw;
+        height: 100vh;
+        transform: scale(0.5) translateX(-35vw);
+        border: none;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        border-radius: 0.5em;
+        object-fit: fill;
     }
 }

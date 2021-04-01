@@ -6,6 +6,14 @@ import getTranslatedSentence from '../../translation/Translation';
 import IsometricCubes from './../Animations/IsometricCubes/IsometricCubes';
 
 function ProjectGallery() {
+  
+  console.log(window.parent, window.self, window.parent === window.self, )
+  if (window.parent !== window.self) {
+    setTimeout(() => {
+      console.log(document.getElementById('self-card'));
+      document.getElementById('self-card')?.click()
+    }, 1000);
+  }
 
   return (
     <div id='project-section'>

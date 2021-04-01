@@ -31,7 +31,7 @@ const ProjectCard = ({project} : {project : Project}) => {
         if (hasTransition || !tiltStyle) style.transition = `transform ${transitionTime}ms cubic-bezier(0.03, 0.98, 0.52, 0.99)`;
     }
     return (
-        <div className={(open ? 'open ' : '') + 'project-card container'} 
+        <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'} 
              style={style}
              onMouseOver={removeTransition}
              onMouseOut={() => {
