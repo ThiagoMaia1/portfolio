@@ -28,7 +28,7 @@ function IsometricCubes() {
             p.path.strokeColor = new scope.Color('lightgray');// new scope.Color({hue: Math.random()*255, saturation: 1, brightness: 0.7});
             p.path.strokeWidth = 1;
             // p.path.strokeScaling = false;
-            p.path.add(view.bounds.center); //.add(randomVector().multiply(Math.floor(Math.random()*20))));
+            p.path.add(view.bounds.center.add(new scope.Point(view.bounds.width/4, 0))); //.add(randomVector().multiply(Math.floor(Math.random()*20))));
         });
         
         let timer = 0;
