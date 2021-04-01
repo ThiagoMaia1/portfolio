@@ -29,10 +29,11 @@
     > .tilt-detector {
         height: 100%;
         width: 100%;
+        cursor: pointer;
         > * {
             transform: perspective(1000px) translateZ(50px); 
             filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
-            // pointer-events: none;
+            pointer-events: none;
         }
     }
 }
