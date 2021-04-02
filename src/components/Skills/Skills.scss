@@ -1,15 +1,13 @@
 .skill-list-container {
     width: 100%;
-    padding: 0 8vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: space-between;
-    height: 20em;
+    justify-content: space-between;
     margin-bottom: 2em;
     
     > * {
         font-size: 1.8em;
+        margin: 0 auto;
     }
 }
