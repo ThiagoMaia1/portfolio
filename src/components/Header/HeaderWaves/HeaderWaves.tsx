@@ -10,7 +10,8 @@ function HeaderWaves() {
 
     return <PaperElement animation={(scope : paper.PaperScope) => {
         scope.activate();
-        
+
+        const baseHeight = Math.min(window.innerHeight/600, window.innerWidth/1100);        
         const view = scope.project.view;
         const sideWidth = 100;
         
@@ -29,7 +30,7 @@ function HeaderWaves() {
         textAbove.style.fontFamily = 'Roboto Slab';
         textAbove.style.fontWeight = 'bold';
         textAbove.style.fillColor = new Color('white');
-        textAbove.style.fontSize = 30;
+        textAbove.style.fontSize = 30*baseHeight;
         textAbove.style.justification = 'center';
 
         let rect2 = new scope.Rectangle(view.bounds);
@@ -40,9 +41,9 @@ function HeaderWaves() {
                 container: rect2, 
                 fillColor: getGradient(rect2, ['#991200', '#880000'], scope),
                 inclinationFactor: 4,
-                randomStrenghtFactor: 0.15,
-                points: 11,
-                height: 34,
+                randomStrenghtFactor: 0.10,
+                points: 10,
+                height: 34*baseHeight,
                 side: Sides.up,
                 sideWidth
             }, scope),
@@ -52,7 +53,7 @@ function HeaderWaves() {
         text.style.fontFamily = 'Roboto Slab';
         text.style.fontWeight = 'bold';
         text.style.fillColor = new Color('white');
-        text.style.fontSize = 100;
+        text.style.fontSize = 100*baseHeight;
         text.style.justification = 'center';
 
         let rect1 = new scope.Rectangle(view.bounds);
@@ -64,9 +65,9 @@ function HeaderWaves() {
                 fillColor: getGradient(rect1, ['#A60000', '#ff3c00'], scope),
                 inclinationFactor: -2,
                 randomStrenghtFactor: 0.1,
-                points: 8,
+                points: 7,
                 side: Sides.both,
-                height: 30,
+                height: 30*baseHeight,
                 sideWidth
             }, scope),
         );

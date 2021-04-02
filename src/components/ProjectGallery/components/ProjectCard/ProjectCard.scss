@@ -1,11 +1,13 @@
 @import '../../../../index.scss';
 
 .project-card {
+
     &:not(.open){
         background: linear-gradient(to right, $primaryColor, $accentColor);
         border-radius: 0.4em;
         border: solid $accentColor 1px;
-        // box-shadow: var(--box-shadow);
+        margin-left: auto;
+        box-shadow: var(--box-shadow);
     
         // &:hover {
         //     transform: translateY(-6%);
@@ -18,8 +20,8 @@
 
     &.container {
         width: 29vw;
-        min-width: 29vh;
-        height: 30vh;
+        min-width: 45vh;
+        height: calc(28vh + 2vw);
         margin-bottom: 10vh;
         font-size: 150%;
         font-weight: 800;

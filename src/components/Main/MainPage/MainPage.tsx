@@ -13,15 +13,15 @@ const MainPage = () => {
         // <IsometricCubes/>
         <ScrollProvider>
             <Header/>
-            <div style={{position: 'fixed', bottom: '10vh', left: '3vw'}}>
-                <Loading/>
-            </div>
             <div id='main-page-body'>
                 <AboutMe/>
                 <Skills/>
                 <ProjectGallery/>
             </div>
             <Footer/>
+            <div className='fixed-loading'>
+                <Loading/>
+            </div>
         </ScrollProvider>
     )
 }

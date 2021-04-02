@@ -26,11 +26,10 @@ function WavePhoto({ imageUri }: { imageUri: string }) {
 
                 let raster = new scope.Raster(img.current);
                 raster.position = view.center;
-                raster.position.y += 40;
-                raster.scale(0.45);
+                raster.position.y += view.bounds.height/10;
+                raster.scale(view.bounds.height/1000);
 
                 let rect = new scope.Path.Rectangle(view.bounds);
-                // rect.fillColor = new scope.Color('yellow');
 
                 let group = new scope.Group([path, raster, rect]);
                 group.clipped = true;

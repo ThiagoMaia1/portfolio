@@ -1,7 +1,9 @@
 #footer-container{
-    height: 50vh;
+    height: calc(90vh - 21vw);
     width: 100%;
     overflow-y: hidden;
+    position: relative;
+    z-index: 100;
     canvas {
         height: 120% !important;
     }

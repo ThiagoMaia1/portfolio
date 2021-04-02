@@ -10,7 +10,11 @@
     }
 
     .arrow-circle {
-        transform: perspective(100px) translateZ(10px);
+        transform: perspective(100px) translateZ(10px) translateX(-3vw);
+    }
+
+    .container-galeria {
+        cursor: pointer;
     }
 
     .movimentador-galeria {
@@ -39,7 +43,7 @@
     height: 100%;
     padding: 1em;
     transition: transform 0.3s ease-in-out;
-    // cursor: pointer;
+    cursor: pointer;
     user-select: none;
     
     img {
@@ -52,7 +56,6 @@
     &:hover {
         transform: perspective(100px) translateZ(5px);
         transform-style: preserve-3d;
-        transform-origin: left;
     }
 }
 

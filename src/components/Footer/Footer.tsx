@@ -11,7 +11,7 @@ function Footer() {
             let view = scope.project.view;
             let waves = [
                 new WavePath({
-                    height: 50,
+                    height: 20 + view.bounds.width*0.02,
                     container: view.bounds,
                     fillColor: '#6e7577',
                     side: Sides.up,
@@ -21,7 +21,7 @@ function Footer() {
                     sideWidth: 200,
                 }, scope),
                 new WavePath({
-                    height: 40,
+                    height: 20 + view.bounds.width*0.01,
                     container: view.bounds,
                     fillColor: '#444444',
                     side: Sides.up,

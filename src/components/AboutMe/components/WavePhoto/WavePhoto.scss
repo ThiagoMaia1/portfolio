@@ -1,6 +1,9 @@
 $heightWidth: 33vw;
+$minHeightWidth: 40vh;
 
 .wave-photo-container {
     height: $heightWidth;
     width: $heightWidth;
+    min-height: $minHeightWidth;
+    min-width: $minHeightWidth;
 }
