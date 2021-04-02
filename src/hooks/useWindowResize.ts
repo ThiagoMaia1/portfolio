@@ -10,6 +10,6 @@ export default function useWindowResize (callback : (size : Size) => void) {
             height: window.innerHeight
         });
         window.addEventListener('resize', onResize);
-        return window.removeEventListener('resize', onResize);
+        return () => window.removeEventListener('resize', onResize);
     })
 };
