@@ -136,6 +136,15 @@ const projects: Array<Project> = [
     ['BallGame/Surpresa.png']
   ),
   new Project(
+    getTranslatedSentence('boardGameHelperTitle'),
+    getTranslatedSentence('boardGameHelperSubtitle'),
+    [t.Typescript, t.HTML5, t.SASS, t.ReactNative],
+    getTranslatedSentence('boardGameHelperDescription'),
+    '',
+    'projects/BoardGame.png',
+    'https://github.com/ThiagoMaia1/board-game-helper.git',
+  ),
+  new Project(
     getTranslatedSentence('portfolioTitle'),
     getTranslatedSentence('portfolioSubtitle'),
     [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS],
@@ -147,15 +156,6 @@ const projects: Array<Project> = [
       'iframe'
     ]
   ),
-  // new Project(
-  //   getTranslatedSentence('boardGameHelperTitle'),
-  //   getTranslatedSentence('boardGameHelperSubtitle'),
-  //   [t.Typescript, t.HTML5, t.SASS, t.ReactNative],
-  //   getTranslatedSentence('boardGameHelperDescription'),
-  //   'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
-  //   'projects/Portfolio.svg',
-  //   'https://github.com/ThiagoMaia1/portfolio',
-  // ),
 ];
 
 export default projects;

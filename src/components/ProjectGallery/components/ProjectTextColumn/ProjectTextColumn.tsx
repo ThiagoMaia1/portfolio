@@ -14,7 +14,9 @@ function ProjectTextColumn({project, isVertical} : {project : Project, isVertica
     return <div className='project-text-column' style={{height: (isVertical ? 64 : 100) + '%'}}>
         <div className='project-text-column-wraper'>
             <div className='project-title'>
-                {project.name + (project.subtitle ? ' - ' + project.subtitle : '')}
+                <a href={project.url} target='_blank'>
+                    {project.name + (project.subtitle ? ' - ' + project.subtitle : '')}
+                </a>
                 {!project.githubUrl ? null
                     : <> - <span className='technology-link'><a href={project.githubUrl} target={'_blank'} rel={'noopener noreferrer'}>
                         {getTranslatedSentence('seeOnGithub') + '  '}<TechnologyLogo technology={technologies.GitHub}/>
