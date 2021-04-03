@@ -24,6 +24,7 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
     const ref = useOutsideClick(fechar);
 
     const opacityTransition = `opacity 1ms ease-in-out ${ativo ? time : 0}ms`;
+    const isVertical = window.innerHeight > window.innerWidth;
 
     return <div className='open-project-wrapper' ref={ref as unknown as LegacyRef<HTMLDivElement>}>
             <div className='shadow-open-project-animation'>
@@ -32,8 +33,8 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
             </div>
             <div className='display-open-project' style={{opacity: 1 - style.opacity, transition: opacityTransition}}>
                 <div className='project-info-container'>
-                    <ProjectCarrossel project={project}/>
-                    <ProjectTextColumn project={project}/>
+                    <ProjectCarrossel project={project} isVertical={isVertical}/>
+                    <ProjectTextColumn project={project} isVertical={isVertical}/>
                 </div>
             </div>
         </div>

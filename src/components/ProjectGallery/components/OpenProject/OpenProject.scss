@@ -41,6 +41,8 @@ $transition-curve: 1.5s ease-in-out;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
+    align-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     height: 100%;
 }

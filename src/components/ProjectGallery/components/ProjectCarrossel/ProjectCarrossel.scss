@@ -1,7 +1,6 @@
 .project-carrossel {
-    height: 100%;
+    height: calc(min(80vh, 50vw));
     margin-right: -7vw;
-    margin-left: 2.4vw;
 
     .carrossel {
         pointer-events: all;

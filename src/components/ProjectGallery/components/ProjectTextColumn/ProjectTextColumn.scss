@@ -1,7 +1,7 @@
 .project-text-column {
     padding: 4vh;
-    height: 100%;
-    width: 100%;
+    flex: 1 1;
+    z-index: 10;
     .project-text-column-wraper {
         display: flex;
         flex-direction: column;
@@ -12,7 +12,7 @@
         width: 100%;
         padding: 4vh;
         background-color: white;
-        border-radius: 0.3em;
+        border-radius: 0.4em;
     }
 }
 
@@ -49,6 +49,10 @@
     width: 100%;
     max-height: 60%;
     margin-bottom: -1em;
+
+    .category-section {
+        max-width: 29vw;
+    }
 
     .break {
         flex-basis: 100%;
