@@ -3,6 +3,7 @@ interface sentences {
     aboutMe : string;
     selfDescription: string;
     myProjects : string;
+    seeOnGithub : string;
     cultueTitle: string,
     cultueSubtitle : string,
     cultueDescription: string,
@@ -39,6 +40,7 @@ const translation : Record<string, sentences> = {
         aboutMe: "Quem Sou Eu?",
         selfDescription: "Sou formado em engenharia de produção, com experiência em desenvolvimento e administração de sistemas empresariais.\n\nEm minhas experiências profissionais pude contribuir para o desenvolvimento de meu setor. Tenho bastante iniciativa e um olhar crítico para propor melhorias em procedimentos, utilizando ferramentas de tecnologia da informação.\n\nDesde o início de minha graduação me interessei pela área de desenvolvimento/programação, e busco me desenvolver nisso através de cursos online e desenvolvimento de projetos pessoais.\n\nAcredito na importância de um ambiente de trabalho amigável, com bons relacionamentos e respeito mútuo.",
         myProjects: "Meus Projetos",
+        seeOnGithub: 'Ver no GitHub',
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Apresentações de Slides para Igrejas',
         cultueDescription: 'Aplicação web voltada para a criação de slides para cultos de igrejas.\nUtiliza os apis: vagalume e biblia para buscar letras de músicas e textos bíblicos e aloca-los em slides.\nPermite a personalização dos slides e exportações em HTML ou PowerPoint.',
@@ -73,6 +75,7 @@ const translation : Record<string, sentences> = {
         aboutMe: "About Me",
         selfDescription: "Sou formado em engenharia de produção, com experiência em desenvolvimento e administração de sistemas empresariais.\n\nEm minhas experiências profissionais pude contribuir para o desenvolvimento de meu setor. Tenho bastante iniciativa e um olhar crítico para propor melhorias em procedimentos, utilizando ferramentas de tecnologia da informação.\n\nDesde o início de minha graduação me interessei pela área de desenvolvimento/programação, e busco me desenvolver nisso através de cursos online e desenvolvimento de projetos pessoais.\n\nAcredito na importância de um ambiente de trabalho amigável, com bons relacionamentos e respeito mútuo.",
         myProjects: "My Projects",
+        seeOnGithub: 'See on GitHub',
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Slide Presentations for Churches',
         cultueDescription: 'Web application directed at the creation of slide presentations for churches. Uses Vagalume and Bible apis to fetch music lyrics and biblical texts and distribute them in the correct number of slides. Allows for personalization and exporting as HTML or PowerPoint.',
