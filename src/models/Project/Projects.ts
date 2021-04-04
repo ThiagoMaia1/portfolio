@@ -39,6 +39,39 @@ const projects: Array<Project> = [
     ]
   ),
   new Project(
+    getTranslatedSentence('myShopTitle'),
+    getTranslatedSentence('myShopSubtitle'),
+    [t.Dart, t.Flutter, t.Figma, t.Trello,],
+    getTranslatedSentence('myShopDescription'),
+    'https://youtu.be/BJljtECxGkE',
+    'projects/MyShop.png',
+    'https://github.com/ThiagoRavier/ecommerce',
+    [
+      'MyShop/Registration.png',
+      'MyShop/Home.png',
+      'MyShop/Catalogue.png',
+      'MyShop/Gallery.png',
+      'MyShop/Product.png',
+      'MyShop/Cart.png',
+      'MyShop/Closing.png',
+      'MyShop/Profile.png',
+    ],
+    {
+      url: 'https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-(E-commerce-template)-by-Oleh-Chabanov', 
+      label: 'Figma de Oleh Chabanov.'
+    }
+  ),
+  new Project(
+    getTranslatedSentence('ballGameTitle'),
+    getTranslatedSentence('ballGameSubtitle'),
+    [t.Typescript, t.HTML5, t.SASS, t.Angular, t.Firebase, t.AWS],
+    getTranslatedSentence('ballGameDescription'),
+    'https://master.d2gy6xsqkmio1s.amplifyapp.com/',
+    'projects/Surpresa.png',
+    'https://github.com/ThiagoMaia1/angular-game',
+    ['BallGame/Surpresa.png']
+  ),
+  new Project(
     getTranslatedSentence('vidAngelTitle'),
     getTranslatedSentence('vidAngelSubtitle'),
     [
@@ -62,29 +95,6 @@ const projects: Array<Project> = [
     {
       url: 'https://www.vidangel.com/browse',
       label: 'Clique para conhecer mais sobre o VidAngel.'
-    }
-  ),
-  new Project(
-    getTranslatedSentence('myShopTitle'),
-    getTranslatedSentence('myShopSubtitle'),
-    [t.Dart, t.Flutter, t.Figma, t.Trello,],
-    getTranslatedSentence('myShopDescription'),
-    'https://youtu.be/BJljtECxGkE',
-    'projects/MyShop.png',
-    'https://github.com/ThiagoRavier/ecommerce',
-    [
-      'MyShop/Registration.png',
-      'MyShop/Home.png',
-      'MyShop/Catalogue.png',
-      'MyShop/Gallery.png',
-      'MyShop/Product.png',
-      'MyShop/Cart.png',
-      'MyShop/Closing.png',
-      'MyShop/Profile.png',
-    ],
-    {
-      url: 'https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-(E-commerce-template)-by-Oleh-Chabanov', 
-      label: 'Figma de Oleh Chabanov.'
     }
   ),
   new Project(
@@ -112,6 +122,15 @@ const projects: Array<Project> = [
     }
   ),
   new Project(
+    getTranslatedSentence('boardGameHelperTitle'),
+    getTranslatedSentence('boardGameHelperSubtitle'),
+    [t.Typescript, t.HTML5, t.SASS, t.ReactNative],
+    getTranslatedSentence('boardGameHelperDescription'),
+    '',
+    'projects/BoardGame.png',
+    'https://github.com/ThiagoMaia1/board-game-helper.git',
+  ),
+  new Project(
     getTranslatedSentence('acaiAntonioTitle'),
     getTranslatedSentence('acaiAntonioSubtitle'),
     [t.Typescript, t.HTML5, t.CSS3, t.ReactNative],
@@ -124,25 +143,6 @@ const projects: Array<Project> = [
       'Acai/Tamanhos.png',
       'Acai/Recheios.png',
     ],
-  ),
-  new Project(
-    getTranslatedSentence('ballGameTitle'),
-    getTranslatedSentence('ballGameSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.Angular, t.Firebase, t.AWS],
-    getTranslatedSentence('ballGameDescription'),
-    'https://master.d2gy6xsqkmio1s.amplifyapp.com/',
-    'projects/Surpresa.png',
-    'https://github.com/ThiagoMaia1/angular-game',
-    ['BallGame/Surpresa.png']
-  ),
-  new Project(
-    getTranslatedSentence('boardGameHelperTitle'),
-    getTranslatedSentence('boardGameHelperSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.ReactNative],
-    getTranslatedSentence('boardGameHelperDescription'),
-    '',
-    'projects/BoardGame.png',
-    'https://github.com/ThiagoMaia1/board-game-helper.git',
   ),
   new Project(
     getTranslatedSentence('portfolioTitle'),
