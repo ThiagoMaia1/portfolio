@@ -6,12 +6,7 @@
         background: linear-gradient(to right, $primaryColor, $accentColor);
         border-radius: 0.4em;
         border: solid $accentColor 1px;
-        margin-left: auto;
         box-shadow: var(--box-shadow);
-    
-        // &:hover {
-        //     transform: translateY(-6%);
-        // }
     }
 
     &.open {
@@ -25,7 +20,6 @@
         margin-bottom: 10vh;
         font-size: 150%;
         font-weight: 800;
-        // transition: transform 0.3s ease-in-out;
     }
 
     > .tilt-detector {

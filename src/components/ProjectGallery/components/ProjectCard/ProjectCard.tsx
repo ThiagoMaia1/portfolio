@@ -12,8 +12,8 @@ const ProjectCard = ({project} : {project : Project}) => {
     let refScroll = useRef<HTMLDivElement>(null);
     let refTilt = useRef<HTMLDivElement>(null);
 
-    const transitionTime = 200;
-    const removeTransition = () => setTimeout(() => setHasTransition(false), 0)//transitionTime);
+    const transitionTime = 300;
+    const removeTransition = () => setTimeout(() => setHasTransition(false), 0);
 
     let tiltStyle = useTilt(refTilt, 0.2);
 
@@ -48,6 +48,5 @@ const ProjectCard = ({project} : {project : Project}) => {
         </div>
     )
 }
-
 
 export default ProjectCard;
