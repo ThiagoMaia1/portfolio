@@ -15,9 +15,9 @@ type Link = {
 const links : Link[] = [
     {logo: AiOutlineGithub, apelido: 'GitHub', url: gitHubUrl},
     {logo: AiFillLinkedin, apelido: 'LinkedIn', url: linkedinUrl},
-    {logo: IoLogoFacebook, apelido: 'Facebook', url: facebookUrl},
     {logo: ImStackoverflow, apelido: 'Stack Overflow', url: stackOverflowUrl},
-    {logo: MdEmail, apelido: emailAddress, url: 'mailto:' + emailAddress},
+    {logo: IoLogoFacebook, apelido: 'Facebook', url: facebookUrl},
+    {logo: MdEmail, apelido: 'E-mail', url: 'mailto:' + emailAddress},
 ]
 
 function ContactInfo ({includeDevelopedBy = true}) {

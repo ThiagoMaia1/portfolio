@@ -19,9 +19,7 @@ const MainPage = () => {
                 <ProjectGallery/>
             </div>
             <Footer/>
-            <div className='fixed-loading'>
-                <Loading/>
-            </div>
+            <Loading/>
         </ScrollProvider>
     )
 }

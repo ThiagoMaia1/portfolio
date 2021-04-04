@@ -10,7 +10,7 @@ export type OnFrameEvent = {
 }
 
 export default function PaperElement({animation, children = null} 
-    : {animation : (scope : paper.PaperScope) => void, children ?: React.ReactNode}) {
+    : {animation : (scope : paper.PaperScope, canvasId : string) => void, children ?: React.ReactNode}) {
 
     const [canvasId, setCanvasId] = useState(uniqueCanvasId());
     const timeout = useRef(setTimeout(() => void 0));
@@ -28,7 +28,7 @@ export default function PaperElement({animation, children = null}
             if (!document.querySelector(`#${canvasId}`)) 
                 return;
             scope.setup(canvasId);
-            animation(scope);
+            animation(scope, canvasId);
         }, 0)
     }, [canvasId]);
 
