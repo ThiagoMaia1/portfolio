@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import paper from 'paper';
 import './PaperElement.scss';
 import useWindowResize from '../../hooks/useWindowResize';
@@ -17,7 +17,8 @@ export default function PaperElement({animation, children = null}
     const scopeRef = useRef<paper.PaperScope>();
 
     useWindowResize(() => setCanvasId(uniqueCanvasId()));
-    
+    let _animation = useCallback(animation, [animation]);
+
     useEffect(function () {
         clearTimeout(timeout.current);
         timeout.current = setTimeout(() => {
@@ -28,9 +29,9 @@ export default function PaperElement({animation, children = null}
             if (!document.querySelector(`#${canvasId}`)) 
                 return;
             scope.setup(canvasId);
-            animation(scope, canvasId);
+            _animation(scope, canvasId);
         }, 0)
-    }, [canvasId]);
+    }, [canvasId, _animation]);
 
     return <div className='paper-container'>
         <div className='paper-children-container'>

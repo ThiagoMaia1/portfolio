@@ -12,8 +12,8 @@ const ProjectCard = ({project} : {project : Project}) => {
     let refScroll = useRef<HTMLDivElement>(null);
     let refTilt = useRef<HTMLDivElement>(null);
 
-    const transitionTime = 300;
-    const removeTransition = () => setTimeout(() => setHasTransition(false), 0);
+    const transitionTime = 100;
+    const removeTransition = () => setTimeout(() => setHasTransition(false), transitionTime);
 
     let tiltStyle = useTilt(refTilt, 0.2);
 
@@ -28,7 +28,7 @@ const ProjectCard = ({project} : {project : Project}) => {
     if (!open) {
         style.transformStyle = 'preserve-3d';
         if (tiltStyle) style.transform = tiltStyle;
-        if (hasTransition || !tiltStyle) style.transition = `transform ${transitionTime}ms cubic-bezier(0.03, 0.98, 0.52, 0.99)`;
+        if (hasTransition || !tiltStyle) style.transition = `transform ${transitionTime}ms linear`;
     }
     return (
         <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'} 
