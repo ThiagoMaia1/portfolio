@@ -1,7 +1,7 @@
 import PaperElement, { OnFrameEvent } from '../Animations/PaperElement';
 import { addShadow, Sides, WavePath } from '../Animations/Waves/Waves'
 import './Footer.scss';
-import BottomBarInfo from './components/BottomBarInfo/BottomBarInfo';
+import ContactInfo from '../basic/ContactInfo/ContactInfo';
 
 function Footer() {
 
@@ -47,7 +47,9 @@ function Footer() {
             }
 
         }}>
-            <BottomBarInfo/>
+        <div id='bottom-bar-info'>
+            <ContactInfo/>
+        </div>
         </PaperElement>
 
     </div>

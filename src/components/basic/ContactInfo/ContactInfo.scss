@@ -1,22 +1,11 @@
-#bottom-bar-info {
-    height: 100%;
-    color: white;
+.items-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    font-weight: 400;
-    padding: 12vh 10% 0;
-
-    .items-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: calc(13vh - 4vw);
-        height: 60%;
-        width: 100%;
-    }
+    flex-wrap: wrap;
+    height: 60%;
+    width: 100%;
 }
 
 .bottom-bar-link-container {

@@ -7,4 +7,15 @@
     canvas {
         height: 120% !important;
     }
+
+    #bottom-bar-info {
+        height: 100%;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        padding: calc(25vh - 4vw) 10% 0;
+    }
+
 }
