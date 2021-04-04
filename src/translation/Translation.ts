@@ -1,9 +1,11 @@
-interface sentences {
+export interface sentences {
     developerTitle : string;
     aboutMe : string;
     selfDescription: string;
     myProjects : string;
+    previousExperiences : string;
     seeOnGithub : string;
+    currentJob : string;
     cultueTitle: string,
     cultueSubtitle : string,
     cultueDescription: string,
@@ -32,6 +34,26 @@ interface sentences {
     foreignLanguage : string,
     foreignLanguageImage : string,
     foreignLanguageUrl : string, 
+    englishTeacher : string,
+    englishTeacherDescription : string,
+    photographyEditor : string,
+    photographyEditorDescription : string,
+    pythonTeacher : string,
+    pythonTeacherDescription : string,
+    intern : string,
+    internDescription : string,
+    excelTeacher : string,
+    excelTeacherDescription : string,
+    fullstackDeveloper : string,
+    fullstackDeveloperDescription : string,
+    contractDeveloper : string,
+    contractDeveloperDescription : string,
+    administrativeAssistant : string,
+    administrativeAssistantDescription : string,
+    storageAdministrator : string,
+    storageAdministratorDescription : string,
+    frontendDeveloper : string,
+    frontendDeveloperDescription : string,
 }
 
 const translation : Record<string, sentences> = {
@@ -40,7 +62,10 @@ const translation : Record<string, sentences> = {
         aboutMe: "Quem Sou Eu?",
         selfDescription: "Sou formado em engenharia de produção, com experiência em desenvolvimento e administração de sistemas empresariais.\n\nEm minhas experiências profissionais pude contribuir para o desenvolvimento de meu setor. Tenho bastante iniciativa e um olhar crítico para propor melhorias em procedimentos, utilizando ferramentas de tecnologia da informação.\n\nDesde o início de minha graduação me interessei pela área de desenvolvimento/programação, e busco me desenvolver nisso através de cursos online e desenvolvimento de projetos pessoais.\n\nAcredito na importância de um ambiente de trabalho amigável, com bons relacionamentos e respeito mútuo.",
         myProjects: "Meus Projetos",
+        previousExperiences: 'Experiência Profissional',
         seeOnGithub: 'Ver no GitHub',
+        currentJob: 'hoje',
+    // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Apresentações de Slides para Igrejas',
         cultueDescription: 'Aplicação web voltada para a criação de slides para cultos de igrejas.\nUtiliza os apis: vagalume e biblia para buscar letras de músicas e textos bíblicos e aloca-los em slides.\nPermite a personalização dos slides e exportações em HTML ou PowerPoint.',
@@ -69,13 +94,37 @@ const translation : Record<string, sentences> = {
         foreignLanguage : 'Inglês Fluente',
         foreignLanguageImage : 'English.png',
         foreignLanguageUrl : 'https://www.britannica.com/topic/English-language',
+    // Professional Experiences
+        englishTeacher : 'Professor de Inglês',
+        englishTeacherDescription : 'Ministração de Aulas e Monitorias em Inglês. Escola com foco em inglês empresarial.',
+        photographyEditor : 'Editor de Fotografia',
+        photographyEditorDescription : 'Tratamento/edição de fotografias de estúdio utilizando Adobe Photoshop, Lightroom. Diagramação de álbuns personalizados utilizando Adobe InDesign.',
+        pythonTeacher : 'Monitor de Aulas de Python',
+        pythonTeacherDescription : 'Auxílio na ministração de aulas de programação em Python. Aulas ministradas exclusivamente em inglês.',
+        intern : 'Estagiário em Administração',
+        internDescription : 'Auxílio na administração do sistema e banco de dados. Auxílio no controle de estoque.',
+        excelTeacher : 'Professor de Excel',
+        excelTeacherDescription : 'Curso de Excel de curto prazo para os funcionários da empresa.',
+        fullstackDeveloper : 'Desenvolvedor Fullstack',
+        fullstackDeveloperDescription : 'Desenvolvimento de melhorias no sistema de assinaturas, pagamentos e vendas. Saneamento do banco de dados, obtenção de relatórios personalizados.',
+        contractDeveloper : 'Desenvolvedor de Sistemas e Banco de Dados - Pequenos Serviços',
+        contractDeveloperDescription : 'Manutenção do sistema da empresa em regime remoto, sob demanda.',
+        administrativeAssistant : 'Assistente em Administração',
+        administrativeAssistantDescription : 'Área de Licitações e Contratos: Controle de saldos de contratos, elaboração de contratos e documentos, verificação de regularidade de empresas.',
+        storageAdministrator : 'Administrador de Almoxarifado',
+        storageAdministratorDescription : 'Organização e planejamento de estoques. Manutenção do catálogo de materiais. Comunicação com o setor de desenvolvimento de sistemas.',
+        frontendDeveloper : 'Desenvolvedor Front-End',
+        frontendDeveloperDescription : 'Desenvolvimento e manutenção de módulos web em Angular, AngularJS, ReactJS e React Native.',
     },
     'en': {
         developerTitle: 'Front-end Developer',
         aboutMe: "About Me",
         selfDescription: "Sou formado em engenharia de produção, com experiência em desenvolvimento e administração de sistemas empresariais.\n\nEm minhas experiências profissionais pude contribuir para o desenvolvimento de meu setor. Tenho bastante iniciativa e um olhar crítico para propor melhorias em procedimentos, utilizando ferramentas de tecnologia da informação.\n\nDesde o início de minha graduação me interessei pela área de desenvolvimento/programação, e busco me desenvolver nisso através de cursos online e desenvolvimento de projetos pessoais.\n\nAcredito na importância de um ambiente de trabalho amigável, com bons relacionamentos e respeito mútuo.",
         myProjects: "My Projects",
+        previousExperiences: 'Professional Experience',
         seeOnGithub: 'See on GitHub',
+        currentJob: 'today',
+        // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Slide Presentations for Churches',
         cultueDescription: 'Web application directed at the creation of slide presentations for churches. Uses Vagalume and Bible apis to fetch music lyrics and biblical texts and distribute them in the correct number of slides. Allows for personalization and exporting as HTML or PowerPoint.',
@@ -101,9 +150,31 @@ const translation : Record<string, sentences> = {
         ballGameSubtitle: '',
         ballGameDescription: 'Small game created as I learnet Angular to try and impress the folks at Mereo.',
         skills: 'Main Skills',
-        foreignLanguage : 'Native Portuguese',
-        foreignLanguageImage : 'Portuguese.png',
-        foreignLanguageUrl : 'https://www.portugues.com.br/',
+        foreignLanguage: 'Native Portuguese',
+        foreignLanguageImage: 'Portuguese.png',
+        foreignLanguageUrl: 'https://www.portugues.com.br/',
+    // Professional Experiences
+        englishTeacher : 'English Teacher',
+        englishTeacherDescription : 'Ministering english classes and correcting tests. School focused on english for enterprises.',
+        photographyEditor : 'Photo Editor',
+        photographyEditorDescription : 'Editing/treating studio photographs using Adobe Photoshop, Lightroom. Diagramming personalized photo albums using Adobe InDesign.',
+        pythonTeacher : 'Python Tutor',
+        pythonTeacherDescription : 'Helping to minister programming classes in Python for engineering students. Classes ministered in english.',
+        intern : 'Administrative Intern',
+        internDescription : 'Supporting administration of system and database, storage management and publicity campaigns.',
+        excelTeacher : 'Excel Teacher',
+        excelTeacherDescription : 'Ministering short term Excel course for company employees.',
+        fullstackDeveloper : 'Fullstack Developer',
+        fullstackDeveloperDescription : 'Maintance and enhancement of the internal system of the company. Process automation. User support. Database sanitizing, normalization. Bulding custom SQL reports. Database of over 500 thousand clients.',
+        contractDeveloper : 'System Mantainer',
+        contractDeveloperDescription : 'Remote maintance of internal system on demand.',
+        administrativeAssistant : 'Administrative Assistante',
+        administrativeAssistantDescription : 'Purchases and Contracts Sector: Control of contracts values and services, writing of contracts and documents, companies background check.',
+        storageAdministrator : 'Storehouse Manager',
+        storageAdministratorDescription : 'Organization and planning of stocks, catalogue maintance, communication with development sector.',
+        frontendDeveloper : 'Front-End Developer',
+        frontendDeveloperDescription : 'Development and maintance of modules in Angular, AngularJS, ReactJS and React Native.',
+
     }
 };
 
