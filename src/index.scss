@@ -56,3 +56,17 @@ a {
 
 $primaryColor: #A60000;
 $accentColor: #c42e00;
+
+@mixin normalized-image($image-width, $image-height: $image-width) {
+  width: $image-width;
+  height: $image-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: $image-width;
+    max-height: $image-height;
+      object-fit: cover;
+  }
+}

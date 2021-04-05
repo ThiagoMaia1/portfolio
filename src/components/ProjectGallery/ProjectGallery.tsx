@@ -16,7 +16,7 @@ function ProjectGallery() {
   }
 
   return (
-    <div id='project-section'>
+    <div id='project-section' className='page-section'>
       <div className='isometric-cubes-container'>
         <IsometricCubes/>
       </div>

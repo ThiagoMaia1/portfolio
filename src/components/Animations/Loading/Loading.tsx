@@ -10,7 +10,7 @@ function Loading() {
     const ref = useRef<HTMLDivElement>(null);
     const recProportionOfCanvas = 0.7;
     const closedRectangleHeight = 10;
-    const changeSizeSpeed = 6;
+    const changeSizeSpeed = 10;
 
     return (
         <div className='fixed-loading'>

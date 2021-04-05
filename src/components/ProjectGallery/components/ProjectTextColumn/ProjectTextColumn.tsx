@@ -14,7 +14,7 @@ function ProjectTextColumn({project, isVertical} : {project : Project, isVertica
     return <div className='project-text-column' style={{height: (isVertical ? 64 : 100) + '%'}}>
         <div className='project-text-column-wraper'>
             <div className='project-title'>
-                <a href={project.url} target='_blank'>
+                <a href={project.url} target='_blank' rel='noopener noreferrer'>
                     {project.name + (project.subtitle ? ' - ' + project.subtitle : '')}
                 </a>
                 {!project.githubUrl ? null
@@ -36,7 +36,7 @@ function ProjectTextColumn({project, isVertical} : {project : Project, isVertica
             <div className='project-description'>
                 {project.description}
                 {!link ? null
-                    : <a href={link.url} target='_blank'>{' ' + link.label}</a>    
+                    : <a href={link.url} target='_blank' rel='noopener noreferrer'>{' ' + link.label}</a>    
                 }
             </div>
         </div>

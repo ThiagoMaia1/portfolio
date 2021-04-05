@@ -28,7 +28,7 @@ function ProjectScreenshot({imageUri} : {imageUri : string}) {
 
     return imageUri === 'iframe' 
         ? <div id='iframe-loop' >
-            <iframe src={window.location.origin}></iframe>
+            <iframe title='iframe-loop' src={window.location.origin}></iframe>
         </div>
         : <div className='project-screenshot'>
             <img src={require(`../../../images/ScreenShots/${imageUri}`).default} alt=''/>
