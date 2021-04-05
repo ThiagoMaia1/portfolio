@@ -8,6 +8,15 @@ import PreviousExperiences from '../../PreviousExperiences/PreviousExperiences';
 import EducationSection from '../../EducationSection/EducationSection';
 import Loading from '../../Animations/Loading/Loading';
 import Footer from '../../Footer/Footer';
+import SectionsIndex from '../../SectionsIndex/SectionsIndex';
+
+// const sectionsIds = {
+//     'about-me',
+//     'skills-section',
+//     'project-section',
+//     'previous-experiences-section',
+//     'education-section',
+// };
 
 const MainPage = () => {
 
@@ -15,6 +24,8 @@ const MainPage = () => {
         // <IsometricCubes/>
         <ScrollProvider>
             <div id='main-page'>
+                <SectionsIndex/>
+                <Loading/>
                 <Header/>
                 <div id='main-page-body'>
                     <AboutMe/>
@@ -24,7 +35,6 @@ const MainPage = () => {
                     <EducationSection/>
                 </div>
                 <Footer/>
-                <Loading/>
             </div>
         </ScrollProvider>
     )

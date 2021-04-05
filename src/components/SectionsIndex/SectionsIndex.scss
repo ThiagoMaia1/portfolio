@@ -1,0 +1,42 @@
+$transition-data: 0.3s ease-in-out;
+
+#sections-index-container {
+    position: fixed;
+    height: 50vh;
+    bottom: 30vh;
+    display: flex;
+    align-items: center;
+    z-index: 200;
+    transition: opacity 1s;
+    > .paper-container {
+        width: 5em;
+    }
+
+    .sections-index-items-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 79%;
+        margin-top: -16%;
+        font-family: 'Merriweather';
+        color: gray;
+        font-size: 0.8em;
+        letter-spacing: -0.03em;
+        max-width: 5vw;
+
+        > .sections-index-item {
+
+            cursor: pointer;
+            user-select: none;
+
+            > div {
+                transition: transform $transition-data, color $transition-data;
+                
+                &.selected {
+                    color: black;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}

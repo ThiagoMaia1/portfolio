@@ -131,7 +131,7 @@ const translation : Record<string, sentences> = {
         frontendDeveloperDescription : 'Desenvolvimento e manutenção de módulos web em Angular, AngularJS, ReactJS e React Native.',
         graduation: 'Graduação em Engenharia de Produção',
         graduationDescription: '',
-        graduationEnade: '1º Lugar em Engenharia de Produção no Brasil segundo ENADE.',
+        graduationEnade: 'Curso nº 1 do Brasil em Engenharia de Produção para turma 2013-2017, segundo ENADE .',
         graduationTCC: 'Trabalho de Conclusão de Curso foi um estudo de caso sobre normalização de Banco de Dados relacional e melhoria do sistema interno de uma editora.', 
     },
     'en': {
