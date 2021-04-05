@@ -15,11 +15,12 @@ class ProfessionalExperience {
         initialMonth : number,
         public durationInMonths : number | undefined,
         public relevantForIT = true,
+        public isEducation = false,
     ) {
         this.title = getTranslatedSentence(job);
         this.description = getTranslatedSentence(job + 'Description' as keyof sentences);
         this.company = companies[companyKey];
-        this.initialDate = new Date(initialYear, initialMonth, 1, 0, 0, 0);
+        this.initialDate = new Date(initialYear, initialMonth - 1, 1, 0, 0, 0);
     }
 
     get finalDate() {

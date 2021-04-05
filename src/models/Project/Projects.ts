@@ -1,3 +1,4 @@
+import { urlFinalPaper } from '../../constants/Constants';
 import getTranslatedSentence from '../../translation/Translation';
 import technologies from '../Technology/Technologies';
 import Project from './Project';
@@ -58,7 +59,7 @@ const projects: Array<Project> = [
     ],
     {
       url: 'https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-(E-commerce-template)-by-Oleh-Chabanov', 
-      label: 'Figma de Oleh Chabanov.'
+      label: getTranslatedSentence('figmaBy'),
     }
   ),
   new Project(
@@ -94,7 +95,7 @@ const projects: Array<Project> = [
     ],
     {
       url: 'https://www.vidangel.com/browse',
-      label: 'Clique para conhecer mais sobre o VidAngel.'
+      label: getTranslatedSentence('vidAngelLink'),
     }
   ),
   new Project(
@@ -102,7 +103,7 @@ const projects: Array<Project> = [
     getTranslatedSentence('ultimatoSystemSubtitle'),
     [t.Access, t.Excel, t.VBA, t.SQL, t.HTML5],
     getTranslatedSentence('ultimatoSystemDescription'),
-    'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
+    urlFinalPaper,
     'projects/Ultimato.png',
     '',
     [
@@ -117,8 +118,8 @@ const projects: Array<Project> = [
       'Ultimato/Form_Vendas_Novo.PNG',
     ],
     {
-      url: 'https://drive.google.com/file/d/1jj4wEeJquL0TMINlnHdRqgbUNpx6VpPB/view', 
-      label: 'Clique para ler mais detalhes no Trabalho de Conclusão de Curso sobre o projeto.'
+      url: urlFinalPaper, 
+      label: getTranslatedSentence('ultimatoFinalPaperLink'),
     }
   ),
   new Project(

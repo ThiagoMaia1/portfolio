@@ -3,6 +3,8 @@ export const gitHubUrl = 'https://github.com/ThiagoMaia1';
 export const facebookUrl = 'https://www.facebook.com/thiago.p.maia/';
 export const linkedinUrl = 'https://www.linkedin.com/in/thiago-pereira-maia-75b825199/';
 export const stackOverflowUrl = 'https://stackoverflow.com/users/14874778/thiago-pereira-maia';
+export const urlFinalPaper = 'https://drive.google.com/file/d/1jj4wEeJquL0TMINlnHdRqgbUNpx6VpPB/view';
+export const urlENADE = 'https://download.inep.gov.br/educacao_superior/enade/documentos/2018/presskit_enade2017_e_indicadores_de_qualidade.pdf';
 export const fullName = 'Thiago Pereira Maia';
 
 export const fixedStar = {

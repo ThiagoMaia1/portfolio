@@ -1,0 +1,19 @@
+#wave-background {
+
+    position: relative;
+    transform: translateY(-150vh);
+    opacity: 0.5;
+    pointer-events: none;
+
+    > div {
+        position: absolute;
+        width: 220vw;
+        height: 400vh;
+        &:first-child {
+            transform: rotate(-150deg) translateX(50vh);
+        }
+        &:last-child {
+            transform: rotate(140deg) translate(250vh, 0);
+        }
+    }
+}

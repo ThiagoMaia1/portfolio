@@ -1,20 +1,28 @@
 export interface sentences {
-    developerTitle : string;
-    aboutMe : string;
-    selfDescription: string;
-    myProjects : string;
-    previousExperiences : string;
-    seeOnGithub : string;
-    currentJob : string;
+    developerTitle : string,
+    aboutMe : string,
+    selfDescription: string,
+    myProjects : string,
+    previousExperiences : string,
+    academicFormation : string,
+    seeOnGithub : string,
+    currentJob : string,
+    skills : string,
+    foreignLanguage : string,
+    foreignLanguageImage : string,
+    foreignLanguageUrl : string, 
+// Projects
     cultueTitle: string,
     cultueSubtitle : string,
     cultueDescription: string,
     vidAngelTitle: string,
     vidAngelSubtitle: string,
     vidAngelDescription: string,
+    vidAngelLink : string,
     myShopTitle : string,
     myShopSubtitle : string,
     myShopDescription : string,
+    figmaBy : string,
     portfolioTitle : string,
     portfolioSubtitle : string,
     portfolioDescription : string,
@@ -24,16 +32,14 @@ export interface sentences {
     ultimatoSystemTitle : string,
     ultimatoSystemSubtitle : string,
     ultimatoSystemDescription : string,
+    ultimatoFinalPaperLink : string,
     boardGameHelperTitle : string,
     boardGameHelperSubtitle : string,
     boardGameHelperDescription : string,
     ballGameTitle : string,
     ballGameSubtitle : string,
     ballGameDescription : string,
-    skills : string,
-    foreignLanguage : string,
-    foreignLanguageImage : string,
-    foreignLanguageUrl : string, 
+// Professional Experiences
     englishTeacher : string,
     englishTeacherDescription : string,
     photographyEditor : string,
@@ -54,6 +60,10 @@ export interface sentences {
     storageAdministratorDescription : string,
     frontendDeveloper : string,
     frontendDeveloperDescription : string,
+    graduation : string,
+    graduationDescription : string,
+    graduationEnade : string,
+    graduationTCC : string,
 }
 
 const translation : Record<string, sentences> = {
@@ -65,6 +75,11 @@ const translation : Record<string, sentences> = {
         previousExperiences: 'Experiência Profissional',
         seeOnGithub: 'Ver no GitHub',
         currentJob: 'hoje',
+        academicFormation: 'Formação Acadêmica',
+        skills: 'Principais Competências',
+        foreignLanguage : 'Inglês Fluente',
+        foreignLanguageImage : 'English.png',
+        foreignLanguageUrl : 'https://www.britannica.com/topic/English-language',
     // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Apresentações de Slides para Igrejas',
@@ -72,9 +87,11 @@ const translation : Record<string, sentences> = {
         vidAngelTitle: 'VidAngel Subtitles',
         vidAngelSubtitle: '',
         vidAngelDescription: 'Extensão para o Google Chrome que modifica o site VidAngel, um filtrador de conteúdo impróprio em filmes e séries dos serviços de streaming comuns. O site está disponível apenas em inglês, a extensão utiliza o API OpenSubtitles para adicionar automaticamente legendas de qualquer idioma, sincronizando-as com os filtros selecionados.', 
+        vidAngelLink: 'Clique para conhecer mais sobre o VidAngel.',
         myShopTitle : 'MyShop',
         myShopSubtitle : 'E-Commerce',
         myShopDescription : 'Aplicativo Mobile de ecommerce para Android ou IOs. Design reproduzido a partir do ',
+        figmaBy: 'Figma de Oleh Chabanov.',
         portfolioTitle : 'Este Portfólio Incrível',
         portfolioSubtitle : '',
         portfolioDescription : 'Este site! Registrado aqui apenas para indicar as tecnologias utilizadas.',
@@ -84,30 +101,27 @@ const translation : Record<string, sentences> = {
         ultimatoSystemTitle: 'Editora Ultimato',
         ultimatoSystemSubtitle: 'Sistema Interno',
         ultimatoSystemDescription: 'Sistema construído em Access para controle das atividades internas gerais da Editora Ultimato. Banco de Dados com 400 mil clientes.\n\nInclui módulos de vendas, incluindo controle de metas, registros de clientes e campanhas publicitárias, ponto eletrônico, controle de royalties, estoques, envios e cobranças.',
+        ultimatoFinalPaperLink: 'Clique para ler mais detalhes no Trabalho de Conclusão de Curso sobre o projeto.',
         boardGameHelperTitle: 'Tropa Remanescente',
         boardGameHelperSubtitle: 'Apoio para o Jogo',
         boardGameHelperDescription: 'Aplicativo de apoio para o jogo de tabuleiro "Tropa Remanescente".',
         ballGameTitle: 'Ball Game',
         ballGameSubtitle: '',
         ballGameDescription: 'Pequeno jogo usando Angular para tentar impressionar o pessoal da Mereo.',
-        skills: 'Principais Competências',
-        foreignLanguage : 'Inglês Fluente',
-        foreignLanguageImage : 'English.png',
-        foreignLanguageUrl : 'https://www.britannica.com/topic/English-language',
     // Professional Experiences
         englishTeacher : 'Professor de Inglês',
         englishTeacherDescription : 'Ministração de Aulas e Monitorias em Inglês. Escola com foco em inglês empresarial.',
         photographyEditor : 'Editor de Fotografia',
         photographyEditorDescription : 'Tratamento/edição de fotografias de estúdio utilizando Adobe Photoshop, Lightroom. Diagramação de álbuns personalizados utilizando Adobe InDesign.',
         pythonTeacher : 'Monitor de Aulas de Python',
-        pythonTeacherDescription : 'Auxílio na ministração de aulas de programação em Python. Aulas ministradas exclusivamente em inglês.',
+        pythonTeacherDescription : 'Auxílio na ministração de aulas de programação em Python. Aulas ministradas em inglês.',
         intern : 'Estagiário em Administração',
         internDescription : 'Auxílio na administração do sistema e banco de dados. Auxílio no controle de estoque.',
         excelTeacher : 'Professor de Excel',
         excelTeacherDescription : 'Curso de Excel de curto prazo para os funcionários da empresa.',
         fullstackDeveloper : 'Desenvolvedor Fullstack',
         fullstackDeveloperDescription : 'Desenvolvimento de melhorias no sistema de assinaturas, pagamentos e vendas. Saneamento do banco de dados, obtenção de relatórios personalizados.',
-        contractDeveloper : 'Desenvolvedor de Sistemas e Banco de Dados - Pequenos Serviços',
+        contractDeveloper : 'Desenvolvedor Fullstack - Sob Demanda',
         contractDeveloperDescription : 'Manutenção do sistema da empresa em regime remoto, sob demanda.',
         administrativeAssistant : 'Assistente em Administração',
         administrativeAssistantDescription : 'Área de Licitações e Contratos: Controle de saldos de contratos, elaboração de contratos e documentos, verificação de regularidade de empresas.',
@@ -115,6 +129,10 @@ const translation : Record<string, sentences> = {
         storageAdministratorDescription : 'Organização e planejamento de estoques. Manutenção do catálogo de materiais. Comunicação com o setor de desenvolvimento de sistemas.',
         frontendDeveloper : 'Desenvolvedor Front-End',
         frontendDeveloperDescription : 'Desenvolvimento e manutenção de módulos web em Angular, AngularJS, ReactJS e React Native.',
+        graduation: 'Graduação em Engenharia de Produção',
+        graduationDescription: '',
+        graduationEnade: '1º Lugar em Engenharia de Produção no Brasil segundo ENADE.',
+        graduationTCC: 'Trabalho de Conclusão de Curso foi um estudo de caso sobre normalização de Banco de Dados relacional e melhoria do sistema interno de uma editora.', 
     },
     'en': {
         developerTitle: 'Front-end Developer',
@@ -124,6 +142,11 @@ const translation : Record<string, sentences> = {
         previousExperiences: 'Professional Experience',
         seeOnGithub: 'See on GitHub',
         currentJob: 'today',
+        academicFormation: 'Education',
+        skills: 'Main Skills',
+        foreignLanguage: 'Native Portuguese',
+        foreignLanguageImage: 'Portuguese.png',
+        foreignLanguageUrl: 'https://www.portugues.com.br/',
         // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Slide Presentations for Churches',
@@ -131,9 +154,11 @@ const translation : Record<string, sentences> = {
         vidAngelTitle: 'VidAngel Subtitles',
         vidAngelSubtitle: '',
         vidAngelDescription: `Extension for Google Chrome that uses the OpenSubtitles Api to add subtitles to movies and TV shows on the VidAngel streaming service.`,
+        vidAngelLink: 'Click to learn more about VidAngel.',
         myShopTitle : 'MyShop',
         myShopSubtitle : 'E-Commerce',
         myShopDescription : 'Mobile E-commerce app for Android or IOs. Design reproduced from ',
+        figmaBy: 'Figma by Oleh Chabanov.',
         portfolioTitle : `This Awesome Portfolio`,
         portfolioSubtitle : '',
         portfolioDescription : 'This website! Registered here only to show the technologies that were used.',
@@ -143,16 +168,13 @@ const translation : Record<string, sentences> = {
         ultimatoSystemTitle: 'Ultimato: Publishing House',
         ultimatoSystemSubtitle: 'Internal Business System',
         ultimatoSystemDescription: 'System built in Access for controlling general internal activities of Ultimato Publishing House. Database with over 400 thousand clients. Includes modules for sales, goals and retribution, clients profiles, marketing campaigns, eletronic timecards, royalties payment, storage, expedition and charging.',
+        ultimatoFinalPaperLink: 'Click to read more details on the Final Paper written about the system. (Portuguese Only)',
         boardGameHelperTitle: 'Remainder Troop',
         boardGameHelperSubtitle: 'Board Game Helper',
         boardGameHelperDescription: 'Support app for the "Remainder Troop" board game.',
         ballGameTitle: 'Ball Game',
         ballGameSubtitle: '',
         ballGameDescription: 'Small game created as I learnet Angular to try and impress the folks at Mereo.',
-        skills: 'Main Skills',
-        foreignLanguage: 'Native Portuguese',
-        foreignLanguageImage: 'Portuguese.png',
-        foreignLanguageUrl: 'https://www.portugues.com.br/',
     // Professional Experiences
         englishTeacher : 'English Teacher',
         englishTeacherDescription : 'Ministering english classes and correcting tests. School focused on english for enterprises.',
@@ -174,11 +196,21 @@ const translation : Record<string, sentences> = {
         storageAdministratorDescription : 'Organization and planning of stocks, catalogue maintance, communication with development sector.',
         frontendDeveloper : 'Front-End Developer',
         frontendDeveloperDescription : 'Development and maintance of modules in Angular, AngularJS, ReactJS and React Native.',
-
+        graduation: "Bachelor's Degree in Industrial Engineering",
+        graduationDescription: '',
+        graduationEnade: "School was 1º place for industrial engineering in Brazil's national evaluation of universities for my class' year.",
+        graduationTCC: 'Final paper was a case study in Relational Database normalization and user interface improvement in a publishing house. (Portuguese Only)', 
     }
 };
 
 const getTranslatedSentence = (key : keyof sentences) => {
+    let languageCode = getLanguageCode();
+    return translation[languageCode][key];
+}
+
+const getGeneralLanguage = (code : string) => code.split('-')[0];
+
+export const getLanguageCode = () => {
     let languageCode : string = window.navigator.language;
     if (!(languageCode in translation)) {
         for (let k of Object.keys(translation)) {
@@ -187,9 +219,7 @@ const getTranslatedSentence = (key : keyof sentences) => {
         }
         languageCode = 'en';
     }
-    return translation[languageCode][key];
+    return languageCode;
 }
-
-const getGeneralLanguage = (code : string) => code.split('-')[0];
 
 export default getTranslatedSentence;

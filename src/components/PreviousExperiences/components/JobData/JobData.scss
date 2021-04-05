@@ -1,0 +1,22 @@
+.job-data {
+
+    border: 0 solid lightgray;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+
+    .job-title {
+        font-weight: 700;
+        margin-bottom: 0.3em;
+        font-family: 'Merriweather';
+    }
+
+    .job-dates {
+        font-size: 90%;
+        color: gray;
+        margin-bottom: 1em;
+    }
+
+    .job-description {
+        white-space: break-spaces;
+    }
+}
