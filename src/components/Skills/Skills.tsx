@@ -37,7 +37,7 @@ function Skills() {
     useWindowResize(size => setNumberOfColumns(getNumberOfColumns(size.width)));
 
     return (
-        <div>
+        <div id='skills-section'>
             <SectionTitle text={getTranslatedSentence('skills')} />
             <div className='skill-list-container'>
                 {getGroupedSkills(numberOfColumns).map(g =>

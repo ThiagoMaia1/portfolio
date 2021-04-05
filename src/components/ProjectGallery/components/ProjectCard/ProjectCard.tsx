@@ -34,10 +34,7 @@ const ProjectCard = ({project} : {project : Project}) => {
         <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'} 
              style={style}
              onMouseOver={removeTransition}
-             onMouseOut={() => {
-                setHasTransition(true)
-                
-            }}
+             onMouseOut={() => setHasTransition(true)}
             ref={refScroll}>
             {open 
                 ? <OpenProject project={project} onClick={onClick}/> 

@@ -11,7 +11,7 @@ interface Action {
 }
 
 const emptyState = {scroll: 0, scrollSin: 0};
-const ScrollContext : React.Context<ScrollState> = createContext(emptyState);
+export const ScrollContext : React.Context<ScrollState> = createContext(emptyState);
 
 function scrollReducer(state : ScrollState, action : Action) {
     switch (action.type) {
