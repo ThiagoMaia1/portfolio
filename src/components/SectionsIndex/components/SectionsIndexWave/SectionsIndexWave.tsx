@@ -43,9 +43,7 @@ function SectionsIndexWave({sections, setCurrentIndex, alignedOffsetOfHeight}
                 wave.segments[pointsPerSection*(sectionIndex) + 3].point.y;
             
             view.onFrame = () => {
-                let newScroll = document.body.scrollTop;
-                if (scroll === newScroll || sections.length === 0) return;
-                scroll = newScroll;
+                if (!scrollHasChanged() || sections.length === 0) return;
                 let selectedIndex = 0;
                 let tolerance = window.innerHeight*0.35;
                 for (let i = 0; i < sections.length; i++) {
@@ -77,7 +75,14 @@ function SectionsIndexWave({sections, setCurrentIndex, alignedOffsetOfHeight}
                 ).segments;
                 smoothing(star);
                 star.fillColor = getGradient(star.bounds, ['#A60000', '#ff3c00'], scope);
-                star.rotate(proportionateHeight*degreesCircle);
+                star.rotate((proportionateHeight + 1/numberOfPoints)*degreesCircle);
+            }
+
+            const scrollHasChanged = () => {
+                const newScroll = document.body.scrollTop;
+                const hasChanged = scroll !== newScroll;
+                if (hasChanged) scroll = newScroll;
+                return hasChanged;                
             }
         }}/>
     )

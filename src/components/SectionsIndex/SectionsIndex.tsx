@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-import useWindowResize from '../../hooks/useWindowResize';
 import { ScrollContext } from '../Main/ScrollProvider';
 import SectionsIndexWave from './components/SectionsIndexWave/SectionsIndexWave';
 import './SectionsIndex.scss';
@@ -62,7 +61,7 @@ function SectionsIndexItem({section, isSelected, alignedOffsetOfHeight}
     
     const onClick = () =>
         document.body.scroll({
-            top: section.element.offsetTop - alignedOffsetOfHeight, 
+            top: section.element.offsetTop - alignedOffsetOfHeight*window.innerHeight, 
             left: 0, 
             behavior: 'smooth'
         });
