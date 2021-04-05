@@ -48,7 +48,10 @@ function SectionsIndex() {
             <div className='sections-index-items-container'>
                 {
                     sections.map((s, i) => 
-                        <SectionsIndexItem key={s.id} section={s} isSelected={i === currentSectionIndex} alignedOffsetOfHeight={alignedOffsetOfHeight}/>  
+                        <SectionsIndexItem key={s.id} 
+                                           section={s} 
+                                           isSelected={i === currentSectionIndex} 
+                                           alignedOffsetOfHeight={alignedOffsetOfHeight}/>  
                     )
                 }
             </div>
@@ -58,7 +61,7 @@ function SectionsIndex() {
 
 function SectionsIndexItem({section, isSelected, alignedOffsetOfHeight} 
     : {section : Section, isSelected : boolean, alignedOffsetOfHeight : number}) {
-    
+
     const onClick = () =>
         document.body.scroll({
             top: section.element.offsetTop - alignedOffsetOfHeight*window.innerHeight, 

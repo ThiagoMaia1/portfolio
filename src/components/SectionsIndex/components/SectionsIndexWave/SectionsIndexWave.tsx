@@ -75,7 +75,7 @@ function SectionsIndexWave({sections, setCurrentIndex, alignedOffsetOfHeight}
                 ).segments;
                 smoothing(star);
                 star.fillColor = getGradient(star.bounds, ['#A60000', '#ff3c00'], scope);
-                star.rotate((proportionateHeight + 1/numberOfPoints)*degreesCircle);
+                star.rotate((proportionateHeight + 0.5/numberOfPoints)*degreesCircle);
             }
 
             const scrollHasChanged = () => {
