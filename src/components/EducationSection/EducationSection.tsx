@@ -7,7 +7,6 @@ function EducationSection() {
 
     let educationExperiences = professionalExperiences.filter(e => e.isEducation);
     let nonEducationNumber = professionalExperiences.length - educationExperiences.length;
-    console.log(educationExperiences);
     return (
         <div id='education-section' className='page-section'>
             <SectionTitle text={getTranslatedSentence('academicFormation')}/>

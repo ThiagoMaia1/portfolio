@@ -52,7 +52,7 @@ function ProjectIframe({project} : {project : Project}) {
     return (
         <div ref={ref}
              className='iframe-container project-screenshot' 
-             style={{width: containerWidth}}
+             style={{width: containerWidth || 1}}
         >
             <div ref={refChild}>
                 <iframe ref={refIframe}
