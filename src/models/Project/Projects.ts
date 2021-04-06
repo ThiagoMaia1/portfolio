@@ -37,7 +37,9 @@ const projects: Array<Project> = [
       'Cultue/Imagens Usuário.png',
       'Cultue/Perfil.png',
       'Cultue/Lista de Apresentações.png',
-    ]
+    ],
+    undefined,
+    'https://cultue.web.app',
   ),
   new Project(
     getTranslatedSentence('myShopTitle'),
@@ -70,7 +72,9 @@ const projects: Array<Project> = [
     'https://master.d2gy6xsqkmio1s.amplifyapp.com/',
     'projects/Surpresa.png',
     'https://github.com/ThiagoMaia1/angular-game',
-    ['BallGame/Surpresa.png']
+    ['BallGame/Surpresa.png'],
+    // undefined,
+    // 'https://master.d2gy6xsqkmio1s.amplifyapp.com/'
   ),
   new Project(
     getTranslatedSentence('vidAngelTitle'),
@@ -153,9 +157,9 @@ const projects: Array<Project> = [
     'http://localhost:3000', //'https://thiagomaia.tk',
     'projects/Portfolio.svg',
     'https://github.com/ThiagoMaia1/portfolio',
-    [
-      'iframe'
-    ]
+    [],
+    undefined,
+    window.location.origin + '/' + Date.now().toString(),
   ),
 ];
 

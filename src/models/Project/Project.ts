@@ -12,6 +12,7 @@ export default class Project {
         public githubUrl : string,
         public imagesUri : string[] = [],
         public linkAfterDescription ?: {url : string, label : string},
+        public iframeUrl ?: string,
     ) {}
 
     get categories() : Array<Category> {

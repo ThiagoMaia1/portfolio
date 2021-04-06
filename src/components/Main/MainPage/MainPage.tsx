@@ -10,18 +10,9 @@ import Loading from '../../Animations/Loading/Loading';
 import Footer from '../../Footer/Footer';
 import SectionsIndex from '../../SectionsIndex/SectionsIndex';
 
-// const sectionsIds = {
-//     'about-me',
-//     'skills-section',
-//     'project-section',
-//     'previous-experiences-section',
-//     'education-section',
-// };
-
 const MainPage = () => {
 
     return (
-        // <IsometricCubes/>
         <ScrollProvider>
             <div id='main-page'>
                 <SectionsIndex/>

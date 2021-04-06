@@ -54,7 +54,6 @@ function Skills() {
 
 export default Skills;
 function getGroupedSkills(numberOfGroups : number) {
-    console.log(numberOfGroups);
     const step = skills.length/numberOfGroups;
     const groups = [];
     //Reversions necessary to get the first column to be the longest.

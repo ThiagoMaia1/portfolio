@@ -7,16 +7,21 @@ import IsometricCubes from './../Animations/IsometricCubes/IsometricCubes';
 
 function ProjectGallery() {
   
-  console.log(window.parent, window.self, window.parent === window.self, )
-  if (window.parent !== window.self) {
-    setTimeout(() => {
-      console.log(document.getElementById('self-card'));
-      document.getElementById('self-card')?.click()
-    }, 1000);
+  const maxIframes = 3;
+  let depth = 0;
+  if (window.top !== window.self) {
+    let parentProjectSection = window.parent.document.querySelector('#project-section') as HTMLElement;
+    depth = 1 + Number(parentProjectSection?.dataset.id) || -1;
+    if (depth > 0 && depth <= maxIframes) {
+      setTimeout(() => {
+        let card = document.querySelector('#self-card .tilt-detector');
+        if (card instanceof HTMLElement) card.click()
+      }, 1000);
+    };
   }
 
   return (
-    <div id='project-section' className='page-section'>
+    <div id='project-section' className='page-section' data-id={depth}>
       <div className='isometric-cubes-container'>
         <IsometricCubes/>
       </div>
