@@ -4,13 +4,14 @@
     z-index: 10;
     .project-text-column-wraper {
         display: flex;
+        overflow-y: auto;
         flex-direction: column;
         font-size: 66%;
         font-weight: initial;
         pointer-events: all;
         height: 100%;
         width: 100%;
-        padding: 4vh;
+        padding: 1.6em;
         background-color: white;
         border-radius: 0.4em;
     }
@@ -65,4 +66,5 @@
 
 .project-description {
     text-align: justify;
+    margin-bottom: -1em;
 }

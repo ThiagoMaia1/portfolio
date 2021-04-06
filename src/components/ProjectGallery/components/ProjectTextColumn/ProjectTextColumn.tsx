@@ -11,7 +11,7 @@ function ProjectTextColumn({project, isVertical} : {project : Project, isVertica
     const link = project.linkAfterDescription;
     const technologyItems = project.technologies.length + project.categories.length;
     const maxHeight = Math.min((technologyItems)*5.5, 60);
-    return <div className='project-text-column' style={{height: (isVertical ? 64 : 100) + '%'}}>
+    return <div className='project-text-column' style={{height: (isVertical ? 60 : 100) + '%'}}>
         <div className='project-text-column-wraper'>
             <div className='project-title'>
                 <a href={project.url} target='_blank' rel='noopener noreferrer'>

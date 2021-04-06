@@ -5,6 +5,7 @@ import Project from '../../../../models/Project/Project';
 import './OpenProject.scss';
 import ProjectCarrossel from '../ProjectCarrossel/ProjectCarrossel';
 import ProjectTextColumn from '../ProjectTextColumn/ProjectTextColumn';
+import useWindowDimensions from '../../../../hooks/useWindowDimensions';
 
 const OpenProject = ({project, onClick} : {project : Project, onClick : () => void}) => {
 
@@ -24,7 +25,8 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
     const ref = useOutsideClick(fechar);
 
     const opacityTransition = `opacity 1ms ease-in-out ${ativo ? time : 0}ms`;
-    const isVertical = window.innerHeight > window.innerWidth;
+    const {height, width} = useWindowDimensions();
+    const isVertical = height > width;
 
     return <div className='open-project-wrapper' ref={ref as unknown as LegacyRef<HTMLDivElement>}>
             <div className='shadow-open-project-animation'>

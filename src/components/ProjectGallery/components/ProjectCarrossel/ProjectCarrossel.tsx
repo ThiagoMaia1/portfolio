@@ -13,7 +13,7 @@ function ProjectCarrossel({project, isVertical} : {project : Project, isVertical
 
     return <div className='project-carrossel' 
                 style={{maxWidth: carrosselWidth, minWidth: carrosselWidth, 
-                        margin: isVertical ? '-5vh -7vw -7vh -2vw' : '0 -7vw 0 2.4vw'}}>
+                        margin: isVertical ? '1vh -7vw -7vh -2vw' : '0 -7vw 0 2.4vw'}}>
         <Carrossel direcao={'horizontal'} tamanhoMaximo={carrosselWidth} tamanhoIcone={window.innerWidth*0.05} corGradiente={'#ba1e00'}
                 style={{zIndex: 10, maxWidth: carrosselWidth, minWidth: carrosselWidth, width: carrosselWidth, height: '100%'}}
         >
