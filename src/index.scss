@@ -70,3 +70,20 @@ $accentColor: #c42e00;
       object-fit: cover;
   }
 }
+
+.closing-x {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border-radius: 0.2em;
+  cursor: pointer;
+  padding: 0 0.2em 0.1em;
+  transition: all 0.3s ease-in-out;
+  &::after{ 
+    content: '✕';
+  }
+  &:hover {
+    // transform: scale(1.2);
+    background-color: rgba(200, 200, 200, 0.5);
+  }
+}
