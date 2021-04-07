@@ -10,6 +10,7 @@ function BackgroundWaves() {
     const Waves = () =>
         <div>
             <PaperElement animation={(scope) => {
+                scope.activate();
                 let view = scope.project.view;
                 const waves = Array(numberOfWaves).fill(0).map((_, i) =>
                     new WavePath({
@@ -30,11 +31,12 @@ function BackgroundWaves() {
                     w.path.strokeWidth = 0.5;
                 });
 
-                view.onFrame = (e : OnFrameEvent) => {
+                // view.onFrame = (e : OnFrameEvent) => {
                     waves.forEach(w => {
-                        w.onFrameFunctions.forEach(f => f(e))
+                        w.onFrameFunctions.forEach(f => f({time: 0, delta: 0, count: 0}))
+                        // w.onFrameFunctions.forEach(f => f(e))
                     });
-                }
+                // }
             }}/>    
         </div>
 

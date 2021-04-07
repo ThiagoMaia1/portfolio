@@ -40,6 +40,7 @@ function SectionsIndex() {
         setIsVisible(window.innerWidth > window.innerHeight);
     }, [window.innerHeight, window.innerWidth]));
 
+    if (!sections.length) return null;
     return (
         <div id='sections-index-container' style={!isVisible ? {opacity: 0, pointerEvents: 'none'} : {}}>
             <SectionsIndexWave sections={sections} 

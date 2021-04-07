@@ -16,7 +16,7 @@ export default function PaperElement({animation, children = null}
     const timeout = useRef(setTimeout(() => void 0));
     const scopeRef = useRef<paper.PaperScope>();
 
-    useWindowResize(() => setCanvasId(uniqueCanvasId()));
+    useWindowResize(() => setCanvasId(uniqueCanvasId()), 500);
     let _animation = useCallback(animation, [animation]);
 
     useEffect(function () {

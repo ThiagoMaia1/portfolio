@@ -14,6 +14,7 @@ function SectionsIndexWave({sections, setCurrentIndex, alignedOffsetOfHeight}
 
     return (
         <PaperElement animation={(scope) => {
+            scope.activate();
             let view = scope.project.view;
             const alignedOffset = window.innerHeight*alignedOffsetOfHeight;
             let wave = new scope.Path({
