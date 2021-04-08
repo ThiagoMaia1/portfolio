@@ -1,6 +1,6 @@
 #about-me {
-    margin-bottom: 10vh;
-    margin-right: 2vw;
+    margin-bottom: 7vh;
+    padding-right: calc(3vw - 2vh);
     position: relative;
 
     #about-me-content {
@@ -8,23 +8,20 @@
         flex-direction: row-reverse;
         justify-content: center;
         flex-wrap: wrap;
+        padding-top: 1vh;
     }
 
     .paragraph {
-        margin: 0 10%;
+        margin: 3vh 10% 0;
         text-align: justify;
         line-height: 2;
         flex: 1 1 300px;
-        margin-top: 1vw;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
     }
 }
 
 #container-photo-thiago {
     transform: translateY(-3vw);
-    margin-left: -2vw;
-    margin-bottom: -2vw;
     margin-top: -3vw;
 }

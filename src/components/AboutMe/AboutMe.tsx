@@ -14,6 +14,6 @@ function AboutMe() {
             <div className='paragraph'>{getTranslatedSentence('selfDescription')}</div>       
         </div>
     </div>
-}
+};
 
-export default AboutMe
+export default AboutMe;
