@@ -131,9 +131,16 @@ const projects: Array<Project> = [
     getTranslatedSentence('boardGameHelperSubtitle'),
     [t.Typescript, t.HTML5, t.SASS, t.ReactNative],
     getTranslatedSentence('boardGameHelperDescription'),
-    '',
+    'https://youtu.be/9Owm3zBeq8Q',
     'projects/BoardGame.png',
     'https://github.com/ThiagoMaia1/board-game-helper.git',
+    [
+      'BoardGameHelper/CharacterSelection.png',
+      'BoardGameHelper/CharacterInfo.png',
+      'BoardGameHelper/MainPagePortrait.png',
+      'BoardGameHelper/ChapterHistory.png',
+      'BoardGameHelper/MainPageLandscape.png',
+    ],
   ),
   new Project(
     getTranslatedSentence('acaiAntonioTitle'),
