@@ -23,7 +23,7 @@ const projects: Array<Project> = [
     getTranslatedSentence('cultueDescription'),
     'https://cultue.web.app/',
     'projects/Cultue.svg',
-    'https://github.com/ThiagoMaia1/siteSlidesIgreja',
+    'https://github.com/ThiagoMaia1/cultue-slides',
     [
       'Cultue/Front Topo.png',
       'Cultue/Front Bottom.png',
