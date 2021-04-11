@@ -2,6 +2,7 @@ import { useState } from "react";
 import useWindowResize from "../../../../hooks/useWindowResize";
 import companies from "../../../../models/Company/Companies";
 import professionalExperiences from "../../../../models/ProfessionalExperience/ProfessionalExperiences";
+import AppearFromBelow from "../../../Animations/AppearFromBelow/AppearFromBelow";
 import EmDash from "../../../basic/EmDash/EmDash";
 import CompanyLogo from "../CompanyLogo/CompanyLogo";
 import JobData from "../JobData/JobData";
@@ -31,12 +32,14 @@ function CompanyExperience({companyKey, isOdd, isLast, isEducation}
     
     if (!experiences.length) return null;
     return (
-        <div className='company-experience-container'>
-            <div className='company-experience' style={{flexDirection: isVertical ? 'column' : 'row'}}>
-                {flexElements}
+        <AppearFromBelow>
+            <div className='company-experience-container'>
+                <div className='company-experience' style={{flexDirection: isVertical ? 'column' : 'row'}}>
+                    {flexElements}
+                </div>
+                {isLast ? null : <EmDash/>} 
             </div>
-            {isLast ? null : <EmDash/>} 
-        </div>
+        </AppearFromBelow>
     );
 }
 
