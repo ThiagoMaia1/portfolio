@@ -1,13 +1,16 @@
 import './SectionTitle.scss';
 import EmDash from '../EmDash/EmDash';
+import AppearFromBelow from '../../Animations/AppearFromBelow/AppearFromBelow';
 
 function SectionTitle({text} : {text : string}) {
 
     return (
-        <div className='section-title'>
-            <div>{text}</div>
-            <div><EmDash/></div>
-        </div>
+        <AppearFromBelow>
+            <div className='section-title'>
+                <div>{text}</div>
+                <div><EmDash/></div>
+            </div>
+        </AppearFromBelow>
     )
 }
 

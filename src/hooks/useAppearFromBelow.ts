@@ -7,9 +7,9 @@ export default function useAppearFromBelow () {
     useContext(ScrollContext)
     let ref = useRef<HTMLDivElement>(null);
     let style = useClosingAnimation(
-        ref.current && ref.current.getBoundingClientRect().top < window.innerHeight*0.8,
+        ref.current && ref.current.getBoundingClientRect().top < window.innerHeight*0.9,
         () => void 0,
-        {transform: 'translateY(50px)', opacity: 0},
+        {transform: 'translateY(50%)', opacity: 0},
         {transform: '', opacity: 1},
         500
     );

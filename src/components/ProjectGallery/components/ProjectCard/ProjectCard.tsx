@@ -4,6 +4,7 @@ import OpenProject from '../OpenProject/OpenProject';
 import ClosedProject from '../ClosedProject/ClosedProject';
 import './ProjectCard.scss';
 import useTilt from '../../../../hooks/useTilt';
+import AppearFromBelow from '../../../Animations/AppearFromBelow/AppearFromBelow';
 
 const ProjectCard = ({project} : {project : Project}) => {
 
@@ -32,18 +33,20 @@ const ProjectCard = ({project} : {project : Project}) => {
     }
     
     return (
-        <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'} 
-             style={style}
-             onMouseOver={removeTransition}
-             onMouseOut={() => setHasTransition(true)}
-            ref={refScroll}>
-            {open 
-                ? <OpenProject project={project} onClick={onClick}/> 
-                : <div ref={refTilt} className='tilt-detector' onClick={onClick}>
-                    <ClosedProject logoUri={project.logoUri} title={project.name}/>
-                </div>
-            }
-        </div>
+        <AppearFromBelow>
+            <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'} 
+                style={style}
+                onMouseOver={removeTransition}
+                onMouseOut={() => setHasTransition(true)}
+                ref={refScroll}>
+                {open 
+                    ? <OpenProject project={project} onClick={onClick}/> 
+                    : <div ref={refTilt} className='tilt-detector' onClick={onClick}>
+                        <ClosedProject logoUri={project.logoUri} title={project.name}/>
+                    </div>
+                }
+            </div>
+        </AppearFromBelow>
     )
 }
 

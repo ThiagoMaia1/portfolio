@@ -16,15 +16,15 @@ function Loading({active, time} : {active : boolean, time : number}) {
     let localTime = time;
 
     return (
-        <div className='fixed-loading' style={{display: active ? '' : 'none'}}>
+        <div className='fixed-loading' style={{display: active ? '' : 'none', left: 0.03*window.innerWidth, bottom: 0.1*window.innerHeight}}>
             <div className='loading-container'>
                 <PaperElement animation={(scope : paper.PaperScope, canvasId) => {
                     console.log(canvasId);
                     scope.activate();
                     const view = scope.project.view;
                     const radius = view.size.width*proportionOfStar/2;
-                    const lengthStartCenter = radius*1.5;
-                    const starCenter = new scope.Point(lengthStartCenter, view.bounds.height - lengthStartCenter);
+                    const lengthStarCenter = radius*1.5;
+                    const starCenter = new scope.Point(lengthStarCenter, view.bounds.height - lengthStarCenter);
                     let { smoothing, numberOfPoints } = fixedStar;
 
                     var path = new scope.Path.Star(starCenter, numberOfPoints, radius, radius);

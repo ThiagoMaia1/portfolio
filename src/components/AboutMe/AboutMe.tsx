@@ -8,8 +8,8 @@ function AboutMe() {
 
     return (
         <div id='about-me'>
+            <SectionTitle text={getTranslatedSentence('aboutMe')}/>
             <AppearFromBelow>
-                <SectionTitle text={getTranslatedSentence('aboutMe')}/>
                 <div id='about-me-content'>
                     <div id='container-photo-thiago'>
                         <WavePhoto imageUri={'./Foto Thiago.png'}/> 
