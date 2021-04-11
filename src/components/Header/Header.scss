@@ -1,18 +1,10 @@
 #header {
-    height: 130vh;
+    height: 140vh;
     width: 100%;
     font-family: 'Roboto Slab';
     position: relative;
     z-index: 300;
-
-    > span {
-        color: white;
-        font-size: 8em;
-        position: absolute;
-        top: 30vh;
-        width: 100%;
-        text-align: center;
-    }
+    margin-bottom: -10vh;
 }
 
 #header-image {

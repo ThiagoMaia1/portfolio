@@ -16,7 +16,7 @@ const MainPage = () => {
         <ScrollProvider>
             <div id='main-page'>
                 <SectionsIndex/>
-                <Loading/>
+                {/* <Loading/> */}
                 <Header/>
                 <div id='main-page-body'>
                     <AboutMe/>

@@ -50,7 +50,7 @@ export class WavePath implements WaveData {
         // let halfHeight = new scope.Point(0, this.container.height*0.4);
         this.scope = scope;
         this.fillColor = w.fillColor;
-        this.animationFunction = w.animationFunction ?? ((event, i) => document.body.scrollTop * 0.01 + event.time/2 + i);
+        this.animationFunction = w.animationFunction ?? ((event, i) => event.time/2 + i);
         this.path = new scope.Path();
         if (this.fillColor) this.path.fillColor = this.fillColor;
         // this.path.selected = true;
