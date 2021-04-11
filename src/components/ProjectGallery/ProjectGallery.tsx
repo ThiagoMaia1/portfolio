@@ -4,6 +4,7 @@ import './ProjectGallery.scss';
 import SectionTitle from './../basic/SectionTitle/SectionTitle';
 import getTranslatedSentence from '../../translation/Translation';
 import IsometricCubes from './../Animations/IsometricCubes/IsometricCubes';
+import AppearFromBelow from '../Animations/AppearFromBelow/AppearFromBelow';
 
 function ProjectGallery() {
   
@@ -22,15 +23,17 @@ function ProjectGallery() {
 
   return (
     <div id='project-section' className='page-section' data-id={depth}>
-      <div className='isometric-cubes-container'>
-        <IsometricCubes/>
-      </div>
-      <SectionTitle text={getTranslatedSentence('myProjects')}/>
-      <div className='project-gallery-wrapper'>
-        <div className='project-gallery'>
-          {projects.map(p => <ProjectCard project={p} key={p.name}/>)}
+      <AppearFromBelow>
+        <div className='isometric-cubes-container'>
+          <IsometricCubes/>
         </div>
-      </div>
+        <SectionTitle text={getTranslatedSentence('myProjects')}/>
+        <div className='project-gallery-wrapper'>
+          <div className='project-gallery'>
+            {projects.map(p => <ProjectCard project={p} key={p.name}/>)}
+          </div>
+        </div>
+      </AppearFromBelow>
     </div>
   );
 }

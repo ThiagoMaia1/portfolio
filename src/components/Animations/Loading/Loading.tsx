@@ -1,21 +1,25 @@
-import PaperElement from '../PaperElement'
+import PaperElement, { OnFrameEvent } from '../PaperElement'
 import getGradient from '../PaperGradient';
 import './Loading.scss';
-import { fixedStar } from '../../../constants/Constants';
-import React, { useRef } from 'react';
+import { fixedStar, paperTextStyle } from '../../../constants/Constants';
+import { useRef } from 'react';
 import FloatingContactInfo from './FloatingContactInfo';
 
-function Loading() {
+function Loading({active, time} : {active : boolean, time : number}) {
+    
+    
     const proportionOfStar = 0.2;
     const ref = useRef<HTMLDivElement>(null);
     const recProportionOfCanvas = 0.7;
     const closedRectangleHeight = 10;
     const changeSizeSpeed = 10;
+    let localTime = time;
 
     return (
-        <div className='fixed-loading'>
+        <div className='fixed-loading' style={{display: active ? '' : 'none'}}>
             <div className='loading-container'>
-                <PaperElement animation={(scope : paper.PaperScope) => {
+                <PaperElement animation={(scope : paper.PaperScope, canvasId) => {
+                    console.log(canvasId);
                     scope.activate();
                     const view = scope.project.view;
                     const radius = view.size.width*proportionOfStar/2;
@@ -43,24 +47,17 @@ function Loading() {
                         fillColor: getGradient(path.bounds, ['#A60000', '#ff3c00'], scope)
                     });
 
-                    let time = 0;
-                    let text = new scope.PointText(starCenter);
-                    text.content = 'T';
-                    text.style.fontFamily = 'Roboto Slab';
-                    text.style.fontWeight = 900;
-                    text.style.fillColor = new scope.Color('white');
-                    text.style.fontSize = '3em';
-                    text.style.justification = 'center';
+                    let text = new scope.PointText({point: starCenter, style: paperTextStyle(scope), content: 'T'});
                     text.position.y += text.bounds.height/3.3;
 
                     view.onFrame = draw;
 
-                    function draw(event : any) {
-                        time += event.delta;
+                    function draw(event : OnFrameEvent) {
+                        localTime += event.delta;
                         scope.activate();
-                        const variation : number = Math.sin(time*3)*radius/10; 
+                        const variation : number = Math.sin(localTime*3)*radius/10; 
                         var newStar = new scope.Path.Star(starCenter, numberOfPoints, radius - 2 + Math.abs(variation), radius - Math.abs(variation));
-                        newStar.rotate(time*radius*1.5);
+                        newStar.rotate(localTime*radius*1.5);
                         path.segments = newStar.segments;
                         smoothing(path);
                         if (ref.current) {
@@ -68,7 +65,7 @@ function Loading() {
                             ref.current.style.width  = compoundPath.bounds.width + 'px';
                         }
                         let mouseIsOverCanvas = !!document.querySelector(`.${ref.current?.className}:hover`);
-                        changeSize(mouseIsOverCanvas, time);
+                        changeSize(mouseIsOverCanvas, localTime);
                     }
 
                     function changeSize(mouseIsOverCanvas : boolean, time : number) {

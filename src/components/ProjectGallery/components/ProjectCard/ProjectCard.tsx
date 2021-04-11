@@ -23,13 +23,14 @@ const ProjectCard = ({project} : {project : Project}) => {
             document.body.scroll({top: cur.offsetTop - window.innerHeight*0.1, left: 0, behavior: 'smooth' })
         setOpen(o => !o);
     }, [open]);
-    
+
     const style : CSSProperties = {transform: '', transition: '', transformStyle: 'initial'};
     if (!open) {
         style.transformStyle = 'preserve-3d';
         if (tiltStyle) style.transform = tiltStyle;
         if (hasTransition || !tiltStyle) style.transition = `transform ${transitionTime}ms linear`;
     }
+    
     return (
         <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'} 
              style={style}

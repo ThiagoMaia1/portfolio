@@ -5,6 +5,7 @@ import TechnologyLink from "../basic/TechnologyLink/TechnologyLink";
 import './Skills.scss';
 import { useState } from "react";
 import useWindowResize from "../../hooks/useWindowResize";
+import AppearFromBelow from '../Animations/AppearFromBelow/AppearFromBelow';
 
 const t = technologies;
 
@@ -38,16 +39,18 @@ function Skills() {
 
     return (
         <div id='skills-section'>
-            <SectionTitle text={getTranslatedSentence('skills')} />
-            <div className='skill-list-container'>
-                {getGroupedSkills(numberOfColumns).map(g =>
-                    <div key={g[0].name}>
-                        {g.map(s => 
-                            <TechnologyLink key={s.name} technology={s}/>
-                        )}
-                    </div>
-                )}
-            </div>
+            <AppearFromBelow>
+                <SectionTitle text={getTranslatedSentence('skills')} />
+                <div className='skill-list-container'>
+                    {getGroupedSkills(numberOfColumns).map(g =>
+                        <div key={g[0].name}>
+                            {g.map(s => 
+                                <TechnologyLink key={s.name} technology={s}/>
+                            )}
+                        </div>
+                    )}
+                </div>
+            </AppearFromBelow>
         </div>
     );
 }

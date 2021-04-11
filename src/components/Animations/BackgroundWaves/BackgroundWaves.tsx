@@ -26,14 +26,21 @@ function BackgroundWaves() {
                 );
                 waves.forEach(w => {
                     w.path.strokeColor = new scope.Color(
-                        getGradient(view.bounds, ['white', '#A60000', 'white'], scope)
+                        getGradient(
+                            new scope.Rectangle(view.bounds.topCenter, view.bounds.bottomCenter), 
+                            ['#ff0000', 'transparent'], 
+                            scope
+                        )
                     );
                     w.path.strokeWidth = 0.5;
                 });
 
                 // view.onFrame = (e : OnFrameEvent) => {
                     waves.forEach(w => {
-                        w.onFrameFunctions.forEach(f => f({time: 0, delta: 0, count: 0}))
+                        w.onFrameFunctions.forEach(f => f({time: 0, delta: 0, count: 0}));
+                        // w.path.segments.forEach(
+                        //     if()
+                        // );
                         // w.onFrameFunctions.forEach(f => f(e))
                     });
                 // }
