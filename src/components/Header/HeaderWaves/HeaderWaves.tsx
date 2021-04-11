@@ -81,15 +81,15 @@ function HeaderWaves() {
         );
         
         const radius = window.innerHeight*0.6*0.2/2;
-        const lengthStartCenter = radius*1.5;
+        const lengthStarCenter = radius*1.5;
         let { smoothing, numberOfPoints } = fixedStar;
-        let starX = sideWidth - window.innerWidth*0.0008;
+        let starX = 0.03*window.innerWidth + lengthStarCenter;
 
         let lastWave = waves[2].path;
 
         const getStarBottom = () => {
             let canvasRect = canvas.getBoundingClientRect();
-            return -canvasRect.top + window.innerHeight*0.9 - lengthStartCenter; 
+            return -canvasRect.top + window.innerHeight*0.9 - lengthStarCenter; 
         }
 
         const getStar = () => {

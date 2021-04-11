@@ -39,8 +39,8 @@ function Skills() {
 
     return (
         <div id='skills-section'>
+            <SectionTitle text={getTranslatedSentence('skills')} />
             <AppearFromBelow>
-                <SectionTitle text={getTranslatedSentence('skills')} />
                 <div className='skill-list-container'>
                     {getGroupedSkills(numberOfColumns).map(g =>
                         <div key={g[0].name}>

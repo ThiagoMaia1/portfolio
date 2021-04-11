@@ -6,9 +6,7 @@
 }
 
 .fixed-loading {
-    position: fixed; 
-    bottom: 10vh; 
-    left: 3vw;
+    position: fixed;
     z-index: 200;
     pointer-events: none;
 }
