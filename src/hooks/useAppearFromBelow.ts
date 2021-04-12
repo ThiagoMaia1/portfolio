@@ -9,7 +9,7 @@ export default function useAppearFromBelow () {
     let style = useClosingAnimation(
         ref.current && ref.current.getBoundingClientRect().top < window.innerHeight*0.9,
         () => void 0,
-        {transform: 'translateY(50%)', opacity: 0},
+        {transform: 'translateY(50px)', opacity: 0},
         {transform: '', opacity: 1},
         500
     );

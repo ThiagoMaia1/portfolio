@@ -14,13 +14,14 @@ function Loading({active, time} : {active : boolean, time : number}) {
     const closedRectangleHeight = 10;
     const changeSizeSpeed = 10;
     let localTime = time;
+    let left = 0.03*window.innerWidth;
 
     return (
-        <div className='fixed-loading' style={{display: active ? '' : 'none', left: 0.03*window.innerWidth, bottom: 0.1*window.innerHeight}}>
+        <div className='fixed-loading' style={{display: active ? '' : 'none', left, bottom: 0.1*window.innerHeight}}>
             <div className='loading-container'>
                 <PaperElement animation={(scope : paper.PaperScope, canvasId) => {
-                    console.log(canvasId);
                     scope.activate();
+                    const windowHeight = window.innerHeight;
                     const view = scope.project.view;
                     const radius = view.size.width*proportionOfStar/2;
                     const lengthStarCenter = radius*1.5;
@@ -28,6 +29,7 @@ function Loading({active, time} : {active : boolean, time : number}) {
                     let { smoothing, numberOfPoints } = fixedStar;
 
                     var path = new scope.Path.Star(starCenter, numberOfPoints, radius, radius);
+                    const bottomY = path.bounds.bottomRight.y;
                     const openedRectangleHeight = view.bounds.height*recProportionOfCanvas;
                     const diagonalFactor = 1;//view.bounds.width*recProportionOfCanvas/openedRectangleHeight;
                     const recBaseLen = radius/2;
@@ -42,9 +44,25 @@ function Loading({active, time} : {active : boolean, time : number}) {
                             radius,
                             insert: false
                         });
+
+                    const fillGradient = () => {
+                        let scroll = Math.max(0, document.body.scrollTop - windowHeight*0.2)*5;
+                        return getGradient(
+                            new scope.Rectangle(
+                                path.bounds.topLeft,
+                                new scope.Point(
+                                    Math.max(window.innerWidth - left - scroll, path.bounds.bottomRight.x),
+                                    bottomY
+                                )
+                            ), 
+                            ['#A60000', '#ff3c00'], 
+                            scope
+                        )
+                    }
+
                     const compoundPath = new scope.CompoundPath({
                         children: [path, getRectangle(0, 0)], 
-                        fillColor: getGradient(path.bounds, ['#A60000', '#ff3c00'], scope)
+                        fillColor: fillGradient(),
                     });
 
                     let text = new scope.PointText({point: starCenter, style: paperTextStyle(scope), content: 'T'});
@@ -73,6 +91,8 @@ function Loading({active, time} : {active : boolean, time : number}) {
                         const rec = getRectangle(rectangleHeight, cycle*15 + rectangleHeight/8);
                         rec.smooth({type: 'geometric', factor: cycle*0.3 + 0.3})
                         compoundPath.children[1] = rec;
+                        compoundPath.fillColor = fillGradient()
+
                         let signal = 0;
                         if (mouseIsOverCanvas && rectangleHeight < openedRectangleHeight) signal = 1;
                         if (!mouseIsOverCanvas && rectangleHeight > closedRectangleHeight) signal = -1;
