@@ -26,6 +26,7 @@ $transition-curve: 1.5s ease-in-out;
 }
 
 .display-open-project {
+    z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;

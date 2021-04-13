@@ -35,12 +35,12 @@ function BackgroundWaves() {
                     w.path.strokeWidth = 0.5;
                 });
 
-                view.onFrame = (e : OnFrameEvent) => {
+                // view.onFrame = (e : OnFrameEvent) => {
                     waves.forEach(w => {
-                        // w.onFrameFunctions.forEach(f => f({time: 0, delta: 0, count: 0}));
-                        w.onFrameFunctions.forEach(f => f(e))
+                        w.onFrameFunctions.forEach(f => f({time: 0, delta: 0, count: 0}));
+                        // w.onFrameFunctions.forEach(f => f(e))
                     });
-                }
+                // }
             }}/>    
         </div>
 

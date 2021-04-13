@@ -33,7 +33,7 @@ const ProjectCard = ({project} : {project : Project}) => {
     }
     
     return (
-        <AppearFromBelow>
+        <AppearFromBelow styleProp={open ? {zIndex: 1000, opacity: 1} : {}}>
             <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'} 
                 style={style}
                 onMouseOver={removeTransition}

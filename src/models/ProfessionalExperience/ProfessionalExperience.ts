@@ -27,7 +27,7 @@ class ProfessionalExperience {
         if (this.durationInMonths === undefined) return undefined;
         const wholeYears = Math.floor(this.durationInMonths/12);
         const year = this.initialDate.getFullYear() + wholeYears;
-        const month = this.initialDate.getMonth() + this.durationInMonths - wholeYears*12;
+        const month = this.initialDate.getMonth() + this.durationInMonths - wholeYears*12 - 1;
         return new Date(year, month, 1, 0, 0, 0);
     }
 }
