@@ -159,9 +159,9 @@ const projects: Array<Project> = [
   new Project(
     getTranslatedSentence('portfolioTitle'),
     getTranslatedSentence('portfolioSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS],
+    [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS, t.Gatsby],
     getTranslatedSentence('portfolioDescription'),
-    'http://localhost:3000', //'https://thiagomaia.tk',
+    window.location.origin,
     'projects/Portfolio.svg',
     'https://github.com/ThiagoMaia1/portfolio',
     [],

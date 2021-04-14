@@ -1,5 +1,5 @@
 import MainPage from './components/Main/MainPage/MainPage';
-import ReactDOMServer from "react-dom/server";
+// import ReactDOMServer from "react-dom/server";
 
 function App() {
 

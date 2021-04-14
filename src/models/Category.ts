@@ -3,6 +3,7 @@ enum Category {
     Framework,
     Tool,
     Software,
+    Database
 }
 
 export default Category;

@@ -6,7 +6,6 @@ import Skills from '../../Skills/Skills';
 import ProjectGallery from '../../ProjectGallery/ProjectGallery';
 import PreviousExperiences from '../../PreviousExperiences/PreviousExperiences';
 import EducationSection from '../../EducationSection/EducationSection';
-import Loading from '../../Animations/Loading/Loading';
 import Footer from '../../Footer/Footer';
 import SectionsIndex from '../../SectionsIndex/SectionsIndex';
 
