@@ -7,7 +7,6 @@ import FloatingContactInfo from './FloatingContactInfo';
 
 function Loading({active, time} : {active : boolean, time : number}) {
     
-    
     const proportionOfStar = 0.2;
     const ref = useRef<HTMLDivElement>(null);
     const recProportionOfCanvas = 0.7;
@@ -27,8 +26,16 @@ function Loading({active, time} : {active : boolean, time : number}) {
                     const lengthStarCenter = radius*1.5;
                     const starCenter = new scope.Point(lengthStarCenter, view.bounds.height - lengthStarCenter);
                     let { smoothing, numberOfPoints } = fixedStar;
+                    
+                    const getStar = () => {
+                        const variation : number = Math.sin(localTime*3)*radius/10; 
+                        const newStar = new scope.Path.Star(starCenter, numberOfPoints, radius - 2 + Math.abs(variation), radius - Math.abs(variation));
+                        newStar.rotate(localTime*radius*1.5);
+                        return newStar;
+                    }
 
-                    var path = new scope.Path.Star(starCenter, numberOfPoints, radius, radius);
+                    var path = getStar();
+                    smoothing(path);
                     const bottomY = path.bounds.bottomRight.y;
                     const openedRectangleHeight = view.bounds.height*recProportionOfCanvas;
                     const diagonalFactor = 1;//view.bounds.width*recProportionOfCanvas/openedRectangleHeight;
@@ -73,9 +80,7 @@ function Loading({active, time} : {active : boolean, time : number}) {
                     function draw(event : OnFrameEvent) {
                         localTime += event.delta;
                         scope.activate();
-                        const variation : number = Math.sin(localTime*3)*radius/10; 
-                        var newStar = new scope.Path.Star(starCenter, numberOfPoints, radius - 2 + Math.abs(variation), radius - Math.abs(variation));
-                        newStar.rotate(localTime*radius*1.5);
+                        const newStar = getStar();
                         path.segments = newStar.segments;
                         smoothing(path);
                         if (ref.current) {

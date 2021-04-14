@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 function HeaderWaves() {
 
-    let [separateLoading, setSeparateLoading] = useState(false);
+    let [separateLoading, setSeparateLoading] = useState(true);
     let time = 0;
 
     return <PaperElement animation={(scope : paper.PaperScope, canvasId : string) => {
@@ -118,7 +118,7 @@ function HeaderWaves() {
         view.onFrame = draw;
 
         function draw(event : OnFrameEvent) {
-            time += event.delta
+            time += event.delta;
             for (let w of waves) {
                 for (let f of w.onFrameFunctions) {
                     f(event);
@@ -129,8 +129,9 @@ function HeaderWaves() {
             unionPath.remove();
             let inside = star.isInside(lastWave.bounds);
             let intersects = star.intersects(lastWave);
-            lastWave.visible = !intersects && !inside;
-            setSeparateLoading(!intersects && !inside);
+            let separate = !intersects && !inside;
+            lastWave.visible = separate;
+            setSeparateLoading(separate);
             if (!lastWave.visible) { 
                 unionPath = star.unite(lastWave) as paper.Path;        
                 unionPath.fillColor = getGradient(unionPath.bounds, ['#A60000', '#ff3c00'], scope);
