@@ -38,6 +38,21 @@ a {
   }
 }
 
+input {
+  outline: none;
+  border: solid 0px lightgray;
+  border-bottom-width: 1px;
+  font-family: 'Trebuchet MS';
+  
+  &:focus {
+    border-color: #A60000;
+  }
+}
+
+::placeholder {
+  color: lightgray;
+}
+
 *::-webkit-scrollbar {
   width: 0.5vw;
   left: -0.5vw;
