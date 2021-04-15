@@ -1,4 +1,4 @@
-import PaperElement, { OnFrameEvent } from "../PaperElement";
+import PaperElement from "../PaperElement";
 import getGradient from "../PaperGradient";
 import { WavePath } from "../Waves/Waves";
 import './BackgroundWaves.scss';

@@ -20,7 +20,7 @@ const useFilter = (zerar, ref, timeout = 999999) => {
         } else if(e.which === 8) { //backspace
             setTermo(t => t.substr(0, t.length-1))
         }
-    }, []);
+    }, [timeout]);
 
     useEffect(() => {
         ref.current.addEventListener('keyup', onKeyUp);

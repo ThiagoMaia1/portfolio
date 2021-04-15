@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from "react";
 import useFilter from "../../hooks/useFilter";
 import projects from "../../models/Project/Projects";
 import technologies from '../../models/Technology/Technologies';
 import getTranslatedSentence from "../../translation/Translation";
 import AppearFromBelow from "../Animations/AppearFromBelow/AppearFromBelow";
-import ExpandArrow from "../basic/ExpandArrow/ExpandArrow";
 import SectionTitle from "../basic/SectionTitle/SectionTitle";
 import Skills from "./components/Skills";
 import './SkillsSection.scss';
