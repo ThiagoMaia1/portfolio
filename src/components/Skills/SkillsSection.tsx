@@ -48,7 +48,7 @@ function SkillsSection() {
             <SectionTitle text={getTranslatedSentence('skills')} />
             <AppearFromBelow>
                 <div className='filter-input-container'>
-                    <input ref={refFilter} value={termo} autoComplete='false' placeholder='Buscar'></input>
+                    <input ref={refFilter} value={termo} onChange={() => 0} autoComplete='false' placeholder='Buscar'></input>
                 </div>
                 <Skills mainSkills={mainList} otherSkills={otherList}/>
             </AppearFromBelow>

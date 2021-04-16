@@ -18,13 +18,15 @@ function Loading({active, time} : {active : boolean, time : number}) {
     return (
         <div className='fixed-loading' style={{display: active ? '' : 'none', left, bottom: 0.1*window.innerHeight}}>
             <div className='loading-container'>
-                <PaperElement animation={(scope : paper.PaperScope, canvasId) => {
+                <PaperElement animation={(scope, canvasId) => {
                     scope.activate();
-                    const windowHeight = window.innerHeight;
                     const view = scope.project.view;
-                    const radius = view.size.width*proportionOfStar/2;
+                    const canvasParent = document.getElementById(canvasId)?.parentElement as HTMLDivElement;
+                    const canvasSize = canvasParent.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    const radius = canvasSize.width*proportionOfStar/2;
                     const lengthStarCenter = radius*1.5;
-                    const starCenter = new scope.Point(lengthStarCenter, view.bounds.height - lengthStarCenter);
+                    const starCenter = new scope.Point(lengthStarCenter, canvasSize.height - lengthStarCenter);
                     let { smoothing, numberOfPoints } = fixedStar;
                     
                     const getStar = () => {
@@ -37,8 +39,8 @@ function Loading({active, time} : {active : boolean, time : number}) {
                     var path = getStar();
                     smoothing(path);
                     const bottomY = path.bounds.bottomRight.y;
-                    const openedRectangleHeight = view.bounds.height*recProportionOfCanvas;
-                    const diagonalFactor = 1;//view.bounds.width*recProportionOfCanvas/openedRectangleHeight;
+                    const openRectangleHeight = canvasSize.height*recProportionOfCanvas;
+                    const diagonalFactor = 1;//canvasSize.width*recProportionOfCanvas/openRectangleHeight;
                     const recBaseLen = radius/2;
                     const recBase = path.bounds.center.add(new scope.Point(-recBaseLen, recBaseLen));
                     let rectangleHeight = closedRectangleHeight;
@@ -99,7 +101,7 @@ function Loading({active, time} : {active : boolean, time : number}) {
                         compoundPath.fillColor = fillGradient()
 
                         let signal = 0;
-                        if (mouseIsOverCanvas && rectangleHeight < openedRectangleHeight) signal = 1;
+                        if (mouseIsOverCanvas && rectangleHeight < openRectangleHeight) signal = 1;
                         if (!mouseIsOverCanvas && rectangleHeight > closedRectangleHeight) signal = -1;
                             rectangleHeight += signal*changeSizeSpeed;
                     }
