@@ -11,7 +11,6 @@ $logo-size: 1.5em;
     span {
         line-height: $logo-size;
     }    
-    
     .technology-logo-container {
         margin-right: 0.5em;
         @include normalized-image($logo-size);

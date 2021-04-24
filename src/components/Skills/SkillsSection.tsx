@@ -1,13 +1,19 @@
-import useFilter from "../../hooks/useFilter";
+import React, { useCallback, useRef, useState } from "react";
+import useHashChange from "../../hooks/useHashChange";
+import { getTechnologies } from "../../hooks/useHashTechnologies";
 import projects from "../../models/Project/Projects";
 import technologies from '../../models/Technology/Technologies';
 import getTranslatedSentence from "../../translation/Translation";
 import AppearFromBelow from "../Animations/AppearFromBelow/AppearFromBelow";
 import SectionTitle from "../basic/SectionTitle/SectionTitle";
 import Skills from "./components/Skills";
+import SeeTechnologyFamily from "./components/SeeTechnologyFamily"
 import './SkillsSection.scss';
+import { updateHash } from "../../constants/FuncoesGeraisTS";
+import professionalExperiences from "../../models/ProfessionalExperience/ProfessionalExperiences";
 
 const t = technologies;
+const termSeparator = '|';
 
 const mainSkills = [
     t.HTML5,
@@ -28,29 +34,64 @@ const mainSkills = [
     t.ForeignLanguage,
 ];
 
-const usedTechnologies = projects.map(p => p.technologies).flat()
+const unlistedSkills = [
+    t.AdobePremiere
+];
+
+const usedTechnologies = [
+    ...projects.map(p => p.technologies),
+    ...professionalExperiences.map(e => e.skillSet),
+    unlistedSkills
+].flat();
 const uniqueTechnologies = [...new Set(usedTechnologies)];
 const otherSkills = uniqueTechnologies.filter(t => !mainSkills.includes(t));
 const allSkills = mainSkills.concat(otherSkills);
 
 function SkillsSection() {
 
-    let [termo, refFilter] = useFilter();
-    let mainList = termo 
-                   ? allSkills.filter(s => new RegExp(termo, 'gi').test(s.name))
+    let [searchTerm, setSearchTerm] = useState('');
+    let searchBarRef = useRef<HTMLInputElement>(null);
+    let setTermo = useCallback((searchTerm : string) => {
+        setSearchTerm(searchTerm);
+        window.dispatchEvent(new Event('resize'));
+    }, [])
+
+    let mainList = searchTerm 
+                   ? allSkills
+                        .filter(s => {
+                            let terms = searchTerm
+                                        .split(termSeparator)
+                                        .filter(t => t !== '')
+                                        .map(t => t.trim());
+                            console.log(terms)
+                            return terms.filter(t => 
+                                new RegExp(t, 'gi').test(s.name)
+                            ).length;
+                        })
                    : mainSkills;
-    let otherList = termo
-                    ? []
-                    : otherSkills;
+
+    
+    let otherList = searchTerm ? [] : otherSkills;
+    useHashChange(hash => {
+        let technologiesHash = getTechnologies(hash);
+        if (technologiesHash.length === 1) 
+            setTermo(technologies[technologiesHash[0]].name)
+    });
 
     return (
         <div id='skills-section'>
             <SectionTitle text={getTranslatedSentence('skills')} />
             <AppearFromBelow>
                 <div className='filter-input-container'>
-                    <input ref={refFilter} value={termo} onChange={() => 0} autoComplete='false' placeholder='Buscar'></input>
+                    <input ref={searchBarRef} value={searchTerm} onChange={e => setTermo(e.target.value)} autoComplete='false' placeholder='Buscar'></input>
+                    <div className='closing-x' onClick={() => {
+                        setSearchTerm('');
+                        updateHash('');
+                        searchBarRef.current?.focus();
+                    }}/>
                 </div>
                 <Skills mainSkills={mainList} otherSkills={otherList}/>
+                <SeeTechnologyFamily setSearchTerm={setSearchTerm}/>
             </AppearFromBelow>
         </div>
     )

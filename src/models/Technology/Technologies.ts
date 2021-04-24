@@ -1,65 +1,112 @@
 import getTranslatedSentence from "../../translation/Translation";
 import Category from "../Category";
 import Technology from "./Technology";
+import { getKeyByValue } from '../../constants/FuncoesGeraisTS'
 
-const folder : string = 'technologies/';
+export type TechnologyFamilies =  'Vanilla' | 'React' | 'ReactNative' | 'Mobile' | 'Vue' | 'Angular' | 'SQL' | 'MicrosoftOffice' | 'NOSQL' | 'API' | 'Design' | 'Adobe' | 'Cloud' | 'MERN' | 'Flutter' | 'Business' | 'Styling' | 'GoogleServices' | 'Languages'
 
 const technologies = {
-    Azure: new Technology('Microsoft Azure', folder + 'Azure.png', Category.Tool, 'https://azure.microsoft.com/'), 
-    Access: new Technology('Access', folder + 'Access.svg', Category.Database, 'https://www.microsoft.com/en/microsoft-365/access'), 
-    AdobeIllustrator: new Technology('Adobe Illustrator', folder + 'AdobeIllustrator.png', Category.Software, 'https://www.adobe.com/br/products/illustrator.html'), 
-    AdobeIndesign: new Technology('Adobe Indesign', folder + 'AdobeIndesign.png', Category.Software, 'https://www.adobe.com/br/products/indesign.html'), 
-    AdobeLightroom: new Technology('Adobe Lightroom', folder + 'AdobeLightroom.png', Category.Software, 'https://www.adobe.com/br/products/photoshop-lightroom.html'), 
-    AdobePremiere: new Technology('Adobe Premiere', folder + 'AdobePremiere.png', Category.Software, 'https://www.adobe.com/br/products/premiere.html'), 
-    AdobePhotoshop: new Technology('Adobe Photoshop', folder + 'AdobePhotoshop.png', Category.Software, 'https://www.adobe.com/br/products/photoshop.html'), 
-    Angular: new Technology('Angular', folder + 'Angular.svg', Category.Framework, 'https://angular.io/'), 
-    APIRest: new Technology('API Rest', folder + 'APIRest.png', Category.Tool, 'https://developer.mozilla.org/pt-BR/docs/Glossary/REST'), 
-    AWS: new Technology('Amazon Web Services', folder + 'AWS.svg', Category.Tool, 'https://aws.amazon.com/'), 
-    ChromeCast: new Technology('Chrome Cast', folder + 'ChromeCast.png', Category.Tool, 'https://developers.google.com/cast'), 
-    ChromeExtensions: new Technology('Chrome Extensions', folder + 'ChromeExtensions.png', Category.Tool, 'https://developer.chrome.com/docs/extensions/'), 
-    CSS3: new Technology('CSS 3', folder + 'CSS3.png', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/CSS'), 
-    Dart: new Technology('Dart', folder + 'Dart.png', Category.Language, 'https://dart.dev/'), 
-    Excel: new Technology('Excel', folder + 'Excel.png', Category.Software, 'https://www.microsoft.com/pt-br/microsoft-365/excel'), 
-    Expo: new Technology('Expo', folder + 'Expo.png', Category.Tool, 'https://expo.io/'), 
-    Express: new Technology('Express', folder + 'Express.png', Category.Framework, 'https://expressjs.com/'), 
+    Access: new Technology('Access', 'Access.svg', Category.Database, 'https://www.microsoft.com/en/microsoft-365/access', 'MicrosoftOffice'),
+    AdobeIllustrator: new Technology('Adobe Illustrator', 'AdobeIllustrator.png', Category.Software, 'https://www.adobe.com/br/products/illustrator.html', 'Adobe'),
+    AdobeIndesign: new Technology('Adobe Indesign', 'AdobeIndesign.png', Category.Software, 'https://www.adobe.com/br/products/indesign.html', 'Adobe'),
+    AdobeLightroom: new Technology('Adobe Lightroom', 'AdobeLightroom.png', Category.Software, 'https://www.adobe.com/br/products/photoshop-lightroom.html', 'Adobe'),
+    AdobePremiere: new Technology('Adobe Premiere', 'AdobePremiere.png', Category.Software, 'https://www.adobe.com/br/products/premiere.html', 'Adobe'),
+    AdobePhotoshop: new Technology('Adobe Photoshop', 'AdobePhotoshop.png', Category.Software, 'https://www.adobe.com/br/products/photoshop.html', 'Adobe'),
+    Angular: new Technology('Angular', 'Angular.svg', Category.Framework, 'https://angular.io/', 'Angular'),
+    AngularJS: new Technology('AngularJS', 'AngularJS.png', Category.Framework, 'https://angularjs.org/', 'Angular'),
+    APIRest: new Technology('API Rest', 'APIRest.png', Category.Tool, 'https://developer.mozilla.org/pt-BR/docs/Glossary/REST', 'API'),
+    AWS: new Technology('Amazon Web Services', 'AWS.svg', Category.Tool, 'https://aws.amazon.com/', 'Cloud'),
+    Azure: new Technology('Microsoft Azure', 'Azure.png', Category.Tool, 'https://azure.microsoft.com/', 'Cloud'),
+    Bootstrap: new Technology('Bootstrap', 'Bootstrap.png', Category.Tool, 'https://getbootstrap.com/', 'Styling'),
+    ChromeCast: new Technology('Chrome Cast', 'ChromeCast.png', Category.Tool, 'https://developers.google.com/cast', 'GoogleServices'),
+    ChromeExtensions: new Technology('Chrome Extensions', 'ChromeExtensions.png', Category.Tool, 'https://developer.chrome.com/docs/extensions/', 'GoogleServices'),
+    CSharp: new Technology('C#', 'CSharp.svg', Category.Language, 'https://docs.microsoft.com/pt-br/dotnet/csharp/', 'Languages'),
+    CSS3: new Technology('CSS 3', 'CSS3.png', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/CSS', 'Vanilla'),
+    Dart: new Technology('Dart', 'Dart.png', Category.Language, 'https://dart.dev/', 'Flutter'),
+    Excel: new Technology('Excel', 'Excel.png', Category.Software, 'https://www.microsoft.com/pt-br/microsoft-365/excel', 'MicrosoftOffice'),
+    Expo: new Technology('Expo', 'Expo.png', Category.Tool, 'https://expo.io/', 'React'),
+    Express: new Technology('Express', 'Express.png', Category.Framework, 'https://expressjs.com/', 'MERN'),
     ForeignLanguage: new Technology(
-        getTranslatedSentence('foreignLanguage'), 
-        folder + getTranslatedSentence('foreignLanguageImage'), 
+        getTranslatedSentence('foreignLanguage'),
+        getTranslatedSentence('foreignLanguageImage'),
         Category.Tool, 
-        getTranslatedSentence('foreignLanguageUrl'),), 
-    Figma: new Technology('Figma', folder + 'Figma.svg', Category.Tool, 'https://www.figma.com/'), 
-    Firebase: new Technology('Firebase', folder + 'Firebase.png', Category.Tool, 'https://firebase.google.com/'), 
-    Flutter: new Technology('Flutter', folder + 'Flutter.svg', Category.Framework, 'https://flutter.dev/'), 
-    Gatsby: new Technology('Gatsby', folder + 'Gatsby.png', Category.Framework, 'https://www.gatsbyjs.com/'), 
-    GitHub: new Technology('GitHub', folder + 'GitHub.png', Category.Tool, 'https://github.com/'), 
-    GraphQL: new Technology('GraphQL', folder + 'GraphQL.png', Category.Tool, 'https://graphql.org/'), 
-    HTML5: new Technology('HTML 5', folder + 'HTML5.png', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5'), 
-    Javascript: new Technology('Javascript', folder + 'Javascript.svg', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'), 
-    MongoDB: new Technology('MongoDB', folder + 'MongoDB.png', Category.Database, 'https://www.mongodb.com/'), 
-    MySQL: new Technology('MySQL', folder + 'MySQL.png', Category.Database, 'https://www.mysql.com/'), 
-    NextJs: new Technology('Next.js', folder + 'Nextjs.svg', Category.Tool, 'https://nextjs.org/'), 
-    NodeJs: new Technology('Node.js', folder + 'Nodejs.png', Category.Language, 'https://nodejs.org/'), 
-    PaperJs: new Technology('Paper.js', folder + 'PaperJs.png', Category.Tool, 'http://paperjs.org/'), 
-    PlayStore: new Technology('Android Play Store', folder + 'PlayStore.svg', Category.Tool, 'https://developer.android.com/distribute/console?hl=pt-br'), 
-    PostgreSQL: new Technology('PostgreSQL', folder + 'PostgreSQL.png', Category.Database, 'https://www.postgresql.org/'), 
-    Postman: new Technology('Postman', folder + 'Postman.png', Category.Tool, 'https://www.postman.com/'), 
-    Python: new Technology('Python', folder + 'Python.png', Category.Language, 'https://python.org.br/'), 
-    ReactJs: new Technology('React JS', folder + 'ReactJs.png', Category.Framework, 'https://pt-br.reactjs.org/'), 
-    ReactNative: new Technology('React Native', folder + 'ReactJs.png', Category.Framework, 'https://reactnative.dev/'), 
-    ReactRouter: new Technology('React Router', folder + 'ReactRouter.svg', Category.Tool, 'https://reactrouter.com/'), 
-    Redux: new Technology('Redux', folder + 'Redux.png', Category.Tool, 'https://redux.js.org/'),
-    ReduxSaga: new Technology('Redux-Saga', folder + 'ReduxSaga.svg', Category.Tool, 'https://redux-saga.js.org/'),
-    SASS: new Technology('SASS/SCSS', folder + 'SASS.png', Category.Language, 'https://sass-lang.com/'), 
-    Scrum: new Technology('Scrum', folder + 'Scrum.png', Category.Language, 'https://en.wikipedia.org/wiki/Scrum_(software_development)'), 
-    Sendgrid: new Technology('Twilio Sendgrid', folder + 'SendGrid.png', Category.Language, 'https://sendgrid.com/'), 
-    SQL: new Technology('SQL', folder + 'SQL.png', Category.Language, 'https://docs.microsoft.com/pt-br/sql/t-sql/language-reference?view=sql-server-ver15'), 
-    StyledComponents: new Technology('StyledComponents', folder + 'StyledComponents.png', Category.Tool, 'https://styled-components.com/'), 
-    TailwindCSS: new Technology('Tailwind CSS', folder + 'TailwindCSS.svg', Category.Tool, 'https://tailwindcss.com/'), 
-    Trello: new Technology('Trello', folder + 'Trello.png', Category.Tool, 'https://trello.com/'), 
-    Typescript: new Technology('Typescript', folder + 'Typescript.svg', Category.Language, 'https://www.typescriptlang.org/'), 
-    VBA: new Technology('Visual Basic for Applications', folder + 'VBA.png', Category.Language, 'https://docs.microsoft.com/pt-br/office/vba/library-reference/concepts/getting-started-with-vba-in-office'), 
-    Vue: new Technology('Vue', folder + 'Vue.png', Category.Framework, 'https://vuejs.org/'), 
-    VueX: new Technology('VuX', folder + 'VueX.png', Category.Tool, 'https://vuex.vuejs.org/'), 
+        getTranslatedSentence('foreignLanguageUrl'),
+        'Business'
+    ),
+    Figma: new Technology('Figma', 'Figma.svg', Category.Tool, 'https://www.figma.com/', 'Design'),
+    Firebase: new Technology('Firebase', 'Firebase.png', Category.Tool, 'https://firebase.google.com/', 'Cloud'),
+    Flutter: new Technology('Flutter', 'Flutter.svg', Category.Framework, 'https://flutter.dev/', 'Flutter'),
+    Gatsby: new Technology('Gatsby', 'Gatsby.png', Category.Framework, 'https://www.gatsbyjs.com/', 'React'),
+    GitHub: new Technology('GitHub', 'GitHub.png', Category.Tool, 'https://github.com/', 'Business'),
+    GraphQL: new Technology('GraphQL', 'GraphQL.png', Category.Tool, 'https://graphql.org/', 'API'),
+    HTML5: new Technology('HTML 5', 'HTML5.png', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5', 'Vanilla'),
+    Javascript: new Technology('Javascript', 'Javascript.svg', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript', 'Vanilla'),
+    jQuery: new Technology('jQuery', 'jQuery.svg', Category.Tool, 'https://jquery.com/', 'Angular'),
+    Jira: new Technology('Jira', 'Jira.svg', Category.Tool, 'https://www.atlassian.com/software/jira', 'Business'),
+    MongoDB: new Technology('MongoDB', 'MongoDB.png', Category.Database, 'https://www.mongodb.com/', 'MERN'),
+    MySQL: new Technology('MySQL', 'MySQL.png', Category.Database, 'https://www.mysql.com/', 'SQL'),
+    NextJs: new Technology('Next.js', 'Nextjs.svg', Category.Tool, 'https://nextjs.org/', 'React'),
+    NodeJs: new Technology('Node.js', 'Nodejs.png', Category.Language, 'https://nodejs.org/', 'MERN'),
+    PaperJs: new Technology('Paper.js', 'PaperJs.png', Category.Tool, 'http://paperjs.org/', 'Styling'),
+    PlayStore: new Technology('Android Play Store', 'PlayStore.svg', Category.Tool, 'https://developer.android.com/distribute/console?hl=pt-br', 'Mobile'),
+    PostgreSQL: new Technology('PostgreSQL', 'PostgreSQL.png', Category.Database, 'https://www.postgresql.org/', 'SQL'),
+    Postman: new Technology('Postman', 'Postman.png', Category.Tool, 'https://www.postman.com/', 'API'),
+    Python: new Technology('Python', 'Python.png', Category.Language, 'https://python.org.br/', 'Languages'),
+    ReactJs: new Technology('React JS', 'ReactJs.png', Category.Framework, 'https://pt-br.reactjs.org/', 'React'),
+    ReactNative: new Technology('React Native', 'ReactJs.png', Category.Framework, 'https://reactnative.dev/', 'React'),
+    ReactRouter: new Technology('React Router', 'ReactRouter.svg', Category.Tool, 'https://reactrouter.com/', 'React'),
+    Redux: new Technology('Redux', 'Redux.png', Category.Tool, 'https://redux.js.org/', 'React'),
+    ReduxSaga: new Technology('Redux-Saga', 'ReduxSaga.svg', Category.Tool, 'https://redux-saga.js.org/', 'React'),
+    SASS: new Technology('SASS/SCSS', 'SASS.png', Category.Language, 'https://sass-lang.com/', 'Styling'),
+    Scrum: new Technology('Scrum', 'Scrum.png', Category.Language, 'https://en.wikipedia.org/wiki/Scrum_(software_development)', 'Business'),
+    Sendgrid: new Technology('Twilio Sendgrid', 'SendGrid.png', Category.Language, 'https://sendgrid.com/', 'Business'),
+    SQL: new Technology('SQL', 'SQL.png', Category.Language, 'https://docs.microsoft.com/pt-br/sql/t-sql/language-reference?view=sql-server-ver15', 'SQL'),
+    StyledComponents: new Technology('Styled Components', 'StyledComponents.png', Category.Tool, 'https://styled-components.com/', 'React'),
+    TailwindCSS: new Technology('Tailwind CSS', 'TailwindCSS.svg', Category.Tool, 'https://tailwindcss.com/', 'Styling'),
+    Trello: new Technology('Trello', 'Trello.png', Category.Tool, 'https://trello.com/', 'Business'),
+    Typescript: new Technology('Typescript', 'Typescript.svg', Category.Language, 'https://www.typescriptlang.org/', 'Vanilla'),
+    VBA: new Technology('Visual Basic for Applications', 'VBA.png', Category.Language, 'https://docs.microsoft.com/pt-br/office/vba/library-reference/concepts/getting-started-with-vba-in-office', 'MicrosoftOffice'),
+    Vue: new Technology('Vue', 'Vue.png', Category.Framework, 'https://vuejs.org/', 'Vue'),
+    VueX: new Technology('VuX', 'VueX.png', Category.Tool, 'https://vuex.vuejs.org/', 'Vue'),
+    VueI18n: new Technology('Vue I18n', 'VueI18n.png', Category.Tool, 'https://kazupon.github.io/vue-i18n/introduction.html', 'Vue'),
+    Word: new Technology('Word', 'Word.png', Category.Software, 'https://www.microsoft.com/pt-br/microsoft-365/word', 'MicrosoftOffice'),
 };
+
+let t = technologies;
+let Vanilla = [t.Javascript, t.HTML5, t.Typescript, t.CSS3, t.SASS];
+let Adobe = [t.AdobePhotoshop, t.AdobeIndesign, t.AdobeIllustrator, t.AdobePremiere, t.AdobeLightroom];
+let React = [t.ReactJs, t.ReactRouter, t.ReduxSaga, t.NextJs, t.Gatsby, t.StyledComponents, t.ReactNative, ...Vanilla];
+let Cloud = [t.Firebase, t.AWS, t.Azure, t.Sendgrid]
+let ReactNative = [t.ReactNative, t.Expo, t.Redux];
+let Flutter = [t.Flutter, t.Dart];
+
+export const technologyFamilies : Record<TechnologyFamilies, Array<Technology>> = {
+    Vanilla,
+    React,
+    Vue: [t.Vue, t.VueX, t.VueI18n, ...Vanilla],
+    Angular: [t.Angular, t.AngularJS, t.jQuery, ...Vanilla],
+    SQL: [t.SQL, t.PostgreSQL, t.MySQL],
+    MicrosoftOffice: [t.Access, t.Word, t.Excel, t.VBA],
+    NOSQL: [t.Firebase, t.MongoDB],
+    API: [t.APIRest, t.AWS, t.GraphQL, t.Postman, t.Express],
+    Design: [t.Figma, ...Adobe],
+    Adobe,
+    ReactNative,
+    Mobile: [...Flutter, ...ReactNative, t.PlayStore],
+    Flutter,
+    Cloud,
+    GoogleServices: [t.ChromeExtensions, t.PlayStore, t.ChromeCast],
+    MERN: [t.NodeJs, ...React, t.Express, t.MongoDB],
+    Business: [t.ForeignLanguage, t.Trello, t.Sendgrid, t.GitHub, t.Excel, t.Scrum, t.Jira, ...Cloud],
+    Styling: [t.Bootstrap, t.TailwindCSS, t.PaperJs, t.CSS3, t.SASS, t.StyledComponents],
+    Languages: [t.Python, t.NodeJs, t.CSharp, t.Javascript, t.Typescript, t.Dart]
+};
+
+export const getTechnologiesOfFamily = (technology : Technology) => 
+    technologyFamilies[technology.family].map(t =>
+        getKeyByValue(technologies, t)
+    )
+
+export type TechnologiesKey = keyof typeof technologies;
 
 export default technologies;

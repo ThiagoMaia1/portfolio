@@ -2,10 +2,17 @@
     .filter-input-container {
         display: flex;
         justify-content: center;
+        position: relative;
+        align-items: center;
+        margin-bottom: 2em;
+        padding-right: 7vw;
         > input {
             font-size: 1.5em;
-            margin-bottom: 2em;
-            margin-right: 7vw;
+        }
+        .closing-x {
+            top: 0;
+            left: 1em;
+            position: relative;
         }
     }
     .section-title {
@@ -15,7 +22,6 @@
 
 .skill-list-container {
     width: 100%;
-    margin-bottom: 2em;
     padding-left: 5%;
     overflow: hidden;
     transition: height 0.3s ease-in-out;

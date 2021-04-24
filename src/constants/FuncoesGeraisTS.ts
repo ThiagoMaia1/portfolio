@@ -39,3 +39,13 @@ export function addDays(date : Date, days : number) {
     result.setDate(result.getDate() + days);
     return result;
 }
+
+export function getKeyByValue<T>(object : T, value : any) {
+    return Object.keys(object)
+        .find(key => object[key as keyof T] === value) as keyof T;
+}
+
+export function updateHash(hash : string) {
+    window.location.hash = hash;
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+}

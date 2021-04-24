@@ -5,6 +5,7 @@ import SectionTitle from './../basic/SectionTitle/SectionTitle';
 import getTranslatedSentence from '../../translation/Translation';
 import IsometricCubes from './../Animations/IsometricCubes/IsometricCubes';
 import AppearFromBelow from '../Animations/AppearFromBelow/AppearFromBelow';
+import useFilterHashTechnologies from '../../hooks/useFilterHashTechnologies';
 
 function ProjectGallery() {
   
@@ -21,6 +22,11 @@ function ProjectGallery() {
     };
   }
 
+  let filterTechnologies = useFilterHashTechnologies();
+  let filteredProjects = projects
+    .filter(p => !!filterTechnologies(p.technologies))
+
+  if (!filteredProjects.length) return null;
   return (
     <div id='project-section' className='page-section' data-id={depth}>
       <AppearFromBelow>
@@ -30,7 +36,8 @@ function ProjectGallery() {
         <SectionTitle text={getTranslatedSentence('myProjects')}/>
         <div className='project-gallery-wrapper'>
           <div className='project-gallery'>
-            {projects.map(p => <ProjectCard project={p} key={p.name}/>)}
+            {filteredProjects
+              .map(p => <ProjectCard project={p} key={p.name}/>)}
           </div>
         </div>
       </AppearFromBelow>

@@ -1,6 +1,7 @@
 import getTranslatedSentence, { sentences } from "../../translation/Translation";
 import companies from "../Company/Companies";
 import Company from "../Company/Company";
+import Technology from "../Technology/Technology";
 
 class ProfessionalExperience {
     title : string;
@@ -14,6 +15,7 @@ class ProfessionalExperience {
         initialYear : number,
         initialMonth : number,
         public durationInMonths : number | undefined,
+        public skillSet : Technology[],
         public relevantForIT = true,
         public isEducation = false,
     ) {

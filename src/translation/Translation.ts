@@ -11,6 +11,7 @@ export interface sentences {
     foreignLanguage : string,
     foreignLanguageImage : string,
     foreignLanguageUrl : string, 
+    relatedTechnologies : string,
 // Projects
     cultueTitle: string,
     cultueSubtitle : string,
@@ -79,7 +80,8 @@ const translation : Record<string, sentences> = {
         skills: 'Principais Competências',
         foreignLanguage : 'Inglês Fluente',
         foreignLanguageImage : 'English.png',
-        foreignLanguageUrl : 'https://www.britannica.com/topic/English-language',
+        foreignLanguageUrl: 'https://www.britannica.com/topic/English-language',
+        relatedTechnologies: 'Ver competências relacionadas',
     // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Apresentações de Slides para Igrejas',
@@ -126,7 +128,7 @@ const translation : Record<string, sentences> = {
         administrativeAssistant : 'Assistente em Administração',
         administrativeAssistantDescription : 'Área de Licitações e Contratos: Controle de saldos de contratos, elaboração de contratos e documentos, verificação de regularidade de empresas.',
         storageAdministrator : 'Administrador de Almoxarifado',
-        storageAdministratorDescription : 'Organização e planejamento de estoques. Manutenção do catálogo de materiais. Comunicação com o setor de desenvolvimento de sistemas.',
+        storageAdministratorDescription : 'Organização e planejamento de estoques. Manutenção do catálogo de materiais. Comunicação com o setor de desenvolvimento de sistemas. Automação de pequenas tarefas usando Python e NodeJs.',
         frontendDeveloper : 'Desenvolvedor Front-End',
         frontendDeveloperDescription : 'Desenvolvimento e manutenção de módulos web em Angular e AngularJS.',
         graduation: 'Graduação em Engenharia de Produção',
@@ -147,6 +149,7 @@ const translation : Record<string, sentences> = {
         foreignLanguage: 'Native Portuguese',
         foreignLanguageImage: 'Portuguese.png',
         foreignLanguageUrl: 'https://www.portugues.com.br/',
+        relatedTechnologies: 'See related skills',
         // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Slide Presentations for Churches',
@@ -193,7 +196,7 @@ const translation : Record<string, sentences> = {
         administrativeAssistant : 'Administrative Assistante',
         administrativeAssistantDescription : 'Purchases and Contracts Sector: Control of contracts values and services, writing of contracts and documents, companies background check.',
         storageAdministrator : 'Storehouse Manager',
-        storageAdministratorDescription : 'Organization and planning of stocks, catalogue maintance, communication with development sector.',
+        storageAdministratorDescription : 'Organization and planning of stocks, catalogue maintance, communication with development sector. Automation of small tasks using Python and NodeJs.',
         frontendDeveloper : 'Front-End Developer',
         frontendDeveloperDescription : 'Development and maintance of modules in Angular and AngularJS.',
         graduation: "Bachelor's Degree in Industrial Engineering",

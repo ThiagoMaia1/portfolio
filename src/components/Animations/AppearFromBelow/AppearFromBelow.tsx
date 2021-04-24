@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import useAppearFromBelow from '../../../hooks/useAppearFromBelow';
 
 function AppearFromBelow({children, styleProp = {}} : {children : ReactNode, styleProp ?: object}) {

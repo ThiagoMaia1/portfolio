@@ -1,20 +1,18 @@
 import Category from '../Category';
+import { TechnologyFamilies } from './Technologies';
+
+const folder = 'technologies/';
 
 export default class Technology {
-    name: string;
-    logoUri: any;
-    category: Category;
-    webPageUrl : string;
+    logoUri: string;
     
     constructor(
-      name : string,
+      public name : string,
       logoUri : string,
-      category : Category,
-      webPageUrl : string,
+      public category : Category,
+      public webPageUrl : string,
+      public family : TechnologyFamilies
     ) {
-      this.name = name;
-      this.logoUri = logoUri;
-      this.category = category; 
-      this.webPageUrl = webPageUrl;
+      this.logoUri = folder + logoUri;
     }
 }

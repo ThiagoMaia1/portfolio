@@ -1,4 +1,5 @@
-import { createContext, CSSProperties, ReactNode, useEffect, useReducer } from 'react';
+import { createContext, CSSProperties, ReactNode, useCallback, useEffect, useReducer } from 'react';
+import useWindowResize from '../../hooks/useWindowResize';
 
 interface ScrollState {
     scroll : number;
@@ -28,21 +29,20 @@ function scrollReducer(state : ScrollState, action : Action) {
 function ScrollProvider({children} : {children : ReactNode}) {
 
     const [state, dispatch] = useReducer(scrollReducer, emptyState);
-    // let [scroll, setScroll] = useState(0);
     const setScroll = (scrollValue : number) => dispatch({type: 'update-scroll', scrollValue});
     
+    let listener = useCallback(() => {console.log(''); setScroll(document.body.scrollTop + Math.random()/100)}, []);
     useEffect(() => {
-        let listener = () => setScroll(document.body.scrollTop);
         document.body.addEventListener('scroll', listener);
         return () => document.body.removeEventListener('scroll', listener);
-    }, [])
+    }, [listener])
+    useWindowResize(listener);
 
     const style : CSSProperties = {
         ['--scroll' as any]: state.scroll,
         ['--scroll-sin' as any]: state.scrollSin,
       };
 
-    // const value = {state, dispatch}
     return <div style={style}>
         <ScrollContext.Provider value={state}>{children}</ScrollContext.Provider>
     </div>

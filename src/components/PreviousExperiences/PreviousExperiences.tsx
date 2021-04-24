@@ -13,7 +13,7 @@ function PreviousExperiences() {
             <div style={{zIndex: 100, position: 'relative'}}>
                 <SectionTitle text={getTranslatedSentence('previousExperiences')}/>
                 {Object.keys(companies).map((c, i, a) => 
-                <CompanyExperience key={c} companyKey={c as keyof typeof companies} isOdd={i % 2 === 1} isLast={i === a.length - 2} isEducation={false}/> 
+                    <CompanyExperience key={c} companyKey={c as keyof typeof companies} isOdd={i % 2 === 1} isLast={i === a.length - 2} isEducation={false}/> 
                 )}
             </div>
         </div>  

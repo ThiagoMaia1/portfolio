@@ -1,16 +1,20 @@
-import { gotoLink } from "../../../constants/FuncoesGeraisTS";
+import { getKeyByValue, updateHash } from "../../../constants/FuncoesGeraisTS";
+import technologies from "../../../models/Technology/Technologies";
 import Technology from "../../../models/Technology/Technology";
 import TechnologyLogo from '../TechnologyLogo/TechnologyLogo';
 import './TechnologyLink.scss';
 
-function TechnologyLink({technology} : {technology : Technology}) {
+function TechnologyLink({technology, includeName = true} 
+    : {technology : Technology, includeName ?: boolean}) {
 
     return (
         <div key={technology.name} 
-             onClick={() => gotoLink(technology.webPageUrl)} 
+             onClick={() => updateHash(getKeyByValue(technologies, technology))} 
              className='technology-link'>
             <TechnologyLogo technology={technology}/>
-            <span>{technology.name}</span>
+            {!includeName ? null
+                : <span>{technology.name}</span>
+            }
         </div>
     )
 }
