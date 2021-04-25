@@ -9,11 +9,13 @@
 
 #main-page {
     overflow: hidden;
+    position: relative;
 }
 
 #main-page-body {
     width: 100%;
     padding-left: calc(15vw - 10vh);
+    position: relative;
 }
 
 .page-section {

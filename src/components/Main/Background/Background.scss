@@ -1,0 +1,19 @@
+#background {
+    position: absolute;
+    height: 100%;
+    
+    .isometric-cubes-container {
+      position: relative;
+      width: 100vw;
+      height: 34%;
+      > * {
+          position: absolute;
+          right: 0;
+          top: 35%;
+      }
+    }
+  
+    #wave-background {
+      margin-top: 55%;
+    }
+  }

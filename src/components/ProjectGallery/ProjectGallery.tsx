@@ -30,9 +30,6 @@ function ProjectGallery() {
   return (
     <div id='project-section' className='page-section' data-id={depth}>
       <AppearFromBelow>
-        <div className='isometric-cubes-container'>
-          <IsometricCubes/>
-        </div>
         <SectionTitle text={getTranslatedSentence('myProjects')}/>
         <div className='project-gallery-wrapper'>
           <div className='project-gallery'>

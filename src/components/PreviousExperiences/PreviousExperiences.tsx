@@ -9,7 +9,6 @@ function PreviousExperiences() {
 
     return (
         <div id='previous-experiences-section' className='page-section'>
-            <BackgroundWaves/>
             <div style={{zIndex: 100, position: 'relative'}}>
                 <SectionTitle text={getTranslatedSentence('previousExperiences')}/>
                 {Object.keys(companies).map((c, i, a) => 

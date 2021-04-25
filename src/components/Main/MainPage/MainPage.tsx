@@ -8,6 +8,7 @@ import PreviousExperiences from '../../PreviousExperiences/PreviousExperiences';
 import EducationSection from '../../EducationSection/EducationSection';
 import Footer from '../../Footer/Footer';
 import SectionsIndex from '../../SectionsIndex/SectionsIndex';
+import Background from '../Background/Background';
 
 const MainPage = () => {
 
@@ -15,8 +16,8 @@ const MainPage = () => {
         <ScrollProvider>
             <div id='main-page'>
                 <SectionsIndex/>
-                {/* <Loading/> */}
                 <Header/>
+                <Background/>
                 <div id='main-page-body'>
                     <AboutMe/>
                     <SkillsSection/>

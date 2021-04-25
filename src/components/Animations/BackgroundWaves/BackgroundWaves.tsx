@@ -8,7 +8,7 @@ function BackgroundWaves() {
     const numberOfWaves = 30;
 
     const Waves = () =>
-        <div>
+        <div className='background waves'>
             <PaperElement animation={(scope) => {
                 scope.activate();
                 let view = scope.project.view;
