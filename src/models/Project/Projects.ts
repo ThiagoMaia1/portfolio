@@ -159,7 +159,7 @@ const projects: Array<Project> = [
   new Project(
     getTranslatedSentence('portfolioTitle'),
     getTranslatedSentence('portfolioSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS, t.StyledComponents, t.Gatsby],
+    [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS, t.StyledComponents],
     getTranslatedSentence('portfolioDescription'),
     window.location.origin,
     'projects/Portfolio.svg',
