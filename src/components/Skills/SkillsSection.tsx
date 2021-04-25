@@ -28,14 +28,16 @@ const mainSkills = [
     t.Flutter, 
     t.Dart,
     t.Python, 
-    t.PostgreSQL, 
+    t.SQL, 
     t.AdobePhotoshop, 
     t.AdobeIllustrator, 
     t.ForeignLanguage,
 ];
 
 const unlistedSkills = [
-    t.AdobePremiere
+    t.AdobePremiere,
+    t.PostgreSQL,
+    t.MySQL,
 ];
 
 const usedTechnologies = [

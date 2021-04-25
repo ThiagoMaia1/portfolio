@@ -15,6 +15,7 @@ function SectionsIndexWave({sections, setCurrentIndex, alignedOffsetOfHeight}
     return (
         <PaperElement animation={(scope) => {
             scope.activate();
+            const baseTop = sections[0].element.parentElement?.offsetTop ?? 0;
             let view = scope.project.view;
             const alignedOffset = window.innerHeight*alignedOffsetOfHeight;
             let wave = new scope.Path({
@@ -57,7 +58,7 @@ function SectionsIndexWave({sections, setCurrentIndex, alignedOffsetOfHeight}
                 };
 
                 let section = sections[selectedIndex];
-                let relativeScroll = scroll + alignedOffset - section.element.offsetTop;
+                let relativeScroll = scroll + alignedOffset - section.element.offsetTop - baseTop;
                 let sectionHeight = (relativeScroll >= 0 || selectedIndex === 0) 
                                     ? section.height 
                                     : sections[selectedIndex - 1].height;

@@ -17,20 +17,14 @@ const Container = styled.div`
     justify-content: center;
 `;
 
-function ExpandArrow({iconSize, direction = Directions.Down, callback} 
-    : {iconSize : number, direction ?: Directions, callback ?: (isExpanded : boolean) => void}) {
-
-    let [isExpanded, setIsExpanded] = useState(false);
+function ExpandArrow({iconSize, isExpanded, direction = Directions.Down, callback} 
+    : {iconSize : number, isExpanded : boolean, direction ?: Directions, callback ?: (isExpanded : boolean) => void}) {
 
     const ArrowIcon = require('react-icons/md')[`MdKeyboardArrow${Directions[direction*(isExpanded ? -1 : 1)]}`];
 
     return (
         <Container onClick={() => {
-            setIsExpanded(e => {
-                let newIsExpanded = !e;
-                callback?.(newIsExpanded);
-                return newIsExpanded;
-            });
+            callback?.(!isExpanded);
         }}>
             <ArrowIcon size={iconSize}/>
         </Container>

@@ -4,6 +4,7 @@ import {updateHash} from '../../../constants/FuncoesGeraisTS'
 import technologies, { getTechnologiesOfFamily } from '../../../models/Technology/Technologies'
 import useHashTechnologies, {hashSeparator} from '../../../hooks/useHashTechnologies'
 import styled from 'styled-components'
+import AppearFromBelow from '../../Animations/AppearFromBelow/AppearFromBelow'
 
 
 function SeeTechnologyFamily({setSearchTerm} : {setSearchTerm : (searchTerm : string) => void}) {
@@ -16,6 +17,7 @@ function SeeTechnologyFamily({setSearchTerm} : {setSearchTerm : (searchTerm : st
         display: flex;
         justify-content: center;    
         padding-right: 5vw;
+        margin-top: 3em;
     `
 
     let technologiesHash = useHashTechnologies();
@@ -32,11 +34,13 @@ function SeeTechnologyFamily({setSearchTerm} : {setSearchTerm : (searchTerm : st
     }
 
     return (
-        <Div>
-            <Button onClick={onClick}>
-                {getTranslatedSentence('relatedTechnologies')}
-            </Button>
-        </Div>
+        <AppearFromBelow>
+            <Div>
+                <Button onClick={onClick}>
+                    {getTranslatedSentence('relatedTechnologies')}
+                </Button>
+            </Div>
+        </AppearFromBelow>
     )
 }
 

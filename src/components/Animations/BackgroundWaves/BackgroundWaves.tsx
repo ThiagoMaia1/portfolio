@@ -21,7 +21,6 @@ function BackgroundWaves() {
                         sideWidth: undefined,
                         animationFunction: (e, i) => -e.time*0.2 + i,
                         inclinationFactor: undefined,
-                        // randomStrenghtFactor: 0.05,
                     }, scope)
                 );
                 waves.forEach(w => {

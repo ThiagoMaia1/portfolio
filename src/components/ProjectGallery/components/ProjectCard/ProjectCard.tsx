@@ -21,7 +21,7 @@ const ProjectCard = ({project} : {project : Project}) => {
     const onClick = useCallback(() => {
         let cur = refScroll.current; 
         if (!open && cur)
-            document.body.scroll({top: cur.offsetTop - window.innerHeight*0.1, left: 0, behavior: 'smooth' })
+            document.body.scroll({top: cur.offsetTop + (document.getElementById('main-page-body')?.offsetTop ?? 0) - window.innerHeight*0.1, left: 0, behavior: 'smooth' })
         setOpen(o => !o);
     }, [open]);
 

@@ -1,5 +1,5 @@
 import TechnologyLink from "../../basic/TechnologyLink/TechnologyLink";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useWindowResize from "../../../hooks/useWindowResize";
 import Technology from "../../../models/Technology/Technology";
 import ExpandArrow from "../../basic/ExpandArrow/ExpandArrow";
@@ -7,7 +7,7 @@ import ExpandArrow from "../../basic/ExpandArrow/ExpandArrow";
 function Skills({mainSkills, otherSkills} 
     : {mainSkills : Technology[], otherSkills : Technology[]}) {
 
-    const columnWidth = 350;
+    const columnWidth = 400;
     let [isExpanded, setIsExpanded] = useState(false);
     let [sectionHeight, setSectionHeight] = useState('');
 
@@ -29,7 +29,7 @@ function Skills({mainSkills, otherSkills}
     useWindowResize(size => setNumberOfColumns(getNumberOfColumns(size.width)));
 
     let groupedMainSkills = getGroupedSkills(mainSkills, numberOfColumns);
-    let groupedOtherSkills = getGroupedSkills(otherSkills, numberOfColumns);
+    let groupedOtherSkills = getGroupedSkills(isExpanded ? otherSkills : [], numberOfColumns);
 
     let groupedSkills = groupedMainSkills.map((g, i) => 
         g.concat(groupedOtherSkills[i])
@@ -54,7 +54,7 @@ function Skills({mainSkills, otherSkills}
                     )}
                 </div>
             </div>
-            {!otherSkills.length ? null : <ExpandArrow callback={setIsExpanded} iconSize={50}/>}
+            {!otherSkills.length ? null : <ExpandArrow callback={setIsExpanded} isExpanded={isExpanded} iconSize={50}/>}
         </>
     );
 }

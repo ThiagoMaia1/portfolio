@@ -29,6 +29,7 @@ function SectionsIndex() {
         return sections;
     }, [] as Section[]);
 
+    const baseTop = sections[0]?.element.parentElement?.offsetTop ?? 0;
     useContext(ScrollContext);
     let [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
@@ -52,7 +53,8 @@ function SectionsIndex() {
                         <SectionsIndexItem key={s.id} 
                                            section={s} 
                                            isSelected={i === currentSectionIndex} 
-                                           alignedOffsetOfHeight={alignedOffsetOfHeight}/>  
+                                           alignedOffsetOfHeight={alignedOffsetOfHeight}
+                                           baseTop={baseTop}/>  
                     )
                 }
             </div>
@@ -60,12 +62,12 @@ function SectionsIndex() {
     )
 }
 
-function SectionsIndexItem({section, isSelected, alignedOffsetOfHeight} 
-    : {section : Section, isSelected : boolean, alignedOffsetOfHeight : number}) {
+function SectionsIndexItem({section, isSelected, alignedOffsetOfHeight, baseTop} 
+    : {section : Section, isSelected : boolean, alignedOffsetOfHeight : number, baseTop : number}) {
 
     const onClick = () =>
         document.body.scroll({
-            top: section.element.offsetTop - alignedOffsetOfHeight*window.innerHeight, 
+            top: section.element.offsetTop - alignedOffsetOfHeight*window.innerHeight + baseTop, 
             left: 0, 
             behavior: 'smooth'
         });
