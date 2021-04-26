@@ -30,7 +30,7 @@ function ContactInfo ({includeDevelopedBy = true}) {
                 let Logo = logo;
                 return (
                     <div className='bottom-bar-link-container' key={url}>
-                        <a href={url} target='_blank' rel='noopener noreferrer' style={{color: 'white'}}>
+                        <a href={url} target='_blank' rel='noopener noreferrer'>
                             <Logo size={window.innerHeight*0.04}/>
                             <span>{apelido}</span>
                         </a>
