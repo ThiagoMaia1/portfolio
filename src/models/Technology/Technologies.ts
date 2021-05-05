@@ -41,6 +41,7 @@ const technologies = {
     GraphQL: new Technology('GraphQL', 'GraphQL.png', Category.Tool, 'https://graphql.org/', 'API'),
     HTML5: new Technology('HTML 5', 'HTML5.png', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5', 'Vanilla'),
     Javascript: new Technology('Javascript', 'Javascript.svg', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript', 'Vanilla'),
+    Jenkins: new Technology('Jenkins', 'Jenkins.svg', Category.Tool, 'https://www.jenkins.io/', 'Business'),
     jQuery: new Technology('jQuery', 'jQuery.svg', Category.Tool, 'https://jquery.com/', 'Angular'),
     Jira: new Technology('Jira', 'Jira.svg', Category.Tool, 'https://www.atlassian.com/software/jira', 'Business'),
     MongoDB: new Technology('MongoDB', 'MongoDB.png', Category.Database, 'https://www.mongodb.com/', 'MERN'),
@@ -68,7 +69,7 @@ const technologies = {
     VBA: new Technology('Visual Basic for Applications', 'VBA.png', Category.Language, 'https://docs.microsoft.com/pt-br/office/vba/library-reference/concepts/getting-started-with-vba-in-office', 'MicrosoftOffice'),
     Vue: new Technology('Vue', 'Vue.png', Category.Framework, 'https://vuejs.org/', 'Vue'),
     VueX: new Technology('VuX', 'VueX.png', Category.Tool, 'https://vuex.vuejs.org/', 'Vue'),
-    VueI18n: new Technology('Vue I18n', 'VueI18n.png', Category.Tool, 'https://kazupon.github.io/vue-i18n/introduction.html', 'Vue'),
+    VueI18n: new Technology('Vue I18n', 'vueI18n.png', Category.Tool, 'https://kazupon.github.io/vue-i18n/introduction.html', 'Vue'),
     Word: new Technology('Word', 'Word.png', Category.Software, 'https://www.microsoft.com/pt-br/microsoft-365/word', 'MicrosoftOffice'),
 };
 
@@ -97,7 +98,7 @@ export const technologyFamilies : Record<TechnologyFamilies, Array<Technology>> 
     Cloud,
     GoogleServices: [t.ChromeExtensions, t.PlayStore, t.ChromeCast],
     MERN: [t.NodeJs, ...React, t.Express, t.MongoDB],
-    Business: [t.ForeignLanguage, t.Trello, t.Sendgrid, t.GitHub, t.Excel, t.Scrum, t.Jira, ...Cloud],
+    Business: [t.ForeignLanguage, t.Trello, t.Sendgrid, t.GitHub, t.Excel, t.Scrum, t.Jira, t.Jenkins, ...Cloud],
     Styling: [t.Bootstrap, t.TailwindCSS, t.PaperJs, t.CSS3, t.SASS, t.StyledComponents],
     Languages: [t.Python, t.NodeJs, t.CSharp, t.Javascript, t.Typescript, t.Dart]
 };
