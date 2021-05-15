@@ -2,6 +2,7 @@ import './MainPage.scss';
 import ScrollProvider from '../ScrollProvider';
 import Header from '../../Header/Header';
 import AboutMe from '../../AboutMe/AboutMe';
+import LinkToInteractive from '../../AboutMe/LinkToInteractive';
 import SkillsSection from '../../Skills/SkillsSection';
 import ProjectGallery from '../../ProjectGallery/ProjectGallery';
 import PreviousExperiences from '../../PreviousExperiences/PreviousExperiences';
@@ -18,6 +19,7 @@ const MainPage = () => {
                 <Header/>
                 <Background/>
                 <div id='main-page-body'>
+                    <LinkToInteractive/>
                     <AboutMe/>
                     <SkillsSection/>
                     <ProjectGallery/>
