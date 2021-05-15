@@ -14,7 +14,7 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
     useEffect(() => {
         clearTimeout(timeoutScroll.current);
         if(Math.abs(scrollOutside) > 200) {
-            fechar();
+            close();
             setScrollOutside(0);
         }
         timeoutScroll.current = setTimeout(() => setScrollOutside(0), 2000)
@@ -22,7 +22,7 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
 
     const time = 1000;
 
-    const fechar = () => setAtivo(false);
+    const close = () => setAtivo(false);
 
     const style = useClosingAnimation(
         ativo,
@@ -42,11 +42,13 @@ const OpenProject = ({project, onClick} : {project : Project, onClick : () => vo
                     style={{...style, transition: style.transition + ', ' + opacityTransition}}/>
             </div>
             <div className='display-open-project' style={{opacity: 1 - style.opacity, transition: opacityTransition}}
-                 onClick={e => {if (e.target === e.currentTarget) fechar();}}
+                 onClick={e => {if (e.target === e.currentTarget) close();}}
                  onWheel={e => setScrollOutside(s => s + e.deltaY)}>
                 <div>
-                    <div className='closing-x' onClick={fechar}/>
-                    <div className='project-info-container'>
+                    <div className='closing-x' onClick={close}/>
+                    <div className='project-info-container'
+                         onWheel={e => e.stopPropagation()}    
+                    >
                         <ProjectCarrossel project={project} isVertical={isVertical}/>
                         <ProjectTextColumn project={project} isVertical={isVertical}/>
                     </div>
