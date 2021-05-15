@@ -8,12 +8,20 @@
       height: 34%;
       > * {
           position: absolute;
+          right: 60vw;
+          top: 5%;
+      }
+    }
+    
+    .isometric-cubes-container:first-child {
+      
+      > * {
           right: 0;
-          top: 35%;
+          top: -5%;
       }
     }
   
     #wave-background {
-      margin-top: 55%;
+      margin-top: -25%;
     }
   }

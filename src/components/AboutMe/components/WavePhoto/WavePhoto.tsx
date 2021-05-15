@@ -34,8 +34,8 @@ function WavePhoto({ imageUri }: { imageUri: string }) {
                 let group = new scope.Group([path, raster, rect]);
                 group.clipped = true;
 
-                view.onFrame = draw;
                 let time = 0;
+                path.rotate(-25);
 
                 function draw(event : any) {
                     time += event.delta;

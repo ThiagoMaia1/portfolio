@@ -6,7 +6,7 @@ import SkillsSection from '../../Skills/SkillsSection';
 import ProjectGallery from '../../ProjectGallery/ProjectGallery';
 import PreviousExperiences from '../../PreviousExperiences/PreviousExperiences';
 import Footer from '../../Footer/Footer';
-import SectionsIndex from '../../SectionsIndex/SectionsIndex';
+// import SectionsIndex from '../../SectionsIndex/SectionsIndex';
 import Background from '../Background/Background';
 
 const MainPage = () => {
@@ -14,7 +14,7 @@ const MainPage = () => {
     return (
         <ScrollProvider>
             <div id='main-page'>
-                <SectionsIndex/>
+                {/* <SectionsIndex/> */}
                 <Header/>
                 <Background/>
                 <div id='main-page-body'>

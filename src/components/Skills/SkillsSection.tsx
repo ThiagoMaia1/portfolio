@@ -81,20 +81,9 @@ function SkillsSection() {
     });
 
     return (
-        <div id='skills-section'>
+        <div id='skills-section' style={{marginBottom: '30vh'}}>
             <SectionTitle text={$t('skills')} />
             <AppearFromBelow>
-                <div className='filter-input-container'>
-                    <input ref={searchBarRef} value={searchTerm} onChange={e => setTermo(e.target.value)} autoComplete='false' placeholder='Buscar'></input>
-                    <div className='closing-x' 
-                        style={!searchTerm ? {visibility: 'hidden'} : {}}
-                        onClick={() => {
-                            setSearchTerm('');
-                            updateHash('');
-                            searchBarRef.current?.focus();
-                        }}
-                    />
-                </div>
                 <Skills mainSkills={mainList} otherSkills={otherList}/>
                 <SeeTechnologyFamily setSearchTerm={setSearchTerm}/>
             </AppearFromBelow>

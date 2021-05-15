@@ -13,6 +13,7 @@ export default class Project {
         public imagesUri : string[] = [],
         public linkAfterDescription ?: {url : string, label : string},
         public iframeUrl ?: string,
+        public marginBottomVH ?: number,
     ) {}
 
     get categories() : Array<Category> {

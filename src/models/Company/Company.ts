@@ -3,6 +3,7 @@ class Company {
         public name : string,
         public logoUri : string,
         public pageUrl = '',
+        public marginBottomVH ?: number,
     ) {}
 }
 

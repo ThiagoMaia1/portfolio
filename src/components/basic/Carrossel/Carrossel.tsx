@@ -313,7 +313,7 @@ class Carrossel extends Component<Props, State> {
             <div ref={this.refCarrossel} className='carrossel' 
                  onWheel={this.deslizarWheel} 
                  style={{...(this.props.style || {}), ...this.style}}>
-                {this.state.tamanhoGaleria > this.state.tamanhoCarrossel 
+                {/* {this.state.tamanhoGaleria > this.state.tamanhoCarrossel 
                     ? setas.map((s, i) => {
                         let j = i as IndexSeta;
                         const Seta = s;
@@ -349,7 +349,7 @@ class Carrossel extends Component<Props, State> {
                             </div>
                         )
                     })
-                    : null}
+                    : null} */}
                 <div className='container-galeria'>
                     <div ref={this.refGaleria} className='movimentador-galeria' style={this.state.estiloGaleria}>
                         {this.props.children}

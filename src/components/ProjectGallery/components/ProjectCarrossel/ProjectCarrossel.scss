@@ -4,7 +4,7 @@
 
     .carrossel {
         pointer-events: all;
-        transform: perspective(100px) rotateY(3deg) rotateZ(-1deg) scaleX(0.85);
+        transform: translateX(-50px);
         transform-style: preserve-3d;
     }
 

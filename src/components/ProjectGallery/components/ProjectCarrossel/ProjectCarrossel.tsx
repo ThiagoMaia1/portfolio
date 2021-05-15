@@ -18,9 +18,9 @@ function ProjectCarrossel({project, isVertical} : {project : Project, isVertical
                 style={{zIndex: 10, maxWidth: carrosselWidth, minWidth: carrosselWidth, width: carrosselWidth, height: '100%'}}
         >
             <div className='screenshot-gallery' onClick={() => gotoLink(project.url)}>
-                {!project.iframeUrl ? null 
+                {/* {!project.iframeUrl ? null 
                     : <ProjectIframe project={project}/>
-                }
+                } */}
                 {project.imagesUri.map(i => 
                     <ProjectScreenshot imageUri={i} key={i}/>
                 )}
