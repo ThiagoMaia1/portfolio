@@ -33,18 +33,13 @@ const ProjectCard = ({project} : {project : Project}) => {
     }
     
     return (
-        <AppearFromBelow styleProp={open ? {zIndex: 1000, opacity: 1} : {}}>
-            <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'} 
-                style={style}
+        <AppearFromBelow>
+            <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'}
+                style={{...style, marginBottom: ((project.marginBottomVH ?? 0) + 30) + 'vh'}}
                 onMouseOver={removeTransition}
                 onMouseOut={() => setHasTransition(true)}
                 ref={refScroll}>
-                {open 
-                    ? <OpenProject project={project} onClick={onClick}/> 
-                    : <div ref={refTilt} className='tilt-detector' onClick={onClick}>
-                        <ClosedProject logoUri={project.logoUri} title={project.name}/>
-                    </div>
-                }
+                <OpenProject project={project} onClick={onClick}/>
             </div>
         </AppearFromBelow>
     )

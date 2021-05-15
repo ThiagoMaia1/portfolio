@@ -28,15 +28,13 @@ function ProjectGallery() {
   if (!filteredProjects.length) return null;
   return (
     <div id='project-section' className='page-section' data-id={depth}>
-      <AppearFromBelow>
-        <SectionTitle text={$t('myProjects')}/>
-        <div className='project-gallery-wrapper'>
-          <div className='project-gallery'>
-            {filteredProjects
-              .map(p => <ProjectCard project={p} key={p.name}/>)}
-          </div>
+      <SectionTitle text={$t('myProjects')}/>
+      <div className='project-gallery-wrapper'>
+        <div className='project-gallery'>
+          {filteredProjects
+            .map(p => <ProjectCard project={p} key={p.name}/>)}
         </div>
-      </AppearFromBelow>
+      </div>
     </div>
   );
 }

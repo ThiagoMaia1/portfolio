@@ -27,14 +27,12 @@ function CompanyExperience({companyWithExperiences, isOdd, isLast}
     if (isOdd && !isVertical) flexElements.reverse();
     
     return (
-        <AppearFromBelow>
-            <div className='company-experience-container'>
-                <div className='company-experience' style={{flexDirection: isVertical ? 'column' : 'row'}}>
-                    {flexElements}
-                </div>
-                {isLast ? null : <EmDash/>} 
+        <div className='company-experience-container' style={{marginBottom: (companyWithExperiences.company.marginBottomVH ?? 0) + 'vh'}}>
+            <div className='company-experience' style={{flexDirection: isVertical ? 'column' : 'row'}}>
+                {flexElements}
             </div>
-        </AppearFromBelow>
+            {isLast ? null : <EmDash/>} 
+        </div>
     );
 }
 

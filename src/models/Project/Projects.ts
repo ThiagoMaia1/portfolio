@@ -25,21 +25,22 @@ const projects: Array<Project> = [
     'projects/Cultue.svg',
     'https://github.com/ThiagoMaia1/cultue-slides',
     [
-      'Cultue/Front Topo.png',
-      'Cultue/Front Bottom.png',
-      'Cultue/Login.png',
+      // 'Cultue/Front Topo.png',
+      // 'Cultue/Front Bottom.png',
+      // 'Cultue/Login.png',
       'Cultue/Main.png',
-      'Cultue/Música.png',
-      'Cultue/Fundos.png',
-      'Cultue/Select Filtro.png',
-      'Cultue/Exportar.png',
-      'Cultue/Atalhos.png',
-      'Cultue/Imagens Usuário.png',
-      'Cultue/Perfil.png',
-      'Cultue/Lista de Apresentações.png',
+      // 'Cultue/Música.png',
+      // 'Cultue/Fundos.png',
+      // 'Cultue/Select Filtro.png',
+      // 'Cultue/Exportar.png',
+      // 'Cultue/Atalhos.png',
+      // 'Cultue/Imagens Usuário.png',
+      // 'Cultue/Perfil.png',
+      // 'Cultue/Lista de Apresentações.png',
     ],
     undefined,
     'https://cultue.web.app',
+    20
   ),
   new Project(
     $t('bibleForHumansTitle'),
@@ -63,12 +64,12 @@ const projects: Array<Project> = [
     'https://github.com/ThiagoMaia1/api-biblia',
     [
       'BibliaParaHumanos/Home.png',
-      'BibliaParaHumanos/TryOut.png',
-      'BibliaParaHumanos/Examples.png',
-      'BibliaParaHumanos/Footer.png',
-      'BibliaParaHumanos/Documentation.png',
-      'BibliaParaHumanos/Help1.png',
-      'BibliaParaHumanos/Help2.png',
+      // 'BibliaParaHumanos/TryOut.png',
+      // 'BibliaParaHumanos/Examples.png',
+      // 'BibliaParaHumanos/Footer.png',
+      // 'BibliaParaHumanos/Documentation.png',
+      // 'BibliaParaHumanos/Help1.png',
+      // 'BibliaParaHumanos/Help2.png',
     ],
     {
       url: 'https://github.com/ThiagoMaia1/pagina-api-biblia', 
@@ -97,7 +98,9 @@ const projects: Array<Project> = [
     {
       url: 'https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-(E-commerce-template)-by-Oleh-Chabanov', 
       label: $t('figmaBy'),
-    }
+    },
+    undefined,
+    35
   ),
   new Project(
     $t('ballGameTitle'),
@@ -108,7 +111,7 @@ const projects: Array<Project> = [
     'companies/mereo.svg',
     'https://github.com/ThiagoMaia1/angular-game',
     [
-      'BallGame/Start.png',
+      // 'BallGame/Start.png',
       'BallGame/GamePlay.png',
       'BallGame/InsertName.png',
       'BallGame/Ranking.png',
@@ -140,7 +143,9 @@ const projects: Array<Project> = [
     {
       url: 'https://www.vidangel.com/browse',
       label: $t('vidAngelLink'),
-    }
+    },
+    undefined,
+    35
   ),
   new Project(
     $t('ultimatoSystemTitle'),
@@ -181,33 +186,36 @@ const projects: Array<Project> = [
       'BoardGameHelper/ChapterHistory.png',
       'BoardGameHelper/MainPageLandscape.png',
     ],
-  ),
-  new Project(
-    $t('acaiAntonioTitle'),
-    $t('acaiAntonioSubtitle'),
-    [t.Typescript, t.HTML5, t.CSS3, t.ReactNative],
-    $t('acaiAntonioDescription'),
-    'https://youtu.be/BWt3QXCnMxY',
-    'projects/AcaiAntonio.png',
-    'https://github.com/ThiagoMaia1/acai-antonio',
-    [
-      'Acai/Início.png',
-      'Acai/Tamanhos.png',
-      'Acai/Recheios.png',
-    ],
-  ),
-  new Project(
-    $t('portfolioTitle'),
-    $t('portfolioSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS, t.StyledComponents],
-    $t('portfolioDescription'),
-    window.location.origin,
-    'projects/Portfolio.svg',
-    'https://github.com/ThiagoMaia1/portfolio',
-    [],
     undefined,
-    window.location.origin + '/' + Date.now().toString(),
+    undefined,
+    20
   ),
+  // new Project(
+  //   $t('acaiAntonioTitle'),
+  //   $t('acaiAntonioSubtitle'),
+  //   [t.Typescript, t.HTML5, t.CSS3, t.ReactNative],
+  //   $t('acaiAntonioDescription'),
+  //   'https://youtu.be/BWt3QXCnMxY',
+  //   'projects/AcaiAntonio.png',
+  //   'https://github.com/ThiagoMaia1/acai-antonio',
+  //   [
+  //     'Acai/Início.png',
+  //     'Acai/Tamanhos.png',
+  //     'Acai/Recheios.png',
+  //   ],
+  // ),
+  // new Project(
+  //   $t('portfolioTitle'),
+  //   $t('portfolioSubtitle'),
+  //   [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS, t.StyledComponents],
+  //   $t('portfolioDescription'),
+  //   window.location.origin,
+  //   'projects/Portfolio.svg',
+  //   'https://github.com/ThiagoMaia1/portfolio',
+  //   [],
+  //   undefined,
+  //   window.location.origin + '/' + Date.now().toString(),
+  // ),
 ];
 
 export default projects;

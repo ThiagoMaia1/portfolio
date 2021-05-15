@@ -7,6 +7,7 @@ function Background() {
     return (
         <div id='background'>
             <IsometricCubes/>
+            <IsometricCubes/>
             <BackgroundWaves/>
         </div>
     )

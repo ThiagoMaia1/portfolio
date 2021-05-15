@@ -65,8 +65,8 @@ function HeaderWaves() {
         text.style.fontSize = 0.04*(window.innerHeight + window.innerWidth);
 
         let rect1 = new scope.Rectangle(bounds);
-        rect1.y = rect1.height*0.43;
-        rect1.height = bounds.height*0.43;
+        rect1.y = rect1.height*0.49;
+        rect1.height = bounds.height*0.35;
         waves.push(
             new WavePath({
                 container: rect1, 
@@ -150,7 +150,7 @@ function HeaderWaves() {
             
         }
     }}>
-        <Loading active={separateLoading} time={time}/>
+        {/* <Loading active={separateLoading} time={time}/> */}
     </PaperElement>
 }
 

@@ -4,7 +4,6 @@
 
     &:not(.open){
         background: linear-gradient(to right, $primaryColor, $accentColor);
-        border-radius: 0.4em;
         border: solid $accentColor 1px;
         box-shadow: var(--box-shadow);
     }
@@ -14,10 +13,9 @@
     }
 
     &.container {
-        width: 29vw;
-        min-width: 40vh;
-        height: calc(28vh + 2vw);
-        margin-bottom: 10vh;
+        width: 100vw;
+        height: 80vh;
+        margin-bottom: 20vh;
         font-size: 150%;
         font-weight: 800;
     }

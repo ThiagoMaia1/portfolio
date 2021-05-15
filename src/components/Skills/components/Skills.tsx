@@ -54,7 +54,6 @@ function Skills({mainSkills, otherSkills}
                     )}
                 </div>
             </div>
-            {!otherSkills.length ? null : <ExpandArrow callback={setIsExpanded} isExpanded={isExpanded} iconSize={50}/>}
         </>
     );
 }
