@@ -3,7 +3,6 @@ import ProjectCard from './../ProjectGallery/components/ProjectCard/ProjectCard'
 import './ProjectGallery.scss';
 import SectionTitle from './../basic/SectionTitle/SectionTitle';
 import $t from '../../translation/Translation';
-import IsometricCubes from './../Animations/IsometricCubes/IsometricCubes';
 import AppearFromBelow from '../Animations/AppearFromBelow/AppearFromBelow';
 import useFilterHashTechnologies from '../../hooks/useFilterHashTechnologies';
 
