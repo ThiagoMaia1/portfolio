@@ -40,7 +40,7 @@ const projects: Array<Project> = [
     ],
     undefined,
     'https://cultue.web.app',
-    20
+    10
   ),
   new Project(
     $t('bibleForHumansTitle'),

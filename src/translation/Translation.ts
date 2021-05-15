@@ -18,7 +18,8 @@ export interface sentences {
     foreignLanguageImage : string,
     foreignLanguageUrl : string, 
     relatedTechnologies : string,
-    developedBy : string
+    developedBy : string,
+    seeInteractiveVersion : string,
 // Projects
     cultueTitle: string,
     cultueSubtitle : string,
@@ -100,6 +101,7 @@ const translation : Record<string, sentences> = {
         foreignLanguageUrl: 'https://www.britannica.com/topic/English-language',
         relatedTechnologies: 'Ver competências relacionadas',
         developedBy: 'Desenvolvido por',
+        seeInteractiveVersion: 'Veja a versão completa e interativa em www.thiagomaia.tk.',
     // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Apresentações de Slides para Igrejas',
@@ -179,6 +181,7 @@ const translation : Record<string, sentences> = {
         foreignLanguageUrl: 'https://www.portugues.com.br/',
         relatedTechnologies: 'See related skills',
         developedBy: 'Developed by',
+        seeInteractiveVersion: 'See the full interactive version of this portfolio at www.thiagomaia.tk.',
         // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Slide Presentations for Churches',
