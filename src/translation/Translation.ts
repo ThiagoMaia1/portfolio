@@ -18,6 +18,7 @@ export interface sentences {
     foreignLanguageImage : string,
     foreignLanguageUrl : string, 
     relatedTechnologies : string,
+    developedBy : string
 // Projects
     cultueTitle: string,
     cultueSubtitle : string,
@@ -98,6 +99,7 @@ const translation : Record<string, sentences> = {
         foreignLanguageImage : 'English.png',
         foreignLanguageUrl: 'https://www.britannica.com/topic/English-language',
         relatedTechnologies: 'Ver competências relacionadas',
+        developedBy: 'Desenvolvido por',
     // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Apresentações de Slides para Igrejas',
@@ -176,6 +178,7 @@ const translation : Record<string, sentences> = {
         foreignLanguageImage: 'Portuguese.png',
         foreignLanguageUrl: 'https://www.portugues.com.br/',
         relatedTechnologies: 'See related skills',
+        developedBy: 'Developed by',
         // Projects
         cultueTitle: 'Cultue',
         cultueSubtitle: 'Slide Presentations for Churches',

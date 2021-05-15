@@ -5,6 +5,7 @@ import { MdEmail } from 'react-icons/md';
 import { ImStackoverflow } from 'react-icons/im';
 import { emailAddress, facebookUrl, fullName, gitHubUrl, linkedinUrl, stackOverflowUrl } from '../../../constants/Constants';
 import { IconType } from 'react-icons';
+import $t from '../../../translation/Translation';
 
 type Link = {
     logo : IconType;
@@ -24,7 +25,7 @@ function ContactInfo ({includeDevelopedBy = true}) {
     return (
         <div className='items-container'>
             {!includeDevelopedBy ? null :
-                <span className='developed-by'>Desenvolvido por {fullName}</span>
+                <span className='developed-by'>{`${$t('developedBy')} ${fullName}`}</span>
             }
             {links.map(({logo, apelido, url}) => {
                 let Logo = logo;
