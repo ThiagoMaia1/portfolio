@@ -2,7 +2,7 @@ import projects from '../../models/Project/Projects';
 import ProjectCard from './../ProjectGallery/components/ProjectCard/ProjectCard';
 import './ProjectGallery.scss';
 import SectionTitle from './../basic/SectionTitle/SectionTitle';
-import getTranslatedSentence from '../../translation/Translation';
+import $t from '../../translation/Translation';
 import IsometricCubes from './../Animations/IsometricCubes/IsometricCubes';
 import AppearFromBelow from '../Animations/AppearFromBelow/AppearFromBelow';
 import useFilterHashTechnologies from '../../hooks/useFilterHashTechnologies';
@@ -30,7 +30,7 @@ function ProjectGallery() {
   return (
     <div id='project-section' className='page-section' data-id={depth}>
       <AppearFromBelow>
-        <SectionTitle text={getTranslatedSentence('myProjects')}/>
+        <SectionTitle text={$t('myProjects')}/>
         <div className='project-gallery-wrapper'>
           <div className='project-gallery'>
             {filteredProjects

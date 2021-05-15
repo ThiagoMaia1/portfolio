@@ -1,15 +1,17 @@
 import { useContext, useEffect, useState } from 'react';
+// import $t, { sentences } from '../../translation/Translation';
 import { ScrollContext } from '../Main/ScrollProvider';
 import SectionsIndexWave from './components/SectionsIndexWave/SectionsIndexWave';
 import './SectionsIndex.scss';
 
-const sectionsIds = [
-    'about-me',
-    'skills-section',
-    'project-section',
-    'previous-experiences-section',
-    'education-section',
-];
+const sectionsList = {
+    'about-me': 'aboutMe',
+    'skills-section': 'skills',
+    'project-section': 'myProjects',
+    'previous-experiences-section': 'previousExperiences',
+    'education-section': 'academicFormation',
+};
+const sectionsIds = Object.keys(sectionsList);
 
 export type Section = {id : string, element : HTMLElement, title : string, height : number};
 

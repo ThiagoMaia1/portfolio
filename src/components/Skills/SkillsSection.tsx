@@ -3,7 +3,7 @@ import useHashChange from "../../hooks/useHashChange";
 import { getTechnologies } from "../../hooks/useHashTechnologies";
 import projects from "../../models/Project/Projects";
 import technologies from '../../models/Technology/Technologies';
-import getTranslatedSentence from "../../translation/Translation";
+import $t from "../../translation/Translation";
 import AppearFromBelow from "../Animations/AppearFromBelow/AppearFromBelow";
 import SectionTitle from "../basic/SectionTitle/SectionTitle";
 import Skills from "./components/Skills";
@@ -82,7 +82,7 @@ function SkillsSection() {
 
     return (
         <div id='skills-section'>
-            <SectionTitle text={getTranslatedSentence('skills')} />
+            <SectionTitle text={$t('skills')} />
             <AppearFromBelow>
                 <div className='filter-input-container'>
                     <input ref={searchBarRef} value={searchTerm} onChange={e => setTermo(e.target.value)} autoComplete='false' placeholder='Buscar'></input>

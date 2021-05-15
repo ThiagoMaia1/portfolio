@@ -14,7 +14,7 @@ const professionalExperiences : ProfessionalExperience[] = [
     new ProfessionalExperience('contractDeveloper', 'ultimato', 2019, 1, 12, [t.Excel, t.VBA, t.Access], true),
     new ProfessionalExperience('administrativeAssistant', 'ufop', 2019, 1, 18, [t.Word, t.Excel, t.VBA], true),
     new ProfessionalExperience('storageAdministrator', 'ufop', 2020, 7, 10, [t.Excel, t.VBA, t.APIRest, t.NodeJs, t.Python], true),
-    new ProfessionalExperience('frontendDeveloper', 'mereo', 2021, 4, undefined, [t.GitHub, t.Angular, t.AngularJS, t.CSharp, t.Scrum, t.Typescript, t.Javascript, t.HTML5, t.CSS3, t.SASS, t.Bootstrap, t.Jira, t.Jenkins, t.ForeignLanguage], true),
+    new ProfessionalExperience('frontendDeveloper', 'mereo', 2021, 4, undefined, [t.GitHub, t.Angular, t.AngularJS, t.CSharp, t.SQLServer, t.Scrum, t.Typescript, t.Javascript, t.HTML5, t.CSS3, t.SASS, t.Bootstrap, t.Jira, t.Jenkins, t.ForeignLanguage], true),
 ];
 
 export default professionalExperiences;

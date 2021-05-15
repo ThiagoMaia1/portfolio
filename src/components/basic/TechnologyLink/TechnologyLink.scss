@@ -1,6 +1,6 @@
 @import '../../../index.scss';
 
-$logo-size: 1.5em;
+$logo-size: 2em;
 .technology-link {
     display: flex;
     margin: 0.3em 0;
@@ -12,7 +12,7 @@ $logo-size: 1.5em;
         line-height: $logo-size;
     }    
     .technology-logo-container {
-        margin-right: 0.5em;
+        margin-right: 0.6em;
         @include normalized-image($logo-size);
     }
 }

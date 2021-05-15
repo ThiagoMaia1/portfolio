@@ -1,5 +1,5 @@
 import getGradient from '../../Animations/PaperGradient';
-import getTranslatedSentence from '../../../translation/Translation';
+import $t from '../../../translation/Translation';
 import PaperElement, { OnFrameEvent } from '../../Animations/PaperElement';
 import {WavePath, Sides, addShadow} from '../../Animations/Waves/Waves';
 import { fixedStar, paperTextStyle } from '../../../constants/Constants';
@@ -37,7 +37,7 @@ function HeaderWaves() {
         ]
         let textAbove = new scope.PointText({
             point: bounds.center.add(new scope.Point(bounds.width*0.2, -bounds.height*0.4)),
-            content: getTranslatedSentence('developerTitle'),
+            content: $t('developerTitle'),
             style: paperTextStyle(scope),
         });
         textAbove.style.fontSize = 0.015*(window.innerHeight + window.innerWidth);

@@ -1,4 +1,4 @@
-import getTranslatedSentence from '../../../translation/Translation'
+import $t from '../../../translation/Translation'
 import Technology from '../../../models/Technology/Technology'
 import {updateHash} from '../../../constants/FuncoesGeraisTS'
 import technologies, { getTechnologiesOfFamily } from '../../../models/Technology/Technologies'
@@ -37,7 +37,7 @@ function SeeTechnologyFamily({setSearchTerm} : {setSearchTerm : (searchTerm : st
         <AppearFromBelow>
             <Div>
                 <Button onClick={onClick}>
-                    {getTranslatedSentence('relatedTechnologies')}
+                    {$t('relatedTechnologies')}
                 </Button>
             </Div>
         </AppearFromBelow>

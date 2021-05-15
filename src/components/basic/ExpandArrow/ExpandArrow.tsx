@@ -14,6 +14,7 @@ const Container = styled.div`
     height: 10vh;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 `;
 
 function ExpandArrow({iconSize, isExpanded, direction = Directions.Down, callback} 

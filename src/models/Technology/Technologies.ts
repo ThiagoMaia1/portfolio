@@ -1,4 +1,4 @@
-import getTranslatedSentence from "../../translation/Translation";
+import $t from "../../translation/Translation";
 import Category from "../Category";
 import Technology from "./Technology";
 import { getKeyByValue } from '../../constants/FuncoesGeraisTS'
@@ -27,13 +27,13 @@ const technologies = {
     Expo: new Technology('Expo', 'Expo.png', Category.Tool, 'https://expo.io/', 'React'),
     Express: new Technology('Express', 'Express.png', Category.Framework, 'https://expressjs.com/', 'MERN'),
     // ForeignLanguage: new Technology(
-    //     getTranslatedSentence('foreignLanguage'),
-    //     getTranslatedSentence('foreignLanguageImage'),
+    //     $t('foreignLanguage'),
+    //     $t('foreignLanguageImage'),
     //     Category.Tool, 
-    //     getTranslatedSentence('foreignLanguageUrl'),
+    //     $t('foreignLanguageUrl'),
     //     'Business'
     // ),
-    ForeignLanguage: new Technology(getTranslatedSentence('english'), 'English.png', Category.Tool, 'https://www.britannica.com/topic/English-language', 'Business'),
+    ForeignLanguage: new Technology($t('english'), 'English.png', Category.Tool, 'https://www.britannica.com/topic/English-language', 'Business'),
     Figma: new Technology('Figma', 'Figma.svg', Category.Tool, 'https://www.figma.com/', 'Design'),
     Firebase: new Technology('Firebase', 'Firebase.png', Category.Tool, 'https://firebase.google.com/', 'Cloud'),
     Flutter: new Technology('Flutter', 'Flutter.svg', Category.Framework, 'https://flutter.dev/', 'Flutter'),
@@ -63,6 +63,7 @@ const technologies = {
     Scrum: new Technology('Scrum', 'Scrum.png', Category.Language, 'https://en.wikipedia.org/wiki/Scrum_(software_development)', 'Business'),
     Sendgrid: new Technology('Twilio Sendgrid', 'SendGrid.png', Category.Language, 'https://sendgrid.com/', 'Business'),
     SQL: new Technology('SQL', 'SQL.png', Category.Language, 'https://docs.microsoft.com/pt-br/sql/t-sql/language-reference?view=sql-server-ver15', 'SQL'),
+    SQLServer: new Technology('SQL Server', 'SQLServer.png', Category.Software, 'https://www.microsoft.com/pt-br/sql-server/sql-server-downloads', 'SQL'),
     StyledComponents: new Technology('Styled Components', 'StyledComponents.png', Category.Tool, 'https://styled-components.com/', 'React'),
     TailwindCSS: new Technology('Tailwind CSS', 'TailwindCSS.svg', Category.Tool, 'https://tailwindcss.com/', 'Styling'),
     Trello: new Technology('Trello', 'Trello.png', Category.Tool, 'https://trello.com/', 'Business'),
@@ -87,7 +88,7 @@ export const technologyFamilies : Record<TechnologyFamilies, Array<Technology>> 
     React,
     Vue: [t.Vue, t.VueX, t.VueI18n, ...Vanilla],
     Angular: [t.Angular, t.AngularJS, t.jQuery, ...Vanilla],
-    SQL: [t.SQL, t.PostgreSQL, t.MySQL],
+    SQL: [t.SQL, t.PostgreSQL, t.MySQL, t.SQLServer],
     MicrosoftOffice: [t.Access, t.Word, t.Excel, t.VBA],
     NOSQL: [t.Firebase, t.MongoDB],
     API: [t.APIRest, t.AWS, t.GraphQL, t.Postman, t.Express],

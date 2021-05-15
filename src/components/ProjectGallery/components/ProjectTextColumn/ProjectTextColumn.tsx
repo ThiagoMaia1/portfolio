@@ -4,7 +4,7 @@ import './ProjectTextColumn.scss';
 import TechnologiesSection from '../TechnologiesSection/TechnologiesSection';
 import TechnologyLogo from '../../../basic/TechnologyLogo/TechnologyLogo';
 import technologies from '../../../../models/Technology/Technologies';
-import getTranslatedSentence from '../../../../translation/Translation';
+import $t from '../../../../translation/Translation';
 
 function ProjectTextColumn({project, isVertical} : {project : Project, isVertical : boolean}) {
 
@@ -19,7 +19,7 @@ function ProjectTextColumn({project, isVertical} : {project : Project, isVertica
                 </a>
                 {!project.githubUrl ? null
                     : <> - <span className='technology-link'><a href={project.githubUrl} target={'_blank'} rel={'noopener noreferrer'}>
-                        {getTranslatedSentence('seeOnGithub') + '  '}<TechnologyLogo technology={technologies.GitHub}/>
+                        {$t('seeOnGithub') + '  '}<TechnologyLogo technology={technologies.GitHub}/>
                       </a></span></>   
                 }
             </div>

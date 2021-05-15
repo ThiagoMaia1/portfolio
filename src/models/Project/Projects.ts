@@ -1,5 +1,5 @@
 import { urlFinalPaper } from '../../constants/Constants';
-import getTranslatedSentence from '../../translation/Translation';
+import $t from '../../translation/Translation';
 import technologies from '../Technology/Technologies';
 import Project from './Project';
 
@@ -7,8 +7,8 @@ const t = technologies;
 
 const projects: Array<Project> = [
   new Project(
-    getTranslatedSentence('cultueTitle'),
-    getTranslatedSentence('cultueSubtitle'),
+    $t('cultueTitle'),
+    $t('cultueSubtitle'),
     [
       t.Javascript,
       t.HTML5,
@@ -20,7 +20,7 @@ const projects: Array<Project> = [
       t.Sendgrid,
       t.APIRest,
     ],
-    getTranslatedSentence('cultueDescription'),
+    $t('cultueDescription'),
     'https://cultue.web.app/',
     'projects/Cultue.svg',
     'https://github.com/ThiagoMaia1/cultue-slides',
@@ -42,8 +42,8 @@ const projects: Array<Project> = [
     'https://cultue.web.app',
   ),
   new Project(
-    getTranslatedSentence('bibleForHumansTitle'),
-    getTranslatedSentence('bibleForHumansSubtitle'),
+    $t('bibleForHumansTitle'),
+    $t('bibleForHumansSubtitle'),
     [
       t.APIRest,
       t.NodeJs,
@@ -57,7 +57,7 @@ const projects: Array<Project> = [
       t.Firebase,
       // t.Sendgrid,
     ],
-    getTranslatedSentence('bibleForHumansDescription'),
+    $t('bibleForHumansDescription'),
     'https://bibliaparahumanos.web.app/home',
     'projects/BibliaParaHumanos.svg',
     'https://github.com/ThiagoMaia1/api-biblia',
@@ -72,15 +72,15 @@ const projects: Array<Project> = [
     ],
     {
       url: 'https://github.com/ThiagoMaia1/pagina-api-biblia', 
-      label: getTranslatedSentence('bibleForHumansLink'),
+      label: $t('bibleForHumansLink'),
     },
     'https://bibliaparahumanos.web.app/home',
   ),
   new Project(
-    getTranslatedSentence('myShopTitle'),
-    getTranslatedSentence('myShopSubtitle'),
+    $t('myShopTitle'),
+    $t('myShopSubtitle'),
     [t.Dart, t.Flutter, t.Figma, t.Trello,],
-    getTranslatedSentence('myShopDescription'),
+    $t('myShopDescription'),
     'https://youtu.be/BJljtECxGkE',
     'projects/MyShop.png',
     'https://github.com/ThiagoRavier/ecommerce',
@@ -96,14 +96,14 @@ const projects: Array<Project> = [
     ],
     {
       url: 'https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-(E-commerce-template)-by-Oleh-Chabanov', 
-      label: getTranslatedSentence('figmaBy'),
+      label: $t('figmaBy'),
     }
   ),
   new Project(
-    getTranslatedSentence('ballGameTitle'),
-    getTranslatedSentence('ballGameSubtitle'),
+    $t('ballGameTitle'),
+    $t('ballGameSubtitle'),
     [t.Typescript, t.HTML5, t.SASS, t.Angular, t.Firebase, t.AWS],
-    getTranslatedSentence('ballGameDescription'),
+    $t('ballGameDescription'),
     'https://master.d2gy6xsqkmio1s.amplifyapp.com/',
     'companies/mereo.svg',
     'https://github.com/ThiagoMaia1/angular-game',
@@ -117,8 +117,8 @@ const projects: Array<Project> = [
     'https://www.mereobounce.tk/'
   ),
   new Project(
-    getTranslatedSentence('vidAngelTitle'),
-    getTranslatedSentence('vidAngelSubtitle'),
+    $t('vidAngelTitle'),
+    $t('vidAngelSubtitle'),
     [
       t.Javascript,
       t.HTML5,
@@ -128,7 +128,7 @@ const projects: Array<Project> = [
       t.Postman,
       t.APIRest,
     ],
-    getTranslatedSentence('vidAngelDescription'),
+    $t('vidAngelDescription'),
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',
     'projects/VidAngelSubtitles.png',
     'https://github.com/ThiagoMaia1/vidangel-subtitles',
@@ -139,14 +139,14 @@ const projects: Array<Project> = [
     ],
     {
       url: 'https://www.vidangel.com/browse',
-      label: getTranslatedSentence('vidAngelLink'),
+      label: $t('vidAngelLink'),
     }
   ),
   new Project(
-    getTranslatedSentence('ultimatoSystemTitle'),
-    getTranslatedSentence('ultimatoSystemSubtitle'),
+    $t('ultimatoSystemTitle'),
+    $t('ultimatoSystemSubtitle'),
     [t.Access, t.Excel, t.VBA, t.SQL, t.HTML5],
-    getTranslatedSentence('ultimatoSystemDescription'),
+    $t('ultimatoSystemDescription'),
     urlFinalPaper,
     'projects/Ultimato.png',
     '',
@@ -163,14 +163,14 @@ const projects: Array<Project> = [
     ],
     {
       url: urlFinalPaper, 
-      label: getTranslatedSentence('ultimatoFinalPaperLink'),
+      label: $t('ultimatoFinalPaperLink'),
     }
   ),
   new Project(
-    getTranslatedSentence('boardGameHelperTitle'),
-    getTranslatedSentence('boardGameHelperSubtitle'),
+    $t('boardGameHelperTitle'),
+    $t('boardGameHelperSubtitle'),
     [t.Typescript, t.HTML5, t.SASS, t.ReactNative],
-    getTranslatedSentence('boardGameHelperDescription'),
+    $t('boardGameHelperDescription'),
     'https://youtu.be/9Owm3zBeq8Q',
     'projects/BoardGame.png',
     'https://github.com/ThiagoMaia1/board-game-helper.git',
@@ -183,10 +183,10 @@ const projects: Array<Project> = [
     ],
   ),
   new Project(
-    getTranslatedSentence('acaiAntonioTitle'),
-    getTranslatedSentence('acaiAntonioSubtitle'),
+    $t('acaiAntonioTitle'),
+    $t('acaiAntonioSubtitle'),
     [t.Typescript, t.HTML5, t.CSS3, t.ReactNative],
-    getTranslatedSentence('acaiAntonioDescription'),
+    $t('acaiAntonioDescription'),
     'https://youtu.be/BWt3QXCnMxY',
     'projects/AcaiAntonio.png',
     'https://github.com/ThiagoMaia1/acai-antonio',
@@ -197,10 +197,10 @@ const projects: Array<Project> = [
     ],
   ),
   new Project(
-    getTranslatedSentence('portfolioTitle'),
-    getTranslatedSentence('portfolioSubtitle'),
+    $t('portfolioTitle'),
+    $t('portfolioSubtitle'),
     [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS, t.StyledComponents],
-    getTranslatedSentence('portfolioDescription'),
+    $t('portfolioDescription'),
     window.location.origin,
     'projects/Portfolio.svg',
     'https://github.com/ThiagoMaia1/portfolio',

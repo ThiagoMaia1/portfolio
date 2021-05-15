@@ -1,4 +1,4 @@
-import getTranslatedSentence, { sentences } from "../../translation/Translation";
+import $t, { sentences } from "../../translation/Translation";
 import companies from "../Company/Companies";
 import Company from "../Company/Company";
 import Technology from "../Technology/Technology";
@@ -19,8 +19,8 @@ class ProfessionalExperience {
         public relevantForIT = true,
         public isEducation = false,
     ) {
-        this.title = getTranslatedSentence(job);
-        this.description = getTranslatedSentence(job + 'Description' as keyof sentences);
+        this.title = $t(job);
+        this.description = $t(job + 'Description' as keyof sentences);
         this.company = companies[companyKey];
         this.initialDate = new Date(initialYear, initialMonth - 1, 1, 0, 0, 0);
     }

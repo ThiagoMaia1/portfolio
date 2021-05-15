@@ -1,13 +1,18 @@
 export interface sentences {
     developerTitle : string,
     aboutMe : string,
+    aboutMeSectionLabel : string,
     selfDescription: string,
+    skills : string,
+    skillsSectionLabel : string,
     myProjects : string,
+    myProjectsSectionLabel : string,
     previousExperiences : string,
+    previousExperiencesSectionLabel : string,
     academicFormation : string,
+    academicFormationSectionLabel : string,
     seeOnGithub : string,
     currentJob : string,
-    skills : string,
     foreignLanguage : string,
     english : string,
     foreignLanguageImage : string,
@@ -76,13 +81,18 @@ const translation : Record<string, sentences> = {
     'ptasd-asdsaadBR': {
         developerTitle: 'Desenvolvedor Front-End',
         aboutMe: "Quem Sou Eu?",
+        aboutMeSectionLabel: 'Sobre Mim',
         selfDescription: "Eu sou um desenvolvedor web e mobile situado na histórica Ouro Preto, MG.\n\nSou formado em engenharia de produção, mas acabei percebendo que minha real paixão profissional é desenvolvimento de softwares. Então decidi me aprofundar nessa área, pra tentar ganhar a vida programando. Eu comecei construindo algumas ideias legais que tinha para websites e apps com o intuito de aprender que você pode ver abaixo.\n\nTenho grande paixão por melhorar coisas, e adoro usar tecnologia para tornar o trabalho mais fácil pras pessoas no dia-a-dia, o que exige ouvir bastante as pessoas, e tentar se colocar no lugar delas. Eu adoro desafios e aprender coisas novas, especialmente se elas forem úteis.",
+        skills: 'Principais Competências',
+        skillsSectionLabel: 'Competências',
         myProjects: "Meus Projetos",
+        myProjectsSectionLabel: 'Projetos',
         previousExperiences: 'Experiência Profissional',
+        previousExperiencesSectionLabel: 'Experiências',
         seeOnGithub: 'Ver no GitHub',
         currentJob: 'hoje',
         academicFormation: 'Formação Acadêmica',
-        skills: 'Principais Competências',
+        academicFormationSectionLabel: 'Formação',
         foreignLanguage : 'Inglês Fluente',
         english : 'Inglês Fluente',
         foreignLanguageImage : 'English.png',
@@ -148,14 +158,19 @@ const translation : Record<string, sentences> = {
     },
     'en': {
         developerTitle: 'Front-end Developer',
-        aboutMe: "About Me",
+        aboutMe: 'About Me',
+        aboutMeSectionLabel: 'About Me',
         selfDescription: "I'm web and mobile developer based on the historical Ouro Preto, Brazil. I gratuated in Industrial Engineering, but ended up realizing that my true professional passion was software development, so I decided to dig deep on that area to make a living out of programming. I started out building some cool website ideas that I had in order to learn, until I was hired.\n\nI have a passion for improving things, and specially for using technology to make work easier for people on their daily routines, which takes a lot of listening and trying to put yourself in other people's shoes. I love challenges, and learning new things, specially if they're useful.\n\nI believe the workplace is a great place to learn and meet people, and believe in the importance of a friendly enviroment with good relationships and mutual respect.",
-        myProjects: "My Projects",
+        skills: 'Main Skills',
+        skillsSectionLabel: 'Skills',
+        myProjects: 'My Projects',
+        myProjectsSectionLabel: 'Projects',
         previousExperiences: 'Professional Experience',
+        previousExperiencesSectionLabel: 'Experiences',
         seeOnGithub: 'See on GitHub',
         currentJob: 'today',
         academicFormation: 'Education',
-        skills: 'Main Skills',
+        academicFormationSectionLabel: 'Education',
         foreignLanguage: 'Native Portuguese',
         english: 'Fluent English',
         foreignLanguageImage: 'Portuguese.png',
@@ -221,7 +236,7 @@ const translation : Record<string, sentences> = {
     }
 };
 
-const getTranslatedSentence = (key : keyof sentences) => {
+const $t = (key : keyof sentences) => {
     let languageCode = getLanguageCode();
     return translation[languageCode][key];
 }
@@ -240,4 +255,4 @@ export const getLanguageCode = () => {
     return languageCode;
 }
 
-export default getTranslatedSentence;
+export default $t;
