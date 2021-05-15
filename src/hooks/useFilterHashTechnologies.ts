@@ -7,7 +7,7 @@ export default function useFilterHashTechnologies () {
     let hashTechnologies = useHashTechnologies();
     return (technologyArray : Technology[]) =>
         !hashTechnologies.length ||
-        technologyArray.filter(t => {
+        !!technologyArray.filter(t => {
             let technologyKey = getKeyByValue(technologies, t);
             return hashTechnologies.includes(technologyKey)
         }).length

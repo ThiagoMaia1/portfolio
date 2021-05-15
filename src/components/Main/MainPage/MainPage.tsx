@@ -5,7 +5,7 @@ import AboutMe from '../../AboutMe/AboutMe';
 import SkillsSection from '../../Skills/SkillsSection';
 import ProjectGallery from '../../ProjectGallery/ProjectGallery';
 import PreviousExperiences from '../../PreviousExperiences/PreviousExperiences';
-import EducationSection from '../../EducationSection/EducationSection';
+// import EducationSection from '../../EducationSection/EducationSection';
 import Footer from '../../Footer/Footer';
 import SectionsIndex from '../../SectionsIndex/SectionsIndex';
 import Background from '../Background/Background';
@@ -23,7 +23,7 @@ const MainPage = () => {
                     <SkillsSection/>
                     <ProjectGallery/>
                     <PreviousExperiences/>
-                    <EducationSection/>
+                    {/* <EducationSection/> */}
                 </div>
                 <Footer/>
             </div>

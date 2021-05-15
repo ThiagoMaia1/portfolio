@@ -32,6 +32,13 @@ class ProfessionalExperience {
         const month = this.initialDate.getMonth() + this.durationInMonths - wholeYears*12 - 1;
         return new Date(year, month, 1, 0, 0, 0);
     }
+    
+    static companyExperiences = (experiences : ProfessionalExperience[], companyKey : keyof typeof companies, isEducation = false) => 
+        experiences.filter(e => e.companyKey === companyKey && e.isEducation === isEducation)
+                   .sort((a, b) => b.initialDate.getTime() - a.initialDate.getTime());
+    
+    static filterByTechnology = (experiences : ProfessionalExperience[], technologyFilter : (technologyArray : Technology[]) => boolean) => 
+        experiences.filter(e => e.isEducation || !!technologyFilter(e.skillSet));
 }
 
 export default ProfessionalExperience;
