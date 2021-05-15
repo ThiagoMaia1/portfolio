@@ -26,13 +26,14 @@ const technologies = {
     Excel: new Technology('Excel', 'Excel.png', Category.Software, 'https://www.microsoft.com/pt-br/microsoft-365/excel', 'MicrosoftOffice'),
     Expo: new Technology('Expo', 'Expo.png', Category.Tool, 'https://expo.io/', 'React'),
     Express: new Technology('Express', 'Express.png', Category.Framework, 'https://expressjs.com/', 'MERN'),
-    ForeignLanguage: new Technology(
-        getTranslatedSentence('foreignLanguage'),
-        getTranslatedSentence('foreignLanguageImage'),
-        Category.Tool, 
-        getTranslatedSentence('foreignLanguageUrl'),
-        'Business'
-    ),
+    // ForeignLanguage: new Technology(
+    //     getTranslatedSentence('foreignLanguage'),
+    //     getTranslatedSentence('foreignLanguageImage'),
+    //     Category.Tool, 
+    //     getTranslatedSentence('foreignLanguageUrl'),
+    //     'Business'
+    // ),
+    ForeignLanguage: new Technology(getTranslatedSentence('english'), 'English.png', Category.Tool, 'https://www.britannica.com/topic/English-language', 'Business'),
     Figma: new Technology('Figma', 'Figma.svg', Category.Tool, 'https://www.figma.com/', 'Design'),
     Firebase: new Technology('Firebase', 'Firebase.png', Category.Tool, 'https://firebase.google.com/', 'Cloud'),
     Flutter: new Technology('Flutter', 'Flutter.svg', Category.Framework, 'https://flutter.dev/', 'Flutter'),

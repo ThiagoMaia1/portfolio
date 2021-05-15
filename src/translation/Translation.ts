@@ -9,6 +9,7 @@ export interface sentences {
     currentJob : string,
     skills : string,
     foreignLanguage : string,
+    english : string,
     foreignLanguageImage : string,
     foreignLanguageUrl : string, 
     relatedTechnologies : string,
@@ -72,7 +73,7 @@ export interface sentences {
 }
 
 const translation : Record<string, sentences> = {
-    'pt-BR': {
+    'ptasd-asdsaadBR': {
         developerTitle: 'Desenvolvedor Front-End',
         aboutMe: "Quem Sou Eu?",
         selfDescription: "Eu sou um desenvolvedor web e mobile situado na histórica Ouro Preto, MG.\n\nSou formado em engenharia de produção, mas acabei percebendo que minha real paixão profissional é desenvolvimento de softwares. Então decidi me aprofundar nessa área, pra tentar ganhar a vida programando. Eu comecei construindo algumas ideias legais que tinha para websites e apps com o intuito de aprender que você pode ver abaixo.\n\nTenho grande paixão por melhorar coisas, e adoro usar tecnologia para tornar o trabalho mais fácil pras pessoas no dia-a-dia, o que exige ouvir bastante as pessoas, e tentar se colocar no lugar delas. Eu adoro desafios e aprender coisas novas, especialmente se elas forem úteis.",
@@ -83,6 +84,7 @@ const translation : Record<string, sentences> = {
         academicFormation: 'Formação Acadêmica',
         skills: 'Principais Competências',
         foreignLanguage : 'Inglês Fluente',
+        english : 'Inglês Fluente',
         foreignLanguageImage : 'English.png',
         foreignLanguageUrl: 'https://www.britannica.com/topic/English-language',
         relatedTechnologies: 'Ver competências relacionadas',
@@ -115,9 +117,9 @@ const translation : Record<string, sentences> = {
         boardGameHelperTitle: 'Tropa Remanescente',
         boardGameHelperSubtitle: 'Apoio para o Jogo',
         boardGameHelperDescription: 'Aplicativo de apoio para o jogo de tabuleiro "Tropa Remanescente".',
-        ballGameTitle: 'Ball Game',
+        ballGameTitle: 'Mereo Bounce',
         ballGameSubtitle: '',
-        ballGameDescription: 'Pequeno jogo usando Angular para tentar impressionar o pessoal da Mereo.',
+        ballGameDescription: 'Joguinho de pular obstáculos, desenvolvido em Angular. Criei para tentar chamar atenção durante o processo seletivo para a empresa Mereo.',
     // Professional Experiences
         englishTeacher : 'Professor de Inglês',
         englishTeacherDescription : 'Ministração de Aulas e Monitorias em Inglês. Escola com foco em inglês empresarial.',
@@ -138,7 +140,7 @@ const translation : Record<string, sentences> = {
         storageAdministrator : 'Administrador de Almoxarifado',
         storageAdministratorDescription : 'Organização e planejamento de estoques. Manutenção do catálogo de materiais. Comunicação com o setor de desenvolvimento de sistemas. Automação de pequenas tarefas usando Python e NodeJs.',
         frontendDeveloper : 'Desenvolvedor Front-End',
-        frontendDeveloperDescription : 'Desenvolvimento e manutenção de módulos web em Angular e AngularJS.',
+        frontendDeveloperDescription : 'Desenvolvimento e manutenção de módulos web em Angular e AngularJS, utilizando metodologias ágeis (Scrum). Equipe internacional.',
         graduation: 'Graduação em Engenharia de Produção',
         graduationDescription: '',
         graduationEnade: 'Curso nº 1 do Brasil em Engenharia de Produção para turma 2013-2017, segundo ENADE.',
@@ -147,7 +149,7 @@ const translation : Record<string, sentences> = {
     'en': {
         developerTitle: 'Front-end Developer',
         aboutMe: "About Me",
-        selfDescription: "I'm web and mobile developer based on the historical Ouro Preto, Brazil. I gratuated in Industrial Engineering, but ended up realizing that my true professional passion was software development, so I decided to dig deep on that area to make a living out of programming. So, trough a lot of study and hard work (though it's hard to call something hard work when you're having so much fun with it) I became a web developer. I started out building some cool website ideas that I had in order to learn (I realized it's much easier to learn how to do things in practice by, well, practing), until I was hired.\n\nI have a passion for improving things, and specially for using technology to make work easier for people on their daily routines, which takes a lot of listening and trying to put yourself in other people's shoes. I love challenges, and learning new things, specially if they're useful.\n\nI believe the workplace is a great place to learn and meet people, and believe in the importance of a friendly enviroment with good relationships and mutual respect.",
+        selfDescription: "I'm web and mobile developer based on the historical Ouro Preto, Brazil. I gratuated in Industrial Engineering, but ended up realizing that my true professional passion was software development, so I decided to dig deep on that area to make a living out of programming. I started out building some cool website ideas that I had in order to learn, until I was hired.\n\nI have a passion for improving things, and specially for using technology to make work easier for people on their daily routines, which takes a lot of listening and trying to put yourself in other people's shoes. I love challenges, and learning new things, specially if they're useful.\n\nI believe the workplace is a great place to learn and meet people, and believe in the importance of a friendly enviroment with good relationships and mutual respect.",
         myProjects: "My Projects",
         previousExperiences: 'Professional Experience',
         seeOnGithub: 'See on GitHub',
@@ -155,6 +157,7 @@ const translation : Record<string, sentences> = {
         academicFormation: 'Education',
         skills: 'Main Skills',
         foreignLanguage: 'Native Portuguese',
+        english: 'Fluent English',
         foreignLanguageImage: 'Portuguese.png',
         foreignLanguageUrl: 'https://www.portugues.com.br/',
         relatedTechnologies: 'See related skills',
@@ -187,9 +190,9 @@ const translation : Record<string, sentences> = {
         boardGameHelperTitle: 'Remainder Troop',
         boardGameHelperSubtitle: 'Board Game Helper',
         boardGameHelperDescription: 'Support app for the "Remainder Troop" board game.',
-        ballGameTitle: 'Ball Game',
+        ballGameTitle: 'Mereo Bounce',
         ballGameSubtitle: '',
-        ballGameDescription: 'Small game created as I learnet Angular to try and impress the folks at Mereo.',
+        ballGameDescription: 'Small game of jumping obstacles, created as I learnet Angular to try and impress the folks at Mereo before they interviewed me.',
     // Professional Experiences
         englishTeacher : 'English Teacher',
         englishTeacherDescription : 'Ministering english classes and correcting tests. School focused on english for enterprises.',
@@ -210,7 +213,7 @@ const translation : Record<string, sentences> = {
         storageAdministrator : 'Storehouse Manager',
         storageAdministratorDescription : 'Organization and planning of stocks, catalogue maintance, communication with development sector. Automation of small tasks using Python and NodeJs.',
         frontendDeveloper : 'Front-End Developer',
-        frontendDeveloperDescription : 'Development and maintance of modules in Angular and AngularJS.',
+        frontendDeveloperDescription : 'Development and maintance of modules in Angular and AngularJS, using agile methodologies (Scrum). International team.',
         graduation: "Bachelor's Degree in Industrial Engineering",
         graduationDescription: '',
         graduationEnade: "School was 1º place for industrial engineering in Brazil's national evaluation of universities for my class' year.",

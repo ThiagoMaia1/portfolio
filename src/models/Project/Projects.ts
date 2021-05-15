@@ -105,11 +105,16 @@ const projects: Array<Project> = [
     [t.Typescript, t.HTML5, t.SASS, t.Angular, t.Firebase, t.AWS],
     getTranslatedSentence('ballGameDescription'),
     'https://master.d2gy6xsqkmio1s.amplifyapp.com/',
-    'projects/Surpresa.png',
+    'companies/mereo.svg',
     'https://github.com/ThiagoMaia1/angular-game',
-    ['BallGame/Surpresa.png'],
-    // undefined,
-    // 'https://master.d2gy6xsqkmio1s.amplifyapp.com/'
+    [
+      'BallGame/Start.png',
+      'BallGame/GamePlay.png',
+      'BallGame/InsertName.png',
+      'BallGame/Ranking.png',
+    ],
+    undefined,
+    'https://www.mereobounce.tk/'
   ),
   new Project(
     getTranslatedSentence('vidAngelTitle'),

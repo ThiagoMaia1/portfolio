@@ -9,7 +9,6 @@ enum Directions {
 }
 
 const Container = styled.div`
-    background-color: white;
     color: lightgray;
     width: 100%;
     height: 10vh;
