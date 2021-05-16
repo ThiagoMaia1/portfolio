@@ -4,7 +4,7 @@ import $t from '../../translation/Translation'
 function LinkToInteractive() {
     return (
         <div>
-            <a style={{display: 'flex', padding: '1.5em 2em', margin: '-10vh 12em 5em', backgroundColor: 'lightgray', 
+            <a style={{display: 'flex', padding: '1.5em 2em', margin: '-16vh 12em 8vh', backgroundColor: 'lightgray', 
                         borderRadius: '0.5em', fontSize: '1.5em', justifyContent: 'space-between', alignItems: 'center',}} 
                         href="https://www.thiagomaia.tk/" rel="noopener noreferrer">
                             {$t('seeInteractiveVersion')}

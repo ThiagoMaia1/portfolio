@@ -7,7 +7,7 @@ import WavePhoto from './components/WavePhoto/WavePhoto';
 function AboutMe() {
 
     return (
-        <div id='about-me' style={{marginTop: '15vh', marginBottom: '35vh'}}>
+        <div id='about-me' style={{marginTop: '15vh', marginBottom: '30vh'}}>
             <SectionTitle text={getTranslatedSentence('aboutMe')}/>
             <AppearFromBelow>
                 <div id='about-me-content'>
