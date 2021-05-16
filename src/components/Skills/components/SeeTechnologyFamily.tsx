@@ -6,20 +6,19 @@ import useHashTechnologies, {hashSeparator} from '../../../hooks/useHashTechnolo
 import styled from 'styled-components'
 import AppearFromBelow from '../../Animations/AppearFromBelow/AppearFromBelow'
 
+const Button = styled.button`
+        font-size: 120%;
+    `
+const Div = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+    padding-right: 5vw;
+    margin-top: 3em;
+`
 
 function SeeTechnologyFamily({setSearchTerm} : {setSearchTerm : (searchTerm : string) => void}) {
     
-    let Button = styled.button`
-        font-size: 120%;
-    `
-    let Div = styled.div`
-        width: 100%;
-        display: flex;
-        justify-content: center;    
-        padding-right: 5vw;
-        margin-top: 3em;
-    `
-
     let technologiesHash = useHashTechnologies();
     let technology : Technology;
 

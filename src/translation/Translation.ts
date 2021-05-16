@@ -79,7 +79,7 @@ export interface sentences {
 }
 
 const translation : Record<string, sentences> = {
-    'ptasd-asdsaadBR': {
+    'pt-BR': {
         developerTitle: 'Desenvolvedor Front-End',
         aboutMe: "Quem Sou Eu?",
         aboutMeSectionLabel: 'Sobre Mim',

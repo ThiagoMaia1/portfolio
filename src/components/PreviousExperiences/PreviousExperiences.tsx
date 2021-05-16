@@ -56,7 +56,7 @@ function PreviousExperiences() {
             {sections
                 .filter(s => s.list.length)
                 .map(s =>
-                    <div id={s.id} className='page-section'>
+                    <div id={s.id} className='page-section' key={s.id}>
                         <div style={{zIndex: 100, position: 'relative'}}>
                             <SectionTitle text={$t(s.translationName)}/>
                             {s.list.map((c, i, a) => 
