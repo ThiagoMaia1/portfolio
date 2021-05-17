@@ -5,7 +5,7 @@ import ContactInfo from '../basic/ContactInfo/ContactInfo';
 
 function Footer() {
 
-    return <div id='footer-container' style={{marginTop: '120vh'}}>
+    return <div id='footer-container' style={{marginTop: '25vh'}}>
         <PaperElement animation={(scope) => {
             scope.activate();
             let view = scope.project.view;

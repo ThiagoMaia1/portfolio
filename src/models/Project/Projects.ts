@@ -100,7 +100,7 @@ const projects: Array<Project> = [
       label: $t('figmaBy'),
     },
     undefined,
-    35
+    25
   ),
   new Project(
     $t('ballGameTitle'),
@@ -118,6 +118,25 @@ const projects: Array<Project> = [
     ],
     undefined,
     'https://www.mereobounce.tk/'
+  ),
+  new Project(
+    $t('boardGameHelperTitle'),
+    $t('boardGameHelperSubtitle'),
+    [t.Typescript, t.HTML5, t.SASS, t.ReactNative],
+    $t('boardGameHelperDescription'),
+    'https://youtu.be/9Owm3zBeq8Q',
+    'projects/BoardGame.png',
+    'https://github.com/ThiagoMaia1/board-game-helper.git',
+    [
+      'BoardGameHelper/CharacterSelection.png',
+      'BoardGameHelper/CharacterInfo.png',
+      'BoardGameHelper/MainPagePortrait.png',
+      'BoardGameHelper/ChapterHistory.png',
+      'BoardGameHelper/MainPageLandscape.png',
+    ],
+    undefined,
+    undefined,
+    25
   ),
   new Project(
     $t('vidAngelTitle'),
@@ -145,7 +164,7 @@ const projects: Array<Project> = [
       label: $t('vidAngelLink'),
     },
     undefined,
-    35
+    30
   ),
   new Project(
     $t('ultimatoSystemTitle'),
@@ -170,25 +189,6 @@ const projects: Array<Project> = [
       url: urlFinalPaper, 
       label: $t('ultimatoFinalPaperLink'),
     }
-  ),
-  new Project(
-    $t('boardGameHelperTitle'),
-    $t('boardGameHelperSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.ReactNative],
-    $t('boardGameHelperDescription'),
-    'https://youtu.be/9Owm3zBeq8Q',
-    'projects/BoardGame.png',
-    'https://github.com/ThiagoMaia1/board-game-helper.git',
-    [
-      'BoardGameHelper/CharacterSelection.png',
-      'BoardGameHelper/CharacterInfo.png',
-      'BoardGameHelper/MainPagePortrait.png',
-      'BoardGameHelper/ChapterHistory.png',
-      'BoardGameHelper/MainPageLandscape.png',
-    ],
-    undefined,
-    undefined,
-    20
   ),
   // new Project(
   //   $t('acaiAntonioTitle'),

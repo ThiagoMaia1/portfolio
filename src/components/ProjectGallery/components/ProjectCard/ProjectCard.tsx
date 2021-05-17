@@ -34,8 +34,9 @@ const ProjectCard = ({project} : {project : Project}) => {
     
     return (
         <AppearFromBelow>
+            <ClosedProject logoUri={project.logoUri} title={project.name}/>
             <div id={project.url === window.location.origin ? 'self-card' : ''} className={(open ? 'open ' : '') + 'project-card container'}
-                style={{...style, marginBottom: ((project.marginBottomVH ?? 0) + 30) + 'vh'}}
+                style={{...style, marginBottom: ((project.marginBottomVH ?? 20)) + 'vh'}}
                 onMouseOver={removeTransition}
                 onMouseOut={() => setHasTransition(true)}
                 ref={refScroll}>

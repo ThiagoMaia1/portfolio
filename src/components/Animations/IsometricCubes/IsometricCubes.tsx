@@ -36,7 +36,7 @@ function IsometricCubes() {
             let timer = 0;
 
             view.onFrame = (event : OnFrameEvent) => {
-                if (event.time - timer < 0.01) return;
+                if (event.time - timer < 0.05) return;
                 timer = event.time;
                 for (let p of pathObjects) {
                     if (p.isExpanding)

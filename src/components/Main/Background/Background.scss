@@ -6,6 +6,7 @@
       position: relative;
       width: 100vw;
       height: 34%;
+      visibility: hidden;
       > * {
           position: absolute;
           right: 60vw;
@@ -15,6 +16,7 @@
     
     .isometric-cubes-container:first-child {
       
+      visibility: visible;
       > * {
           right: 0;
           top: -5%;
