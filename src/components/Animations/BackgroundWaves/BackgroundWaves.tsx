@@ -9,7 +9,7 @@ function BackgroundWaves() {
 
     const Waves = () =>
         <div className='background waves'>
-            <PaperElement animation={(scope) => {
+            <PaperElement shouldResize={false} animation={(scope) => {
                 scope.activate();
                 let view = scope.project.view;
                 const waves = Array(numberOfWaves).fill(0).map((_, i) =>

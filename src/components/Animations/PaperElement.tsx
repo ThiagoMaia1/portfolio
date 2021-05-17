@@ -9,14 +9,16 @@ export type OnFrameEvent = {
     delta : number,
 }
 
-export default function PaperElement({animation, children = null} 
-    : {animation : (scope : paper.PaperScope, canvasId : string) => void, children ?: React.ReactNode}) {
+export default function PaperElement({animation, children = null, shouldResize = true} 
+    : {animation : (scope : paper.PaperScope, canvasId : string) => void, children ?: React.ReactNode, shouldResize ?: boolean}) {
 
     const [canvasId, setCanvasId] = useState(uniqueCanvasId());
     const timeout = useRef(setTimeout(() => void 0));
     const scopeRef = useRef<paper.PaperScope>();
 
-    useWindowResize(() => setCanvasId(uniqueCanvasId()), 500);
+    useWindowResize(() => {
+        if (shouldResize) setCanvasId(uniqueCanvasId())
+    }, 500);
     let _animation = useCallback(animation, [animation]);
 
     useEffect(function () {
