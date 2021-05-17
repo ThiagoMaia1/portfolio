@@ -127,6 +127,7 @@ const projects: Array<Project> = [
       t.ChromeExtensions,
       t.Postman,
       t.APIRest,
+      t.Vue,
     ],
     $t('vidAngelDescription'),
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',

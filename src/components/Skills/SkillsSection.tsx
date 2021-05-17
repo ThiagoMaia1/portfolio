@@ -89,7 +89,8 @@ function SkillsSection() {
             <SectionTitle text={$t('skills')} />
             <AppearFromBelow>
                 <div className='filter-input-container'>
-                    <input ref={searchBarRef} value={searchTerm} onChange={e => setTermo(e.target.value)} autoComplete='false' placeholder='Buscar'></input>
+                    <input ref={searchBarRef} value={searchTerm} onChange={e => setTermo(e.target.value)} autoComplete='false' 
+                           placeholder={$t('search')}></input>
                     <div className='closing-x' 
                         style={!searchTerm ? {visibility: 'hidden'} : {}}
                         onClick={() => {
