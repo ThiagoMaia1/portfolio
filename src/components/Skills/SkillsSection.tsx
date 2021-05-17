@@ -78,11 +78,11 @@ function SkillsSection() {
 
     
     let otherList = searchTerm ? [] : otherSkills;
-    useHashChange(hash => {
+    useHashChange((hash, isFirstTime) => {
         let technologiesHash = getTechnologies(hash);
         if (technologiesHash.length === 1) 
             setTermo(technologies[technologiesHash[0]].name)
-        if (sectionRef.current !== null) 
+        if ((technologiesHash.length > 0 || !isFirstTime) && sectionRef.current !== null) 
             document.body.scroll({
             top: sectionRef.current.offsetTop - 0.1*window.innerHeight + (document.querySelector('#about-me')?.parentElement?.offsetTop ?? 0)
     })});
