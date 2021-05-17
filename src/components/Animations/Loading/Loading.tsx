@@ -16,7 +16,7 @@ function Loading({active, time} : {active : boolean, time : number}) {
     let left = 0.03*window.innerWidth;
 
     return (
-        <div className='fixed-loading' style={{display: active ? '' : 'none', left, bottom: 0.1*window.innerHeight}}>
+        <div className='fixed-loading' style={{opacity: active ? '1' : '0', left, bottom: 0.1*window.innerHeight}}>
             <div className='loading-container'>
                 <PaperElement animation={(scope, canvasId) => {
                     scope.activate();
