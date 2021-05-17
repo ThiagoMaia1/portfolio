@@ -38,6 +38,7 @@ function ScrollProvider({children} : {children : ReactNode}) {
     }, [listener])
     useWindowResize(listener);
 
+    console.log({top: document.body.scrollTop, height: document.body.querySelector('div#root')?.clientHeight})
     const style : CSSProperties = {
         ['--scroll' as any]: state.scroll,
         ['--scroll-sin' as any]: state.scrollSin,

@@ -70,7 +70,6 @@ function SectionsIndexItem({section, isSelected, alignedOffsetOfHeight, baseTop}
     const onClick = () =>
         document.body.scroll({
             top: section.element.offsetTop - alignedOffsetOfHeight*window.innerHeight + baseTop, 
-            left: 0, 
             behavior: 'smooth'
         });
     

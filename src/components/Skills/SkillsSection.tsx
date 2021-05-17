@@ -57,6 +57,7 @@ function SkillsSection() {
 
     let [searchTerm, setSearchTerm] = useState('');
     let searchBarRef = useRef<HTMLInputElement>(null);
+    let sectionRef = useRef<HTMLInputElement>(null);
     let setTermo = useCallback((searchTerm : string) => {
         setSearchTerm(searchTerm);
         window.dispatchEvent(new Event('resize'));
@@ -69,7 +70,6 @@ function SkillsSection() {
                                         .split(termSeparator)
                                         .filter(t => t !== '')
                                         .map(t => t.trim());
-                            console.log(terms)
                             return terms.filter(t => 
                                 new RegExp(t, 'gi').test(s.name)
                             ).length;
@@ -82,10 +82,13 @@ function SkillsSection() {
         let technologiesHash = getTechnologies(hash);
         if (technologiesHash.length === 1) 
             setTermo(technologies[technologiesHash[0]].name)
-    });
+        if (sectionRef.current !== null) 
+            document.body.scroll({
+            top: sectionRef.current.offsetTop - 0.1*window.innerHeight + (document.querySelector('#about-me')?.parentElement?.offsetTop ?? 0)
+    })});
 
     return (
-        <div id='skills-section'>
+        <div id='skills-section' ref={sectionRef}>
             <SectionTitle text={$t('skills')} />
             <AppearFromBelow>
                 <div className='filter-input-container'>
