@@ -45,7 +45,9 @@ function Skills({mainSkills, otherSkills}
         <>
             <div className='skill-list-container' style={{height: sectionHeight + 'px'}}>
                 <div ref={refContainer}>
-                    {groupedSkills.map(g =>
+                    {groupedSkills
+                        .filter(g => g.length > 0)
+                        .map(g =>
                         <div key={g[0].name} style={{width: 60/numberOfColumns + 'vw'}}>
                             {g.map(s => 
                                 <TechnologyLink key={s.name} technology={s}/>
