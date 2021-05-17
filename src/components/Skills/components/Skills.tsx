@@ -49,7 +49,8 @@ function Skills({mainSkills, otherSkills}
                         .filter(g => g.length > 0)
                         .map(g =>
                         <div key={g[0].name} style={{width: 60/numberOfColumns + 'vw'}}>
-                            {g.map(s => 
+                            {g.filter(t => !!t)
+                               .map(s => 
                                 <TechnologyLink key={s.name} technology={s}/>
                             )}
                         </div>
