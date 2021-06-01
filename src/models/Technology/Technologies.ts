@@ -3,7 +3,7 @@ import Category from "../Category";
 import Technology from "./Technology";
 import { getKeyByValue } from '../../constants/FuncoesGeraisTS'
 
-export type TechnologyFamilies =  'Vanilla' | 'React' | 'ReactNative' | 'Mobile' | 'Vue' | 'Angular' | 'SQL' | 'MicrosoftOffice' | 'NOSQL' | 'API' | 'Design' | 'Adobe' | 'Cloud' | 'MERN' | 'Flutter' | 'Business' | 'Styling' | 'GoogleServices' | 'Languages'
+export type TechnologyFamilies =  'Vanilla' | 'React' | 'ReactNative' | 'Mobile' | 'Vue' | 'Angular' | 'SQL' | 'MicrosoftOffice' | 'NOSQL' | 'API' | 'Design' | 'Adobe' | 'Cloud' | 'MERN' | 'Flutter' | 'Business' | 'Styling' | 'GoogleServices' | 'Languages' | 'Tests'
 
 const technologies = {
     Access: new Technology('Access', 'Access.svg', Category.Database, 'https://www.microsoft.com/en/microsoft-365/access', 'MicrosoftOffice'),
@@ -26,13 +26,6 @@ const technologies = {
     Excel: new Technology('Excel', 'Excel.png', Category.Software, 'https://www.microsoft.com/pt-br/microsoft-365/excel', 'MicrosoftOffice'),
     Expo: new Technology('Expo', 'Expo.png', Category.Tool, 'https://expo.io/', 'React'),
     Express: new Technology('Express', 'Express.png', Category.Framework, 'https://expressjs.com/', 'MERN'),
-    // ForeignLanguage: new Technology(
-    //     $t('foreignLanguage'),
-    //     $t('foreignLanguageImage'),
-    //     Category.Tool, 
-    //     $t('foreignLanguageUrl'),
-    //     'Business'
-    // ),
     ForeignLanguage: new Technology($t('english'), 'English.png', Category.Tool, 'https://www.britannica.com/topic/English-language', 'Business'),
     Figma: new Technology('Figma', 'Figma.svg', Category.Tool, 'https://www.figma.com/', 'Design'),
     Firebase: new Technology('Firebase', 'Firebase.png', Category.Tool, 'https://firebase.google.com/', 'Cloud'),
@@ -43,11 +36,12 @@ const technologies = {
     HTML5: new Technology('HTML 5', 'HTML5.png', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/HTML5', 'Vanilla'),
     Javascript: new Technology('Javascript', 'Javascript.svg', Category.Language, 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript', 'Vanilla'),
     Jenkins: new Technology('Jenkins', 'Jenkins.svg', Category.Tool, 'https://www.jenkins.io/', 'Business'),
+    Jest: new Technology('Jest', 'Jest.svg', Category.Tool, 'https://jestjs.io/', 'Tests'),
     jQuery: new Technology('jQuery', 'jQuery.svg', Category.Tool, 'https://jquery.com/', 'Angular'),
     Jira: new Technology('Jira', 'Jira.svg', Category.Tool, 'https://www.atlassian.com/software/jira', 'Business'),
     MongoDB: new Technology('MongoDB', 'MongoDB.png', Category.Database, 'https://www.mongodb.com/', 'MERN'),
     MySQL: new Technology('MySQL', 'MySQL.png', Category.Database, 'https://www.mysql.com/', 'SQL'),
-    NextJs: new Technology('Next.js', 'Nextjs.svg', Category.Tool, 'https://nextjs.org/', 'React'),
+    NextJs: new Technology('Next.js', 'NextJs.svg', Category.Tool, 'https://nextjs.org/', 'React'),
     NodeJs: new Technology('Node.js', 'Nodejs.png', Category.Language, 'https://nodejs.org/', 'MERN'),
     PaperJs: new Technology('Paper.js', 'PaperJs.png', Category.Tool, 'http://paperjs.org/', 'Styling'),
     PlayStore: new Technology('Android Play Store', 'PlayStore.svg', Category.Tool, 'https://developer.android.com/distribute/console?hl=pt-br', 'Mobile'),
@@ -102,7 +96,8 @@ export const technologyFamilies : Record<TechnologyFamilies, Array<Technology>> 
     MERN: [t.NodeJs, ...React, t.Express, t.MongoDB],
     Business: [t.ForeignLanguage, t.Trello, t.Sendgrid, t.GitHub, t.Excel, t.Scrum, t.Jira, t.Jenkins, ...Cloud],
     Styling: [t.Bootstrap, t.TailwindCSS, t.PaperJs, t.CSS3, t.SASS, t.StyledComponents],
-    Languages: [t.Python, t.NodeJs, t.CSharp, t.Javascript, t.Typescript, t.Dart]
+    Languages: [t.Python, t.NodeJs, t.CSharp, t.Javascript, t.Typescript, t.Dart],
+    Tests: [t.Jest],
 };
 
 export const getTechnologiesOfFamily = (technology : Technology) => 

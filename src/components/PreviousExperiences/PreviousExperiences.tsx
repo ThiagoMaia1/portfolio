@@ -15,25 +15,25 @@ export type CompanyWithExperiences = {
 }
 
 class Section {
+    public list : CompanyWithExperiences[] = []; 
     constructor (
         public translationName : keyof sentences,
-        public list : CompanyWithExperiences[], 
         public id : string,
         public filter : (x : any) => ProfessionalExperience[]  
-    ){}
+        ){}
 }
 
 function PreviousExperiences() {
 
     let filterTechnologies = useFilterHashTechnologies();
     const sections = [
-        new Section('previousExperiences', [], 'previous-experiences-section', 
+        new Section('previousExperiences', 'previous-experiences-section', 
             (key : CompanyKey) => ProfessionalExperience.filterByTechnology(
                 ProfessionalExperience.companyExperiences(professionalExperiences, key, false),
                 filterTechnologies
             )
         ),
-        new Section('academicFormation', [], 'education-section',
+        new Section('academicFormation', 'education-section',
             (key : CompanyKey) => ProfessionalExperience.companyExperiences(professionalExperiences, key, true)
         )
     ];
@@ -50,6 +50,9 @@ function PreviousExperiences() {
                 });
         })
     })
+
+    const maxExperienceDate = (company : CompanyWithExperiences) =>
+        Math.max(...company.experiences.map(e => e.initialDate.getTime()))
     
     return (
         <>
@@ -59,7 +62,9 @@ function PreviousExperiences() {
                     <div id={s.id} className='page-section' key={s.id}>
                         <div style={{zIndex: 100, position: 'relative'}}>
                             <SectionTitle text={$t(s.translationName)}/>
-                            {s.list.map((c, i, a) => 
+                            {s.list
+                                .sort((a, b) => maxExperienceDate(b) - maxExperienceDate(a))
+                                .map((c, i, a) => 
                                 <CompanyExperience key={c.key} 
                                                    companyWithExperiences={c} 
                                                    isOdd={i % 2 === 1} 
