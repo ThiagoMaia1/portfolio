@@ -3,7 +3,7 @@ import companies, { CompanyKey } from '../../models/Company/Companies';
 import Company from '../../models/Company/Company';
 import ProfessionalExperience from '../../models/ProfessionalExperience/ProfessionalExperience';
 import professionalExperiences from '../../models/ProfessionalExperience/ProfessionalExperiences';
-import $t, { sentences } from '../../translation/Translation';
+import $t, { Sentences } from '../../translation/Translation';
 import SectionTitle from '../basic/SectionTitle/SectionTitle';
 import CompanyExperience from './components/CompanyExperience/CompanyExperience';
 import './PreviousExperiences.scss';
@@ -17,7 +17,7 @@ export type CompanyWithExperiences = {
 class Section {
     public list : CompanyWithExperiences[] = []; 
     constructor (
-        public translationName : keyof sentences,
+        public translationName : keyof Sentences,
         public id : string,
         public filter : (x : any) => ProfessionalExperience[]  
         ){}

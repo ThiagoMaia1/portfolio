@@ -24,7 +24,7 @@
     .job-skillset-container {
         display: flex;
         flex-wrap: wrap;
-        max-width: 70vw;
+        max-width: calc(max(40vw, 50vh));
         font-size: 125%;
         display: flex;
         margin-top: 1em;

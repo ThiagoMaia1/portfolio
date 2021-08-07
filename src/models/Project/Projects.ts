@@ -7,8 +7,8 @@ const t = technologies;
 
 const projects: Array<Project> = [
   new Project(
-    $t('cultueTitle'),
-    $t('cultueSubtitle'),
+    $t('rsdTitle'),
+    $t('rsdSubtitle'),
     [
       t.Javascript,
       t.HTML5,
@@ -19,6 +19,33 @@ const projects: Array<Project> = [
       t.ReactRouter,
       t.Sendgrid,
       t.APIRest,
+    ],
+    $t('rsdDescription'),
+    'https://rsd.cash/',
+    'projects/RSD.svg',
+    '',
+    [
+      'RSDCash/HomeHeader.png',
+      'RSDCash/HomeImage.png',
+      'RSDCash/CallToAction.png',
+      'RSDCash/WhitePaperFooter.png',
+      'RSDCash/RoadMap.png',
+      'RSDCash/Mint.png',
+    ],
+  ),
+  new Project(
+    $t('cultueTitle'),
+    $t('cultueSubtitle'),
+    [
+      t.ReactJs, 
+      t.NextJs, 
+      t.Typescript, 
+      t.SASS, 
+      t.StyledComponents, 
+      t.Jest, 
+      t.GitHub, 
+      t.ForeignLanguage, 
+      t.ReactQuery
     ],
     $t('cultueDescription'),
     'https://cultue.web.app/',
