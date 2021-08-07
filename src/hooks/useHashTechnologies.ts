@@ -1,5 +1,5 @@
 import technologies, { TechnologiesKey } from '../models/Technology/Technologies'
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import useHashChange from './useHashChange';
 
 export const hashSeparator = '&';
@@ -14,6 +14,9 @@ export const getTechnologies = (hash : string) => {
 export default function useHashTechnologies() {
     let [hashTechnologies, setHashTechnologies] = 
         useState(getTechnologies(''));
-    useHashChange(hash => setHashTechnologies(getTechnologies(hash)));
+    const setHash = useCallback(hash => 
+        setHashTechnologies(getTechnologies(hash))
+    , [setHashTechnologies]);
+    useHashChange(setHash);
     return hashTechnologies;
 }

@@ -40,7 +40,6 @@ const unlistedSkills = [
     t.AdobePhotoshop, 
     t.AdobePremiere,
     t.AdobeIllustrator,
-    t.PostgreSQL,
     t.MySQL,
 ];
 
@@ -78,14 +77,15 @@ function SkillsSection() {
 
     
     let otherList = searchTerm ? [] : otherSkills;
-    useHashChange((hash, isFirstTime) => {
+    const hashCallback = useCallback((hash : string, isFirstTime : boolean) => {
         let technologiesHash = getTechnologies(hash);
         if (technologiesHash.length === 1) 
             setTermo(technologies[technologiesHash[0]].name)
         if ((technologiesHash.length > 0 || !isFirstTime) && sectionRef.current !== null) 
             document.body.scroll({
             top: sectionRef.current.offsetTop - 0.1*window.innerHeight + (document.querySelector('#about-me')?.parentElement?.offsetTop ?? 0)
-    })});
+    })}, [setTermo]);
+    useHashChange(hashCallback);
 
     return (
         <div id='skills-section' ref={sectionRef}>
