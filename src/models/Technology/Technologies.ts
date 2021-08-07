@@ -61,7 +61,7 @@ const technologies = {
     Sendgrid: new Technology('Twilio Sendgrid', 'SendGrid.png', Category.Language, 'https://sendgrid.com/', 'Business'),
     Sequelize: new Technology('Sequelize', 'Sequelize.svg', Category.Framework, 'https://sequelize.org/', 'SQL'),
     Serverless: new Technology('Serverless', 'Serverless.svg', Category.Tool, 'https://www.serverless.com/', 'API'),
-    Slack: new Technology('Slack', 'Slack.png', Category.Tool, 'https://slack.com/', 'Business'),
+    Slack: new Technology('Slack', 'Slack.svg', Category.Tool, 'https://slack.com/', 'Business'),
     SQL: new Technology('SQL', 'SQL.png', Category.Language, 'https://docs.microsoft.com/pt-br/sql/t-sql/language-reference?view=sql-server-ver15', 'SQL'),
     SQLServer: new Technology('SQL Server', 'SQLServer.png', Category.Software, 'https://www.microsoft.com/pt-br/sql-server/sql-server-downloads', 'SQL'),
     Storybook: new Technology('Storybook', 'Storybook.svg', Category.Tool, 'https://storybook.js.org/', 'React'),
@@ -80,8 +80,8 @@ const technologies = {
 let t = technologies;
 let Vanilla = [t.Javascript, t.HTML5, t.Typescript, t.CSS3, t.SASS];
 let Adobe = [t.AdobePhotoshop, t.AdobeIndesign, t.AdobeIllustrator, t.AdobePremiere, t.AdobeLightroom];
-let React = [t.ReactJs, t.ReactRouter, t.ReduxSaga, t.NextJs, t.Gatsby, t.StyledComponents, t.ReactNative, ...Vanilla];
-let Cloud = [t.Firebase, t.AWS, t.Azure, t.Sendgrid]
+let React = [t.ReactJs, t.ReactRouter, t.ReduxSaga, t.NextJs, t.Gatsby, t.StyledComponents, t.ReactNative, t.ReactQuery, t.SWR, t.Storybook, ...Vanilla];
+let Cloud = [t.Firebase, t.AWS, t.Serverless, t.Azure, t.Sendgrid]
 let ReactNative = [t.ReactNative, t.Expo, t.Redux];
 let Flutter = [t.Flutter, t.Dart];
 
@@ -90,10 +90,10 @@ export const technologyFamilies : Record<TechnologyFamilies, Array<Technology>> 
     React,
     Vue: [t.Vue, t.VueX, t.VueI18n, ...Vanilla],
     Angular: [t.Angular, t.AngularJS, t.jQuery, ...Vanilla],
-    SQL: [t.SQL, t.PostgreSQL, t.MySQL, t.SQLServer],
+    SQL: [t.SQL, t.PostgreSQL, t.MySQL, t.SQLServer, t.Sequelize],
     MicrosoftOffice: [t.Access, t.Word, t.Excel, t.VBA],
     NOSQL: [t.Firebase, t.MongoDB],
-    API: [t.APIRest, t.AWS, t.GraphQL, t.Postman, t.Express],
+    API: [t.APIRest, t.AWS, t.GraphQL, t.Postman, t.Express, t.Serverless],
     Design: [t.Figma, ...Adobe],
     Adobe,
     ReactNative,
@@ -102,8 +102,8 @@ export const technologyFamilies : Record<TechnologyFamilies, Array<Technology>> 
     Cloud,
     GoogleServices: [t.ChromeExtensions, t.PlayStore, t.ChromeCast],
     MERN: [t.NodeJs, ...React, t.Express, t.MongoDB],
-    Business: [t.ForeignLanguage, t.Trello, t.Sendgrid, t.GitHub, t.Excel, t.Scrum, t.Jira, t.Jenkins, ...Cloud],
-    Styling: [t.Bootstrap, t.TailwindCSS, t.PaperJs, t.CSS3, t.SASS, t.StyledComponents],
+    Business: [t.ForeignLanguage, t.Trello, t.Sendgrid, t.GitHub, t.GitLab, t.Excel, t.Scrum, t.Jira, t.Jenkins, t.Slack, ...Cloud],
+    Styling: [t.Bootstrap, t.TailwindCSS, t.PaperJs, t.CSS3, t.SASS, t.StyledComponents, t.MaterialUI],
     Languages: [t.Python, t.NodeJs, t.CSharp, t.Javascript, t.Typescript, t.Dart],
     Tests: [t.Jest],
 };
