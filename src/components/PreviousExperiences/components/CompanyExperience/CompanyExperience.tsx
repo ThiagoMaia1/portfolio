@@ -32,7 +32,7 @@ function CompanyExperience({companyWithExperiences, isOdd, isLast}
                 <div className='company-experience' style={{flexDirection: isVertical ? 'column' : 'row'}}>
                     {flexElements}
                 </div>
-                {isLast ? null : <EmDash/>} 
+                {!isLast && <EmDash/>} 
             </div>
         </AppearFromBelow>
     );

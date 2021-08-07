@@ -12,8 +12,8 @@ function TechnologyLink({technology, includeName = true}
              onClick={() => updateHash(getKeyByValue(technologies, technology))} 
              className='technology-link'>
             <TechnologyLogo technology={technology}/>
-            {!includeName ? null
-                : <span>{technology.name}</span>
+            {includeName &&
+             <span>{technology.name}</span>
             }
         </div>
     )

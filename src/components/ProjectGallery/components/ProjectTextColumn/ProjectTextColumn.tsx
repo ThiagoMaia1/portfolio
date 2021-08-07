@@ -17,8 +17,8 @@ function ProjectTextColumn({project, isVertical} : {project : Project, isVertica
                 <a href={project.url} target='_blank' rel='noopener noreferrer'>
                     {project.name + (project.subtitle ? ' - ' + project.subtitle : '')}
                 </a>
-                {!project.githubUrl ? null
-                    : <> - <span className='technology-link'><a href={project.githubUrl} target={'_blank'} rel={'noopener noreferrer'}>
+                {project.githubUrl &&
+                    <> - <span className='technology-link'><a href={project.githubUrl} target={'_blank'} rel={'noopener noreferrer'}>
                         {$t('seeOnGithub') + '  '}<TechnologyLogo technology={technologies.GitHub}/>
                       </a></span></>   
                 }
@@ -35,8 +35,8 @@ function ProjectTextColumn({project, isVertical} : {project : Project, isVertica
             </div>
             <div className='project-description'>
                 {project.description}
-                {!link ? null
-                    : <a href={link.url} target='_blank' rel='noopener noreferrer'>{' ' + link.label}</a>    
+                {link && 
+                    <a href={link.url} target='_blank' rel='noopener noreferrer'>{' ' + link.label}</a>    
                 }
             </div>
         </div>
