@@ -16,37 +16,34 @@ const t = technologies;
 const termSeparator = '|';
 
 const mainSkills = [
-    t.HTML5,
-    t.CSS3,
-    t.Javascript, 
     t.Typescript, 
     t.NodeJs,
-    t.GitHub,
-    t.ReactJs, 
-    t.ReactNative, 
-    t.Angular,
-    t.Vue,
-    t.Flutter, 
-    t.Dart,
-    t.Python,
-    t.Firebase,
-    t.SQL, 
-    t.APIRest,
+    t.GitLab,
     t.Scrum, 
+    t.ReactJs, 
+    t.ReactNative,
+    t.NextJs,
+    t.Jest,
+    t.Firebase,
+    t.PostgreSQL,
+    t.SQL, 
     t.ForeignLanguage,
 ];
 
 const unlistedSkills = [
+    t.AWS,
     t.AdobePhotoshop, 
     t.AdobePremiere,
     t.AdobeIllustrator,
+    t.AdobeIndesign,
+    t.AdobeLightroom,
     t.MySQL,
 ];
 
 const usedTechnologies = [
     ...projects.map(p => p.technologies),
+    ...unlistedSkills,
     ...professionalExperiences.map(e => e.skillSet),
-    unlistedSkills
 ].flat();
 const uniqueTechnologies = [...new Set(usedTechnologies)];
 const otherSkills = uniqueTechnologies.filter(t => !mainSkills.includes(t));
