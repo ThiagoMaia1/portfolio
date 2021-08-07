@@ -1,15 +1,8 @@
 .project-carrossel {
-    height: calc(min(80vh, 50vw));
-    margin-right: -7vw;
+    height: calc(min(80vh, 60vw));
 
     .carrossel {
         pointer-events: all;
-        transform: perspective(100px) rotateY(3deg) rotateZ(-1deg) scaleX(0.85);
-        transform-style: preserve-3d;
-    }
-
-    .arrow-circle {
-        transform: perspective(100px) translateZ(10px) translateX(-3vw);
     }
 
     .container-galeria {
@@ -23,9 +16,6 @@
     .seta-galeria {
         &:first-of-type {
             background-image: none !important;
-            > .arrow-circle {
-                transform: perspective(100px) translateZ(10px) translateX(3.5vw);
-            }
         }
     }
 }
