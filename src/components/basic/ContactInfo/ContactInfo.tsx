@@ -24,7 +24,7 @@ const links : Link[] = [
 function ContactInfo ({includeDevelopedBy = true}) {
     return (
         <div className='items-container'>
-            {!includeDevelopedBy ? null :
+            {includeDevelopedBy &&
                 <span className='developed-by'>{`${$t('developedBy')} ${fullName}`}</span>
             }
             {links.map(({logo, apelido, url}) => {

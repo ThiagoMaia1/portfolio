@@ -3,7 +3,7 @@ import companies, { CompanyKey } from '../../models/Company/Companies';
 import Company from '../../models/Company/Company';
 import ProfessionalExperience from '../../models/ProfessionalExperience/ProfessionalExperience';
 import professionalExperiences from '../../models/ProfessionalExperience/ProfessionalExperiences';
-import $t, { sentences } from '../../translation/Translation';
+import $t, { Sentences } from '../../translation/Translation';
 import SectionTitle from '../basic/SectionTitle/SectionTitle';
 import CompanyExperience from './components/CompanyExperience/CompanyExperience';
 import './PreviousExperiences.scss';
@@ -15,25 +15,25 @@ export type CompanyWithExperiences = {
 }
 
 class Section {
+    public list : CompanyWithExperiences[] = []; 
     constructor (
-        public translationName : keyof sentences,
-        public list : CompanyWithExperiences[], 
+        public translationName : keyof Sentences,
         public id : string,
         public filter : (x : any) => ProfessionalExperience[]  
-    ){}
+        ){}
 }
 
 function PreviousExperiences() {
 
-    let filterTechnologies = useFilterHashTechnologies();
+    const filterTechnologies = useFilterHashTechnologies();
     const sections = [
-        new Section('previousExperiences', [], 'previous-experiences-section', 
+        new Section('previousExperiences', 'previous-experiences-section', 
             (key : CompanyKey) => ProfessionalExperience.filterByTechnology(
                 ProfessionalExperience.companyExperiences(professionalExperiences, key, false),
                 filterTechnologies
             )
         ),
-        new Section('academicFormation', [], 'education-section',
+        new Section('academicFormation', 'education-section',
             (key : CompanyKey) => ProfessionalExperience.companyExperiences(professionalExperiences, key, true)
         )
     ];
@@ -50,16 +50,21 @@ function PreviousExperiences() {
                 });
         })
     })
+
+    const maxExperienceDate = (company : CompanyWithExperiences) =>
+        Math.max(...company.experiences.map(e => e.initialDate.getTime()))
     
     return (
         <>
             {sections
                 .filter(s => s.list.length)
                 .map(s =>
-                    <div id={s.id} className='page-section'>
+                    <div id={s.id} className='page-section' key={s.id}>
                         <div style={{zIndex: 100, position: 'relative'}}>
                             <SectionTitle text={$t(s.translationName)}/>
-                            {s.list.map((c, i, a) => 
+                            {s.list
+                                .sort((a, b) => maxExperienceDate(b) - maxExperienceDate(a))
+                                .map((c, i, a) => 
                                 <CompanyExperience key={c.key} 
                                                    companyWithExperiences={c} 
                                                    isOdd={i % 2 === 1} 

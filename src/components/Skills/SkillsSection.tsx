@@ -16,38 +16,34 @@ const t = technologies;
 const termSeparator = '|';
 
 const mainSkills = [
-    t.HTML5,
-    t.CSS3,
-    t.Javascript, 
     t.Typescript, 
     t.NodeJs,
-    t.GitHub,
-    t.ReactJs, 
-    t.ReactNative, 
-    t.Angular,
-    t.Vue,
-    t.Flutter, 
-    t.Dart,
-    t.Python,
-    t.Firebase,
-    t.SQL, 
-    t.APIRest,
+    t.GitLab,
     t.Scrum, 
+    t.ReactJs, 
+    t.ReactNative,
+    t.NextJs,
+    t.Jest,
+    t.Firebase,
+    t.PostgreSQL,
+    t.SQL, 
     t.ForeignLanguage,
 ];
 
 const unlistedSkills = [
+    t.AWS,
     t.AdobePhotoshop, 
     t.AdobePremiere,
     t.AdobeIllustrator,
-    t.PostgreSQL,
+    t.AdobeIndesign,
+    t.AdobeLightroom,
     t.MySQL,
 ];
 
 const usedTechnologies = [
     ...projects.map(p => p.technologies),
+    ...unlistedSkills,
     ...professionalExperiences.map(e => e.skillSet),
-    unlistedSkills
 ].flat();
 const uniqueTechnologies = [...new Set(usedTechnologies)];
 const otherSkills = uniqueTechnologies.filter(t => !mainSkills.includes(t));
@@ -57,6 +53,7 @@ function SkillsSection() {
 
     let [searchTerm, setSearchTerm] = useState('');
     let searchBarRef = useRef<HTMLInputElement>(null);
+    let sectionRef = useRef<HTMLInputElement>(null);
     let setTermo = useCallback((searchTerm : string) => {
         setSearchTerm(searchTerm);
         window.dispatchEvent(new Event('resize'));
@@ -69,7 +66,6 @@ function SkillsSection() {
                                         .split(termSeparator)
                                         .filter(t => t !== '')
                                         .map(t => t.trim());
-                            console.log(terms)
                             return terms.filter(t => 
                                 new RegExp(t, 'gi').test(s.name)
                             ).length;
@@ -78,11 +74,15 @@ function SkillsSection() {
 
     
     let otherList = searchTerm ? [] : otherSkills;
-    useHashChange(hash => {
+    const hashCallback = useCallback((hash : string, isFirstTime : boolean) => {
         let technologiesHash = getTechnologies(hash);
         if (technologiesHash.length === 1) 
             setTermo(technologies[technologiesHash[0]].name)
-    });
+        if ((technologiesHash.length > 0 || !isFirstTime) && sectionRef.current !== null) 
+            document.body.scroll({
+            top: sectionRef.current.offsetTop - 0.1*window.innerHeight + (document.querySelector('#about-me')?.parentElement?.offsetTop ?? 0)
+    })}, [setTermo]);
+    useHashChange(hashCallback);
 
     return (
         <div id='skills-section' style={{marginBottom: '30vh'}}>

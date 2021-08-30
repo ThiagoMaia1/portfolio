@@ -31,7 +31,7 @@ function ScrollProvider({children} : {children : ReactNode}) {
     const [state, dispatch] = useReducer(scrollReducer, emptyState);
     const setScroll = (scrollValue : number) => dispatch({type: 'update-scroll', scrollValue});
     
-    let listener = useCallback(() => {console.log(''); setScroll(document.body.scrollTop + Math.random()/100)}, []);
+    let listener = useCallback(() => setScroll(document.body.scrollTop + Math.random()/100), []);
     useEffect(() => {
         document.body.addEventListener('scroll', listener);
         return () => document.body.removeEventListener('scroll', listener);

@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-// import $t, { sentences } from '../../translation/Translation';
 import { ScrollContext } from '../Main/ScrollProvider';
 import SectionsIndexWave from './components/SectionsIndexWave/SectionsIndexWave';
 import './SectionsIndex.scss';

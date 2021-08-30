@@ -14,8 +14,8 @@ function WavePhoto({ imageUri }: { imageUri: string }) {
     }, [imageUri]);
 
     return <div className='wave-photo-container'>
-        {!imageHasLoaded ? null
-            : <PaperElement animation={scope => {
+        {imageHasLoaded &&
+            <PaperElement animation={scope => {
                 scope.activate();
                 let { view } = scope.project;
                 let { numberOfPoints, smallRadius, bigRadius, smoothing } = fixedStar;

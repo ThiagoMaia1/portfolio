@@ -7,6 +7,33 @@ const t = technologies;
 
 const projects: Array<Project> = [
   new Project(
+    $t('rsdTitle'),
+    $t('rsdSubtitle'),
+    [
+      t.ReactJs, 
+      t.NextJs, 
+      t.Typescript, 
+      t.SASS, 
+      t.StyledComponents, 
+      t.Jest, 
+      t.GitHub, 
+      t.ForeignLanguage, 
+      t.ReactQuery,
+    ],
+    $t('rsdDescription'),
+    'https://rsd.cash/',
+    'projects/RSD.svg',
+    '',
+    [
+      'RSDCash/HomeHeader.png',
+      'RSDCash/HomeImage.png',
+      'RSDCash/CallToAction.png',
+      'RSDCash/WhitePaperFooter.png',
+      'RSDCash/RoadMap.png',
+      'RSDCash/Mint.png',
+    ],
+  ),
+  new Project(
     $t('cultueTitle'),
     $t('cultueSubtitle'),
     [
@@ -149,6 +176,7 @@ const projects: Array<Project> = [
       t.ChromeExtensions,
       t.Postman,
       t.APIRest,
+      t.Vue,
     ],
     $t('vidAngelDescription'),
     'https://chrome.google.com/webstore/detail/vidangel-subtitles/glnfgjbdffkpaphaiablhgenfoigmfbj?hl=pt-BR&authuser=0',

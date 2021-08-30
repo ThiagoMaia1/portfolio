@@ -1,4 +1,4 @@
-import $t, { sentences } from "../../translation/Translation";
+import $t, { Sentences } from "../../translation/Translation";
 import companies from "../Company/Companies";
 import Company from "../Company/Company";
 import Technology from "../Technology/Technology";
@@ -10,7 +10,7 @@ class ProfessionalExperience {
     initialDate : Date;
 
     constructor (   
-        job : keyof sentences,
+        job : keyof Sentences,
         public companyKey : keyof typeof companies,
         initialYear : number,
         initialMonth : number,
@@ -20,7 +20,7 @@ class ProfessionalExperience {
         public isEducation = false,
     ) {
         this.title = $t(job);
-        this.description = $t(job + 'Description' as keyof sentences);
+        this.description = $t(job + 'Description' as keyof Sentences);
         this.company = companies[companyKey];
         this.initialDate = new Date(initialYear, initialMonth - 1, 1, 0, 0, 0);
     }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import technologies from '../models/Technology/Technologies';
 import useFilter from './useFilter'
 import useHashChange from './useHashChange'
@@ -8,11 +8,12 @@ const useSkillFilter = () => {
 
     let [termo, ref] = useFilter();
 
-    useHashChange(hash => {
+    const filterHashs = useCallback(hash => {
         let technologiesHash = getTechnologies(hash);
         if (technologiesHash.length === 1)
             ref.current.value = technologies[technologiesHash[0]].name;
-    });
+    }, []);
+    useHashChange(filterHashs);
 
     return [termo, ref];
 
