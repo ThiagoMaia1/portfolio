@@ -27,7 +27,7 @@ const mainSkills = [
     t.Firebase,
     t.PostgreSQL,
     t.SQL, 
-    t.ForeignLanguage,
+    t.AWS,
 ];
 
 const unlistedSkills = [

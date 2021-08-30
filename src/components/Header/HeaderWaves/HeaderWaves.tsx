@@ -3,7 +3,6 @@ import $t from '../../../translation/Translation';
 import PaperElement, { OnFrameEvent } from '../../Animations/PaperElement';
 import {WavePath, Sides, addShadow} from '../../Animations/Waves/Waves';
 import { fixedStar, paperTextStyle } from '../../../constants/Constants';
-import Loading from '../../Animations/Loading/Loading';
 import { useState } from 'react';
 
 function HeaderWaves() {

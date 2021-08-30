@@ -32,6 +32,9 @@ const projects: Array<Project> = [
       'RSDCash/RoadMap.png',
       'RSDCash/Mint.png',
     ],
+    undefined,
+    undefined,
+    40,
   ),
   new Project(
     $t('cultueTitle'),
