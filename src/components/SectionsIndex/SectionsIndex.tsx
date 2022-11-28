@@ -58,7 +58,9 @@ function SectionsIndex() {
     ),
   )
 
-  if (!sections.length) return null
+  if (!sections.length) {
+    return null
+  }
   return (
     <div
       id="sections-index-container"

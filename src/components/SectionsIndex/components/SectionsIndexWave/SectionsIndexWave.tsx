@@ -60,7 +60,9 @@ function SectionsIndexWave({
           wave.segments[pointsPerSection * sectionIndex + 3].point.y
 
         view.onFrame = () => {
-          if (!scrollHasChanged() || sections.length === 0) return
+          if (!scrollHasChanged() || sections.length === 0) {
+            return
+          }
           let selectedIndex = 0
           const tolerance = window.innerHeight * 0.35
           for (let i = 0; i < sections.length; i++) {
@@ -86,7 +88,9 @@ function SectionsIndexWave({
           const intersections = wave.getIntersections(
             new scope.Path.Line({ insert: false, from: [0, y], to: [1000, y] }),
           )
-          if (intersections.length === 0) return
+          if (intersections.length === 0) {
+            return
+          }
           const x = intersections[0].point.x
           star.segments = new scope.Path.Star(
             new scope.Point(x, y),
@@ -108,7 +112,9 @@ function SectionsIndexWave({
         const scrollHasChanged = () => {
           const newScroll = document.body.scrollTop
           const hasChanged = scroll !== newScroll
-          if (hasChanged) scroll = newScroll
+          if (hasChanged) {
+            scroll = newScroll
+          }
           return hasChanged
         }
       }}

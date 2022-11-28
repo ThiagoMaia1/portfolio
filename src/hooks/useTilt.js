@@ -2,15 +2,20 @@ import useMousePosition from './useMousePosition'
 
 const useTilt = (ref, taxa, relativeToWindow = false) => {
   let [rect, isOutside] = [{}, true]
-  if (ref.current) rect = ref.current.getBoundingClientRect()
+  if (ref.current) {
+    rect = ref.current.getBoundingClientRect()
+  }
   let coordenadas = useMousePosition(ref.current)
 
-  if (rect)
+  if (rect) {
     isOutside =
       Math.abs(coordenadas[0]) > rect.width / 2 ||
       Math.abs(coordenadas[1]) > rect.height / 2
+  }
 
-  if (!coordenadas || isOutside) return ''
+  if (!coordenadas || isOutside) {
+    return ''
+  }
   let tamanho = relativeToWindow
     ? [window.innerWidth, window.innerHeight]
     : [rect.width, rect.height]

@@ -26,7 +26,9 @@ class ProfessionalExperience {
   }
 
   get finalDate() {
-    if (this.durationInMonths === undefined) return undefined
+    if (this.durationInMonths === undefined) {
+      return undefined
+    }
     const wholeYears = Math.floor(this.durationInMonths / 12)
     const year = this.initialDate.getFullYear() + wholeYears
     const month =

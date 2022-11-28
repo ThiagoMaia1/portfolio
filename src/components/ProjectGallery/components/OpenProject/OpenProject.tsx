@@ -59,7 +59,9 @@ const OpenProject = ({ project, onClick }: Props) => {
         className="display-open-project"
         style={{ opacity: 1 - style.opacity, transition: opacityTransition }}
         onClick={(e) => {
-          if (e.target === e.currentTarget) close()
+          if (e.target === e.currentTarget) {
+            close()
+          }
         }}
         onWheel={(e) => setScrollOutside((s) => s + e.deltaY)}
       >

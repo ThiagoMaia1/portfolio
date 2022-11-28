@@ -48,7 +48,9 @@ function Footer() {
 
           view.onFrame = (e: OnFrameEvent) => {
             for (const w of waves) {
-              for (const f of w.onFrameFunctions) f(e)
+              for (const f of w.onFrameFunctions) {
+                f(e)
+              }
             }
           }
         }}

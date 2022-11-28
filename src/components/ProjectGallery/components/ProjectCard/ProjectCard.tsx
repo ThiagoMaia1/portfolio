@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: Props) => {
 
   const onClick = useCallback(() => {
     const cur = refScroll.current
-    if (!open && cur)
+    if (!open && cur) {
       document.body.scroll({
         top:
           cur.offsetTop +
@@ -33,6 +33,7 @@ const ProjectCard = ({ project }: Props) => {
         left: 0,
         behavior: 'smooth',
       })
+    }
     setOpen((o) => !o)
   }, [open])
 
@@ -43,9 +44,12 @@ const ProjectCard = ({ project }: Props) => {
   }
   if (!open) {
     style.transformStyle = 'preserve-3d'
-    if (tiltStyle) style.transform = tiltStyle
-    if (hasTransition || !tiltStyle)
+    if (tiltStyle) {
+      style.transform = tiltStyle
+    }
+    if (hasTransition || !tiltStyle) {
       style.transition = `transform ${transitionTime}ms linear`
+    }
   }
 
   return (

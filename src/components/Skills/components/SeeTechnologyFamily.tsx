@@ -29,9 +29,11 @@ function SeeTechnologyFamily({ setSearchTerm }: Props) {
   const technologiesHash = useHashTechnologies()
   let technology: Technology
 
-  if (technologiesHash.length === 1)
+  if (technologiesHash.length === 1) {
     technology = technologies[technologiesHash[0]]
-  else return null
+  } else {
+    return null
+  }
 
   const onClick = () => {
     const familyTechnologies = getTechnologiesOfFamily(technology)

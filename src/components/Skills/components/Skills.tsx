@@ -18,14 +18,17 @@ function Skills({ mainSkills, otherSkills }: Props) {
     skills: Technology[],
     numberOfGroups: number,
   ): Technology[][] {
-    if (!skills.length) return Array(numberOfColumns).fill([])
+    if (!skills.length) {
+      return Array(numberOfColumns).fill([])
+    }
     const step = skills.length / numberOfGroups
     const groups = []
     //Reversions necessary to get the first column to be the longest.
     const skillsReversed = [...skills]
     skillsReversed.reverse()
-    for (let i = 0; i < skills.length; i += step)
+    for (let i = 0; i < skills.length; i += step) {
       groups.push(skillsReversed.slice(i, i + step).reverse())
+    }
     return groups.reverse()
   }
 

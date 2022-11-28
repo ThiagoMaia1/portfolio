@@ -17,7 +17,9 @@ function ProjectGallery() {
     if (depth > 0 && depth <= maxIframes) {
       setTimeout(() => {
         const card = document.querySelector('#self-card .tilt-detector')
-        if (card instanceof HTMLElement) card.click()
+        if (card instanceof HTMLElement) {
+          card.click()
+        }
       }, 1000)
     }
   }
@@ -27,7 +29,9 @@ function ProjectGallery() {
     (p) => !!filterTechnologies(p.technologies),
   )
 
-  if (!filteredProjects.length) return null
+  if (!filteredProjects.length) {
+    return null
+  }
   return (
     <div id="project-section" className="page-section" data-id={depth}>
       <AppearFromBelow>

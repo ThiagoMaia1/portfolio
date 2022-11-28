@@ -12,7 +12,9 @@ export function canvasTextWidth(texto, fontStyle) {
 
 export function capitalize(string, caseTexto) {
   const primeiraMaiuscula = (string) => {
-    if (typeof string !== 'string') return ''
+    if (typeof string !== 'string') {
+      return ''
+    }
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
@@ -110,8 +112,12 @@ export const getImgBase64 = (
   flipH = null,
   flipV = null,
 ) => {
-  if (!frameW) frameW = img.width
-  if (!frameH) frameH = img.width
+  if (!frameW) {
+    frameW = img.width
+  }
+  if (!frameH) {
+    frameH = img.width
+  }
   var canvas = document.createElement('canvas')
   var ctx = canvas.getContext('2d')
   var iw = img.width
@@ -126,7 +132,9 @@ export const getImgBase64 = (
   inverterCtx(ctx, flipH, flipV, canvas)
   ctx.drawImage(img, x, y, wScaled, hScaled, 0, 0, frameW, frameH)
   var dataURL = canvas.toDataURL('image/png')
-  if (callback) callback(dataURL)
+  if (callback) {
+    callback(dataURL)
+  }
   return dataURL
 }
 
@@ -151,8 +159,9 @@ const inverterCtx = (ctx, flipH, flipV, canvas) => {
   let sentidoY = flipV ? -1 : 1
   let originX = flipH ? canvas.width : 0
   let originY = flipV ? canvas.height : 0
-  if (flipH || flipV)
+  if (flipH || flipV) {
     ctx.setTransform(sentidoX, 0, 0, sentidoY, originX, originY)
+  }
 }
 
 export const eEmailValido = (enderecoEmail) => {
@@ -173,8 +182,9 @@ export function downScaleImage(img, scale) {
 // scales the canvas by (float) scale < 1
 // returns a new canvas containing the scaled image.
 function downScaleCanvas(cv, scale) {
-  if (!(scale < 1) || !(scale > 0))
+  if (!(scale < 1) || !(scale > 0)) {
     throw new Error('scale must be a positive number <1 ')
+  }
   var sqScale = scale * scale // square scale = area of source pixel within target
   var sw = cv.width // source image width
   var sh = cv.height // source image height
@@ -378,18 +388,28 @@ export function rgbToHsl({ r, g, b }) {
 
   // Calculate hue
   // No difference
-  if (delta === 0) h = 0
+  if (delta === 0) {
+    h = 0
+  }
   // Red is max
-  else if (cmax === r) h = ((g - b) / delta) % 6
+  else if (cmax === r) {
+    h = ((g - b) / delta) % 6
+  }
   // Green is max
-  else if (cmax === g) h = (b - r) / delta + 2
+  else if (cmax === g) {
+    h = (b - r) / delta + 2
+  }
   // Blue is max
-  else h = (r - g) / delta + 4
+  else {
+    h = (r - g) / delta + 4
+  }
 
   h = Math.round(h * 60)
 
   // Make negative hues positive behind 360°
-  if (h < 0) h += 360
+  if (h < 0) {
+    h += 360
+  }
   // Calculate lightness
   l = (cmax + cmin) / 2
 
@@ -430,7 +450,9 @@ export function rgbObjToStr({ r, g, b, a }) {
 export function rgbStrToObject(str) {
   let keys = ['r', 'g', 'b', 'a']
   let rgbObj = cssColorStrToObject(str, keys)
-  if (rgbObj.a === undefined) rgbObj.a = 1
+  if (rgbObj.a === undefined) {
+    rgbObj.a = 1
+  }
   return rgbObj
 }
 
@@ -445,7 +467,9 @@ export function cssColorStrToObject(str, keys) {
   let objKeys = array.reduce((obj, a, i) => {
     let k = keys[i]
     obj[k] = Number(a)
-    if (isNaN(obj[k])) obj[k] = 0
+    if (isNaN(obj[k])) {
+      obj[k] = 0
+    }
     return obj
   }, {})
   return objKeys
@@ -453,24 +477,36 @@ export function cssColorStrToObject(str, keys) {
 
 export const parseCorToRgb = (cor) => {
   if (typeof cor === 'string') {
-    if (/rgb/.test(cor)) cor = rgbStrToObject(cor)
-    else if (/hsl/.test(cor)) cor = hslStrToObject(cor)
-    else if (/#/.test(cor)) cor = hexToRgb(cor)
-    else cor = null
+    if (/rgb/.test(cor)) {
+      cor = rgbStrToObject(cor)
+    } else if (/hsl/.test(cor)) {
+      cor = hslStrToObject(cor)
+    } else if (/#/.test(cor)) {
+      cor = hexToRgb(cor)
+    } else {
+      cor = null
+    }
   } else if (typeof cor === 'object') {
     let keys = Object.keys(cor)
-    if (keys.includes('h')) cor = hslToRgb(cor)
-    else if (cor.rgb) cor = cor.rgb
-    else if (!keys.includes('r')) cor = null
+    if (keys.includes('h')) {
+      cor = hslToRgb(cor)
+    } else if (cor.rgb) {
+      cor = cor.rgb
+    } else if (!keys.includes('r')) {
+      cor = null
+    }
   }
   return cor || null
 }
 
 export function invertColor(hex, blackOrWhite) {
-  if (hex.indexOf('#') === 0) hex = hex.slice(1)
+  if (hex.indexOf('#') === 0) {
+    hex = hex.slice(1)
+  }
   // convert 3-digit hex to 6-digits.
-  if (hex.length === 3)
+  if (hex.length === 3) {
     hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
+  }
   if (hex.length !== 6) {
     return '#000'
   }
@@ -496,7 +532,9 @@ export const getBackgroundImageColor = (color) =>
   'linear-gradient(' + color + ', ' + color + ')'
 
 export const getStrPercentual = (decimal) => {
-  if (typeof decimal === 'string' && /%/.test(decimal)) return decimal
+  if (typeof decimal === 'string' && /%/.test(decimal)) {
+    return decimal
+  }
   return Number(decimal).toFixed(2) * 100 + '%'
 }
 
@@ -563,14 +601,19 @@ export const downloadArquivoTexto = function (nomeArquivo, conteudoArquivo) {
 }
 
 export const removerPorcentagem = (str) => {
-  if (typeof str === 'string' && /%/.test(str))
+  if (typeof str === 'string' && /%/.test(str)) {
     str = Number(str.replace('%', '')) / 100
-  if (typeof str === 'number' && !isNaN(str)) return str
+  }
+  if (typeof str === 'number' && !isNaN(str)) {
+    return str
+  }
   return 0
 }
 
 export const getInset = (origem) => {
-  if (!origem) origem = {}
+  if (!origem) {
+    origem = {}
+  }
   return listaDirecoes.reduce((resultado, d) => {
     resultado[d] = getStrPercentual(origem[d]) || 0
     return resultado
@@ -589,7 +632,9 @@ export const getInsetNum = (insetImagem) => {
 }
 
 export const maximoDivisorComum = (a, b) => {
-  if (b === 0) return a
+  if (b === 0) {
+    return a
+  }
   return maximoDivisorComum(b, a % b)
 }
 

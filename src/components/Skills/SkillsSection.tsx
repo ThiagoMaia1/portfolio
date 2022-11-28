@@ -72,12 +72,13 @@ function SkillsSection() {
   const hashCallback = useCallback(
     (hash: string, isFirstTime: boolean) => {
       const technologiesHash = getTechnologies(hash)
-      if (technologiesHash.length === 1)
+      if (technologiesHash.length === 1) {
         setTermo(technologies[technologiesHash[0]].name)
+      }
       if (
         (technologiesHash.length > 0 || !isFirstTime) &&
         sectionRef.current !== null
-      )
+      ) {
         document.body.scroll({
           top:
             sectionRef.current.offsetTop -
@@ -85,6 +86,7 @@ function SkillsSection() {
             (document.querySelector('#about-me')?.parentElement?.offsetTop ??
               0),
         })
+      }
     },
     [setTermo],
   )

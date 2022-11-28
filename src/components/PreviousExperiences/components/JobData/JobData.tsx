@@ -18,8 +18,11 @@ function JobData({ experience, isLast }: Props) {
   }
 
   let finalDate: string
-  if (experience.finalDate) finalDate = formatDate(experience.finalDate)
-  else finalDate = $t('currentJob')
+  if (experience.finalDate) {
+    finalDate = formatDate(experience.finalDate)
+  } else {
+    finalDate = $t('currentJob')
+  }
 
   return (
     <div className="job-data" style={{ borderBottomWidth: isLast ? 0 : '1px' }}>

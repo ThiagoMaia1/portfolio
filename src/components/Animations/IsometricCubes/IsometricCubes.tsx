@@ -37,15 +37,22 @@ function IsometricCubes() {
           let timer = 0
 
           view.onFrame = (event: OnFrameEvent) => {
-            if (event.time - timer < 0.1) return
+            if (event.time - timer < 0.1) {
+              return
+            }
             timer = event.time
             for (const p of pathObjects) {
-              if (p.isExpanding)
-                if (p.path.lastSegment.point.isInside(view.bounds))
+              if (p.isExpanding) {
+                if (p.path.lastSegment.point.isInside(view.bounds)) {
                   p.path.add(p.path.lastSegment.point.add(randomVector()))
-                else p.isExpanding = false
-              else if (p.path.segments.length > 1) p.path.lastSegment.remove()
-              else p.isExpanding = true
+                } else {
+                  p.isExpanding = false
+                }
+              } else if (p.path.segments.length > 1) {
+                p.path.lastSegment.remove()
+              } else {
+                p.isExpanding = true
+              }
             }
           }
         }}

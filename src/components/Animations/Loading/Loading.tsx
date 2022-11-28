@@ -143,10 +143,15 @@ function Loading({ active, time }: Props) {
               compoundPath.fillColor = fillGradient()
 
               let signal = 0
-              if (mouseIsOverCanvas && rectangleHeight < openRectangleHeight)
+              if (mouseIsOverCanvas && rectangleHeight < openRectangleHeight) {
                 signal = 1
-              if (!mouseIsOverCanvas && rectangleHeight > closedRectangleHeight)
+              }
+              if (
+                !mouseIsOverCanvas &&
+                rectangleHeight > closedRectangleHeight
+              ) {
                 signal = -1
+              }
               rectangleHeight += signal * changeSizeSpeed
             }
           }}

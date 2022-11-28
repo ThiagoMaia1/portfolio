@@ -25,7 +25,9 @@ export default function PaperElement({
   const scopeRef = useRef<paper.PaperScope>()
 
   useWindowResize(() => {
-    if (shouldResize) setCanvasId(uniqueCanvasId())
+    if (shouldResize) {
+      setCanvasId(uniqueCanvasId())
+    }
   }, 500)
   const _animation = useCallback(animation, [animation])
 
@@ -33,11 +35,14 @@ export default function PaperElement({
     function () {
       clearTimeout(timeout.current)
       timeout.current = setTimeout(() => {
-        if (scopeRef.current !== undefined)
+        if (scopeRef.current !== undefined) {
           scopeRef.current.projects.forEach((p) => p.remove())
+        }
         scopeRef.current = new paper.PaperScope()
         const scope = scopeRef.current
-        if (!document.querySelector(`#${canvasId}`)) return
+        if (!document.querySelector(`#${canvasId}`)) {
+          return
+        }
         scope.setup(canvasId)
         _animation(scope, canvasId)
       }, 0)
