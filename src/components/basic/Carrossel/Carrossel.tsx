@@ -1,4 +1,9 @@
-import React, { Component, CSSProperties, SyntheticEvent } from 'react'
+import React, {
+  Component,
+  CSSProperties,
+  ReactNode,
+  SyntheticEvent,
+} from 'react'
 import './Carrossel.scss'
 import {
   MdKeyboardArrowUp,
@@ -20,6 +25,7 @@ enum Direcao {
 }
 
 interface Props {
+  children?: ReactNode
   direcao: 'vertical' | 'horizontal'
   tamanhoMaximo: string
   percentualBeirada?: number
