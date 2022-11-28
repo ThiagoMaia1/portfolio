@@ -18,15 +18,18 @@ const termSeparator = '|'
 const mainSkills = [
   t.Typescript,
   t.NodeJs,
-  t.GitLab,
-  t.Scrum,
   t.ReactJs,
   t.ReactNative,
   t.NextJs,
   t.Jest,
-  t.Firebase,
+  t.Cypress,
+  t.Storybook,
+  t.Flutter,
+  t.Dart,
+  t.GitHub,
   t.PostgreSQL,
   t.SQL,
+  t.Firebase,
   t.ForeignLanguage,
 ]
 

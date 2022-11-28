@@ -126,7 +126,7 @@ const translation: Record<string, Sentences> = {
     developerTitle: 'Front-end Developer',
     aboutMe: 'About Me',
     aboutMeSectionLabel: 'About Me',
-    selfDescription: `See my personal development portfolio at: www.thiagomaia.tk.\nI'm a front-end developer, with an eye for design, based in Brazil. I've worked with Databases, Python, but currently work as a web developer. My main technologies are React.Js and Angular, but I also enjoy Vue, Flutter and React Native. \nProgramming is a true passion for me, which leads to me to seek for the best possible code to solve the problems in a clean and elegant way, allowing for good maintance in the future. I also know that I make mistakes, that's why I value tools that force me to work better such as Typescript and TDD.\nI enjoy learning new technologies, and I'm able to learn very quickly. My learning process is very "hands-on", I've learned most of what I know trough building real world projects, which has given me a good understanding of why each tool is useful.`,
+    selfDescription: `I'm a front-end developer, with an eye for design, based in Brazil. I've worked with Databases, Python, but currently work as a web developer. My main technologies are React.Js and Angular, but I also enjoy Vue, Flutter and React Native. \nProgramming is a true passion for me, which leads to me to seek for the best possible code to solve the problems in a clean and elegant way, allowing for good maintenance in the future. I also know that I make mistakes, that's why I value tools that force me to work better such as Typescript and TDD.\nI enjoy learning new technologies, and I'm able to learn very quickly. My learning process is very "hands-on", I've learned most of what I know trough building real world projects, which has given me a good understanding of why each tool is useful.`,
     skills: 'Main Skills',
     skillsSectionLabel: 'Skills',
     search: 'Search',
@@ -206,16 +206,16 @@ const translation: Record<string, Sentences> = {
       'Ministering short term Excel course for company employees.',
     fullstackDeveloper: 'Fullstack Developer',
     fullstackDeveloperDescription:
-      "Development and maintance of the company's internal system, used by all internal sectors.\n- Development of user interfaces, UX.\n- Payment and banking systems integration. Automated mailing system. Analytics integration.\n- Development of SQL queries and reports.\n- Maintance and normalization of the database.\n- Tasks automation. Building custom sheets for isolated cases.\n- Building of HTML e-mails.",
+      "Development and maintenance of the company's internal system, used by all internal sectors.\n- Development of user interfaces, UX.\n- Payment and banking systems integration. Automated mailing system. Analytics integration.\n- Development of SQL queries and reports.\n- Maintance and normalization of the database.\n- Tasks automation. Building custom sheets for isolated cases.\n- Building of HTML e-mails.",
     contractDeveloper: 'System Mantainer',
     contractDeveloperDescription:
-      'Remote maintance of internal system on demand.',
+      'Remote maintenance of internal system on demand.',
     administrativeAssistant: 'Administrative Assistante',
     administrativeAssistantDescription:
       'Government job on the administrative area, storehouse management. I would take the opportunities as well as I could to automate processes using my programming knowledge.',
     storageAdministrator: 'Storehouse Manager',
     storageAdministratorDescription:
-      'Organization and planning of stocks, catalogue maintance, communication with development sector. Automation of small tasks using Python and NodeJs.',
+      'Organization and planning of stocks, catalogue maintenance, communication with development sector. Automation of small tasks using Python and NodeJs.',
     reactDeveloperCP: 'Senior React Developer',
     reactDeveloperCPDescription:
       'Development and Maintenance of Plataform for Inbound Lead Conversion.\n- Development of interfaces in React.js (Typescript, HTML, CSS) based on Figma designs\n- Libraries React-query, React-final-form, React-Router\n- Versioning and CI/CD com GitHub\n- Development of unit tests with Jest + E2e with Cypress\n- COD with Storybook + Percy/Chromatic\n- Team with multiple nationalities',
@@ -227,7 +227,7 @@ const translation: Record<string, Sentences> = {
       'Development and Maintance of Value Stream Management Platform\n- Development of UI in React.js (Typescript, HTML, CSS)\n- Libraries SWR, React-hook-form, Material UI, ZingChart, React-Router\n- API Maintance Node.js + AWS Serverless\n- Database: PostgreSQL + Sequelize\n- GitLab Versioning and CI/CD\n- Development of Unit Tests with Jest\n- Component Driven Development with Storybook\n- SCRUM + Kanban with Jira\n- Team with Multiple Nationalities, meetings all in english',
     frontendDeveloper: 'Front-End Developer',
     frontendDeveloperDescription:
-      "Development and maintance of web applications using Angular and Angular.js.\n- System migration from Angular.js, Javascript, CSS, Bootstrap to Angular 8+, Typescript, Sass/Scss.\n- Agile methodologies. SCRUM with Kanban (Atlassian's Jira).\n- Multinational team, with daily meetings in english.\n- CI/CD Pipeline with Jenkins and Github.\n- Occasional tasks on the back-end: C# + Entity Framework, SQL Server.",
+      "Development and maintenance of web applications using Angular and Angular.js.\n- System migration from Angular.js, Javascript, CSS, Bootstrap to Angular 8+, Typescript, Sass/Scss.\n- Agile methodologies. SCRUM with Kanban (Atlassian's Jira).\n- Multinational team, with daily meetings in english.\n- CI/CD Pipeline with Jenkins and Github.\n- Occasional tasks on the back-end: C# + Entity Framework, SQL Server.",
     reactDeveloperTurtle: 'React Developer',
     reactDeveloperTurtleDescription:
       'Development and maintence of developer contractors plataform\n- Development of user interfaces with React + Typescript + Sass\n- Back-end communication using GraphQL + Apollo\n- Implementation of designs built with Figma\n- Libraries: Formik, React Router\n- Version control with GitHub',
