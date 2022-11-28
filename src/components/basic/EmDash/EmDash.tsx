@@ -1,7 +1,7 @@
-import './EmDash.scss';
+import './EmDash.scss'
 
 function EmDash() {
-    return <div className='em-dash-rect'></div>
+  return <div className="em-dash-rect"></div>
 }
 
 export default EmDash

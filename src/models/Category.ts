@@ -1,9 +1,9 @@
 enum Category {
-    Language,
-    Framework,
-    Tool,
-    Software,
-    Database
+  Language,
+  Framework,
+  Tool,
+  Software,
+  Database,
 }
 
-export default Category;
+export default Category

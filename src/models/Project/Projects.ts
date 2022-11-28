@@ -1,23 +1,23 @@
-import { urlFinalPaper } from '../../constants/Constants';
-import $t from '../../translation/Translation';
-import technologies from '../Technology/Technologies';
-import Project from './Project';
+import { urlFinalPaper } from '../../constants/Constants'
+import $t from '../../translation/Translation'
+import technologies from '../Technology/Technologies'
+import Project from './Project'
 
-const t = technologies;
+const t = technologies
 
 const projects: Array<Project> = [
   new Project(
     $t('rsdTitle'),
     $t('rsdSubtitle'),
     [
-      t.ReactJs, 
-      t.NextJs, 
-      t.Typescript, 
-      t.SASS, 
-      t.StyledComponents, 
-      t.Jest, 
-      t.GitHub, 
-      t.ForeignLanguage, 
+      t.ReactJs,
+      t.NextJs,
+      t.Typescript,
+      t.SASS,
+      t.StyledComponents,
+      t.Jest,
+      t.GitHub,
+      t.ForeignLanguage,
       t.ReactQuery,
     ],
     $t('rsdDescription'),
@@ -98,7 +98,7 @@ const projects: Array<Project> = [
       'BibliaParaHumanos/Help2.png',
     ],
     {
-      url: 'https://github.com/ThiagoMaia1/pagina-api-biblia', 
+      url: 'https://github.com/ThiagoMaia1/pagina-api-biblia',
       label: $t('bibleForHumansLink'),
     },
     'https://bibliaparahumanos.web.app/home',
@@ -106,7 +106,7 @@ const projects: Array<Project> = [
   new Project(
     $t('myShopTitle'),
     $t('myShopSubtitle'),
-    [t.Dart, t.Flutter, t.Figma, t.Trello,],
+    [t.Dart, t.Flutter, t.Figma, t.Trello],
     $t('myShopDescription'),
     'https://youtu.be/BJljtECxGkE',
     'projects/MyShop.png',
@@ -122,9 +122,9 @@ const projects: Array<Project> = [
       'MyShop/Profile.png',
     ],
     {
-      url: 'https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-(E-commerce-template)-by-Oleh-Chabanov', 
+      url: 'https://www.figma.com/file/bHEvWMeeRywiIU9fU5T6yn/Mobile-App-FIGMA-(E-commerce-template)-by-Oleh-Chabanov',
       label: $t('figmaBy'),
-    }
+    },
   ),
   new Project(
     $t('ballGameTitle'),
@@ -141,7 +141,7 @@ const projects: Array<Project> = [
       'BallGame/Ranking.png',
     ],
     undefined,
-    'https://www.mereobounce.tk/'
+    'https://www.mereobounce.tk/',
   ),
   new Project(
     $t('vidAngelTitle'),
@@ -168,7 +168,7 @@ const projects: Array<Project> = [
     {
       url: 'https://www.vidangel.com/browse',
       label: $t('vidAngelLink'),
-    }
+    },
   ),
   new Project(
     $t('ultimatoSystemTitle'),
@@ -190,9 +190,9 @@ const projects: Array<Project> = [
       'Ultimato/VendasNovo.png',
     ],
     {
-      url: urlFinalPaper, 
+      url: urlFinalPaper,
       label: $t('ultimatoFinalPaperLink'),
-    }
+    },
   ),
   new Project(
     $t('boardGameHelperTitle'),
@@ -218,16 +218,20 @@ const projects: Array<Project> = [
     'https://youtu.be/BWt3QXCnMxY',
     'projects/AcaiAntonio.png',
     'https://github.com/ThiagoMaia1/acai-antonio',
-    [
-      'Acai/Início.png',
-      'Acai/Tamanhos.png',
-      'Acai/Recheios.png',
-    ],
+    ['Acai/Início.png', 'Acai/Tamanhos.png', 'Acai/Recheios.png'],
   ),
   new Project(
     $t('portfolioTitle'),
     $t('portfolioSubtitle'),
-    [t.Typescript, t.HTML5, t.SASS, t.ReactJs, t.PaperJs, t.AWS, t.StyledComponents],
+    [
+      t.Typescript,
+      t.HTML5,
+      t.SASS,
+      t.ReactJs,
+      t.PaperJs,
+      t.AWS,
+      t.StyledComponents,
+    ],
     $t('portfolioDescription'),
     window.location.origin,
     'projects/Portfolio.svg',
@@ -236,6 +240,6 @@ const projects: Array<Project> = [
     undefined,
     window.location.origin + '/' + Date.now().toString(),
   ),
-];
+]
 
-export default projects;
+export default projects
