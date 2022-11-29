@@ -68,7 +68,7 @@ const portugueseTranslations = {
   ballGameSubtitle: '',
   ballGameDescription:
     'Joguinho de pular obstáculos, desenvolvido em Angular. Criei para tentar chamar atenção durante o processo seletivo para a empresa Mereo.',
-  // Professional Experiences
+  // Professional Experience
   englishTeacher: 'Professor de Inglês',
   englishTeacherDescription:
     'Ministração de Aulas e Monitorias em Inglês. Escola com foco em inglês empresarial.',
@@ -126,7 +126,7 @@ const translation: Record<string, Sentences> = {
     developerTitle: 'Front-end Developer',
     aboutMe: 'About Me',
     aboutMeSectionLabel: 'About Me',
-    selfDescription: `I'm a front-end developer, with an eye for design, based in Brazil. I've worked with Databases, Python, but currently work as a web developer. My main technologies are React.Js and Angular, but I also enjoy Vue, Flutter and React Native. \nProgramming is a true passion for me, which leads to me to seek for the best possible code to solve the problems in a clean and elegant way, allowing for good maintenance in the future. I also know that I make mistakes, that's why I value tools that force me to work better such as Typescript and TDD.\nI enjoy learning new technologies, and I'm able to learn very quickly. My learning process is very "hands-on", I've learned most of what I know trough building real world projects, which has given me a good understanding of why each tool is useful.`,
+    selfDescription: `I'm a front-end developer, with an eye for design, based in Brazil. I've worked with Databases, Python, but currently work as a web developer. My main technologies are React.Js and Angular, but I also enjoy Vue, Flutter and React Native. \nProgramming is a true passion for me, which is why I always seek for the best possible code to solve the problems in a clean and elegant way, allowing for good maintenance in the future. I also know that I make mistakes, that's why I value tools that force me to work better such as Typescript and TDD.\nI enjoy learning new technologies, and I'm able to learn very quickly. My learning process is very "hands-on", I've learned most of what I know trough building real world projects, which has given me a good understanding of why each tool is useful.`,
     skills: 'Main Skills',
     skillsSectionLabel: 'Skills',
     search: 'Search',
@@ -189,7 +189,7 @@ const translation: Record<string, Sentences> = {
     ballGameSubtitle: '',
     ballGameDescription:
       'Small game of jumping obstacles, created as I learnet Angular to try and impress the folks at Mereo before they interviewed me.',
-    // Professional Experiences
+    // Professional Experience
     englishTeacher: 'English Teacher',
     englishTeacherDescription:
       'Ministering english classes and correcting tests. School focused on english for enterprises.',
@@ -198,7 +198,7 @@ const translation: Record<string, Sentences> = {
       'Editing/treating studio photographs using Adobe Photoshop, Lightroom. Diagramming personalized photo albums using Adobe InDesign.',
     pythonTeacher: 'Python Tutor',
     pythonTeacherDescription:
-      'Helping to minister programming classes in Python for engineering students. Classes ministered in english.',
+      'Taught python programming classes for engineering students. Classes ministered in english.',
     intern: 'Development Intern',
     internDescription: 'Same activities as Fullstack-Developer.',
     excelTeacher: 'Excel Teacher',
@@ -206,7 +206,7 @@ const translation: Record<string, Sentences> = {
       'Ministering short term Excel course for company employees.',
     fullstackDeveloper: 'Fullstack Developer',
     fullstackDeveloperDescription:
-      "Development and maintenance of the company's internal system, used by all internal sectors.\n- Development of user interfaces, UX.\n- Payment and banking systems integration. Automated mailing system. Analytics integration.\n- Development of SQL queries and reports.\n- Maintance and normalization of the database.\n- Tasks automation. Building custom sheets for isolated cases.\n- Building of HTML e-mails.",
+      "Development and maintenance of the company's internal system, used by all internal sectors.\n- Development of user interfaces, UX.\n- Payment and banking systems integration. Automated mailing system. Analytics integration.\n- Development of SQL queries and reports.\n- Maintenance and normalization of the database.\n- Tasks automation. Building custom sheets for isolated cases.\n- Building of HTML e-mails.",
     contractDeveloper: 'System Mantainer',
     contractDeveloperDescription:
       'Remote maintenance of internal system on demand.',
@@ -224,13 +224,13 @@ const translation: Record<string, Sentences> = {
       'Development of presentation website for the RSD - Reference System for DeFi (cryptocurrency).\n- React.js + Next.js \n- Typescript, Sass, Styled Components \n- Version control with Git + Keybase.\n- React Query',
     reactAndNodeDeveloper: 'Node and React Developer',
     reactAndNodeDeveloperDescription:
-      'Development and Maintance of Value Stream Management Platform\n- Development of UI in React.js (Typescript, HTML, CSS)\n- Libraries SWR, React-hook-form, Material UI, ZingChart, React-Router\n- API Maintance Node.js + AWS Serverless\n- Database: PostgreSQL + Sequelize\n- GitLab Versioning and CI/CD\n- Development of Unit Tests with Jest\n- Component Driven Development with Storybook\n- SCRUM + Kanban with Jira\n- Team with Multiple Nationalities, meetings all in english',
+      'Development and Maintenance of Value Stream Management Platform\n- Development of UI in React.js (Typescript, HTML, CSS)\n- Libraries SWR, React-hook-form, Material UI, ZingChart, React-Router\n- API Maintenance Node.js + AWS Serverless\n- Database: PostgreSQL + Sequelize\n- GitLab Versioning and CI/CD\n- Development of Unit Tests with Jest\n- Component Driven Development with Storybook\n- SCRUM + Kanban with Jira\n- Team with Multiple Nationalities, meetings all in english',
     frontendDeveloper: 'Front-End Developer',
     frontendDeveloperDescription:
       "Development and maintenance of web applications using Angular and Angular.js.\n- System migration from Angular.js, Javascript, CSS, Bootstrap to Angular 8+, Typescript, Sass/Scss.\n- Agile methodologies. SCRUM with Kanban (Atlassian's Jira).\n- Multinational team, with daily meetings in english.\n- CI/CD Pipeline with Jenkins and Github.\n- Occasional tasks on the back-end: C# + Entity Framework, SQL Server.",
     reactDeveloperTurtle: 'React Developer',
     reactDeveloperTurtleDescription:
-      'Development and maintence of developer contractors plataform\n- Development of user interfaces with React + Typescript + Sass\n- Back-end communication using GraphQL + Apollo\n- Implementation of designs built with Figma\n- Libraries: Formik, React Router\n- Version control with GitHub',
+      'Development and maintence of plataform for management of contractors\n- Development of user interfaces with React + Typescript + Sass\n- Back-end communication using GraphQL + Apollo\n- Implementation of designs built with Figma\n- Libraries: Formik, React Router\n- Version control with GitHub',
     graduation: "Bachelor's Degree in Industrial Engineering",
     graduationDescription: '',
     graduationEnade:
@@ -241,23 +241,24 @@ const translation: Record<string, Sentences> = {
 }
 
 const $t = (key: keyof Sentences) => {
-  const languageCode = 'en' //getLanguageCode()
+  const languageCode = getLanguageCode()
   return translation[languageCode][key]
 }
 
 const getGeneralLanguage = (code: string) => code.split('-')[0]
 
 export const getLanguageCode = () => {
-  let languageCode: string = window.navigator.language
-  if (!(languageCode in translation)) {
-    for (const k of Object.keys(translation)) {
-      if (getGeneralLanguage(k) === getGeneralLanguage(languageCode)) {
-        break
-      }
-    }
-    languageCode = 'en'
-  }
-  return languageCode
+  return 'en'
+  // let languageCode: string = window.navigator.language
+  // if (!(languageCode in translation)) {
+  //   for (const k of Object.keys(translation)) {
+  //     if (getGeneralLanguage(k) === getGeneralLanguage(languageCode)) {
+  //       break
+  //     }
+  //   }
+  //   languageCode = 'en'
+  // }
+  // return languageCode
 }
 
 export default $t

@@ -162,7 +162,7 @@ const professionalExperiences: ProfessionalExperience[] = [
     'turtleOs',
     2021,
     9,
-    2,
+    3,
     [
       t.Typescript,
       t.SASS,
@@ -181,7 +181,7 @@ const professionalExperiences: ProfessionalExperience[] = [
     'chiliPiper',
     2021,
     11,
-    12,
+    13,
     [
       t.Typescript,
       t.ReactJs,
